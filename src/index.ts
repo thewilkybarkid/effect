@@ -233,7 +233,7 @@ export * as Duration from "effect/Duration"
 /**
  * @since 2.0.0
  */
-export * as Effect from "effect/Effect"
+export { Effect } from "effect/Effect"
 
 /**
  * @since 2.0.0
