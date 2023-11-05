@@ -49,13 +49,13 @@ export interface GetNameById extends Request.Request<string, string> {
 
 export const GetNameById = Request.tagged<GetNameById>("GetNameById")
 
-const delay = <R, E, A>(self: Effect.Effect<R, E, A>) =>
+const delay = <R, E, A>(self: Effect<R, E, A>) =>
   Effect.zipRight(
     Effect.promise(() => new Promise((r) => timeout.set(() => r(0), 0))),
     self
   )
 
-const counted = <R, E, A>(self: Effect.Effect<R, E, A>) => Effect.tap(self, () => Effect.map(Counter, (c) => c.count++))
+const counted = <R, E, A>(self: Effect<R, E, A>) => Effect.tap(self, () => Effect.map(Counter, (c) => c.count++))
 
 const UserResolver = Resolver.makeBatched((requests: Array<UserRequest>) =>
   Effect.flatMap(Requests, (r) => {
@@ -92,7 +92,7 @@ export const print = (request: UserRequest): string => {
   }
 }
 
-const processRequest = (request: UserRequest): Effect.Effect<never, never, void> => {
+const processRequest = (request: UserRequest): Effect<never, never, void> => {
   switch (request._tag) {
     case "GetAllIds": {
       return Request.complete(request, Exit.succeed(userIds))

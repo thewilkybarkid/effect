@@ -28,8 +28,8 @@ const hash = dual<
 >(2, (x, y) => Hash.number(x ^ y))
 
 const hashEffect = dual<
-  (y: number) => (x: number) => Effect.Effect<never, never, number>,
-  (x: number, y: number) => Effect.Effect<never, never, number>
+  (y: number) => (x: number) => Effect<never, never, number>,
+  (x: number, y: number) => Effect<never, never, number>
 >(2, (x, y) => Effect.sync(() => hash(x, y)))
 
 describe.concurrent("ScopedCache", () => {

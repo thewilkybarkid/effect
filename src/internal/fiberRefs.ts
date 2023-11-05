@@ -1,4 +1,4 @@
-import type * as Effect from "../Effect"
+import type { Effect } from "../Effect"
 import * as Equal from "../Equal"
 import type * as FiberId from "../FiberId"
 import type * as FiberRef from "../FiberRef"
@@ -152,7 +152,7 @@ export const forkAs = dual<
 export const fiberRefs = (self: FiberRefs.FiberRefs) => HashSet.fromIterable(self.locals.keys())
 
 /** @internal */
-export const setAll = (self: FiberRefs.FiberRefs): Effect.Effect<never, never, void> =>
+export const setAll = (self: FiberRefs.FiberRefs): Effect<never, never, void> =>
   core.forEachSequentialDiscard(
     fiberRefs(self),
     (fiberRef) => core.fiberRefSet(fiberRef, getOrDefault(self, fiberRef))

@@ -85,7 +85,7 @@ describe.concurrent("Effect", () => {
     }))
   it.effect("point, bind, map", () =>
     Effect.gen(function*($) {
-      const fibEffect = (n: number): Effect.Effect<never, never, number> => {
+      const fibEffect = (n: number): Effect<never, never, number> => {
         if (n <= 1) {
           return Effect.succeed(n)
         }
@@ -96,7 +96,7 @@ describe.concurrent("Effect", () => {
     }))
   it.effect("effect, bind, map", () =>
     Effect.gen(function*($) {
-      const fibEffect = (n: number): Effect.Effect<never, unknown, number> => {
+      const fibEffect = (n: number): Effect<never, unknown, number> => {
         if (n <= 1) {
           return Effect.try(() => n)
         }
@@ -107,7 +107,7 @@ describe.concurrent("Effect", () => {
     }))
   it.effect("effect, bind, map, redeem", () =>
     Effect.gen(function*($) {
-      const fibEffect = (n: number): Effect.Effect<never, unknown, number> => {
+      const fibEffect = (n: number): Effect<never, unknown, number> => {
         if (n <= 1) {
           return pipe(
             Effect.try(() => {

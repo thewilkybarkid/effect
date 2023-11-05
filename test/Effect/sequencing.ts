@@ -187,7 +187,7 @@ describe.concurrent("Effect", () => {
     }))
   it.effect("zip/parallel - paralellizes simple success values", () =>
     Effect.gen(function*($) {
-      const countdown = (n: number): Effect.Effect<never, never, number> => {
+      const countdown = (n: number): Effect<never, never, number> => {
         return n === 0
           ? Effect.succeed(0)
           : pipe(

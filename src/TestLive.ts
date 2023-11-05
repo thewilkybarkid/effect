@@ -3,7 +3,7 @@
  */
 import * as Context from "./Context"
 import type * as DefaultServices from "./DefaultServices"
-import type * as Effect from "./Effect"
+import type { Effect } from "./Effect"
 import * as core from "./internal/core"
 import * as defaultServices from "./internal/defaultServices"
 
@@ -27,7 +27,7 @@ export type TestLiveTypeId = typeof TestLiveTypeId
  */
 export interface TestLive {
   readonly [TestLiveTypeId]: TestLiveTypeId
-  provide<R, E, A>(effect: Effect.Effect<R, E, A>): Effect.Effect<R, E, A>
+  provide<R, E, A>(effect: Effect<R, E, A>): Effect<R, E, A>
 }
 
 /**
@@ -41,7 +41,7 @@ export const TestLive: Context.Tag<TestLive, TestLive> = Context.Tag<TestLive>(
 class LiveImpl implements TestLive {
   readonly [TestLiveTypeId]: TestLiveTypeId = TestLiveTypeId
   constructor(readonly services: Context.Context<DefaultServices.DefaultServices>) {}
-  provide<R, E, A>(effect: Effect.Effect<R, E, A>): Effect.Effect<R, E, A> {
+  provide<R, E, A>(effect: Effect<R, E, A>): Effect<R, E, A> {
     return core.fiberRefLocallyWith(
       defaultServices.currentServices,
       Context.merge(this.services)

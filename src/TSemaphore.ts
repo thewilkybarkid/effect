@@ -2,7 +2,7 @@
  * @since 2.0.0
  */
 
-import type * as Effect from "./Effect"
+import type { Effect } from "./Effect"
 import * as internal from "./internal/stm/tSemaphore"
 import type * as Scope from "./Scope"
 import type * as STM from "./STM"
@@ -94,8 +94,8 @@ export const releaseN: {
  * @category mutations
  */
 export const withPermit: {
-  (semaphore: TSemaphore): <R, E, A>(self: Effect.Effect<R, E, A>) => Effect.Effect<R, E, A>
-  <R, E, A>(self: Effect.Effect<R, E, A>, semaphore: TSemaphore): Effect.Effect<R, E, A>
+  (semaphore: TSemaphore): <R, E, A>(self: Effect<R, E, A>) => Effect<R, E, A>
+  <R, E, A>(self: Effect<R, E, A>, semaphore: TSemaphore): Effect<R, E, A>
 } = internal.withPermit
 
 /**
@@ -103,23 +103,23 @@ export const withPermit: {
  * @category mutations
  */
 export const withPermits: {
-  (semaphore: TSemaphore, permits: number): <R, E, A>(self: Effect.Effect<R, E, A>) => Effect.Effect<R, E, A>
-  <R, E, A>(self: Effect.Effect<R, E, A>, semaphore: TSemaphore, permits: number): Effect.Effect<R, E, A>
+  (semaphore: TSemaphore, permits: number): <R, E, A>(self: Effect<R, E, A>) => Effect<R, E, A>
+  <R, E, A>(self: Effect<R, E, A>, semaphore: TSemaphore, permits: number): Effect<R, E, A>
 } = internal.withPermits
 
 /**
  * @since 2.0.0
  * @category mutations
  */
-export const withPermitScoped: (self: TSemaphore) => Effect.Effect<Scope.Scope, never, void> = internal.withPermitScoped
+export const withPermitScoped: (self: TSemaphore) => Effect<Scope.Scope, never, void> = internal.withPermitScoped
 
 /**
  * @since 2.0.0
  * @category mutations
  */
 export const withPermitsScoped: {
-  (permits: number): (self: TSemaphore) => Effect.Effect<Scope.Scope, never, void>
-  (self: TSemaphore, permits: number): Effect.Effect<Scope.Scope, never, void>
+  (permits: number): (self: TSemaphore) => Effect<Scope.Scope, never, void>
+  (self: TSemaphore, permits: number): Effect<Scope.Scope, never, void>
 } = internal.withPermitsScoped
 
 /**

@@ -86,7 +86,7 @@ describe.concurrent("Effect", () => {
         pipe(
           Effect.acquireUseRelease(
             Effect.succeed(42),
-            (): Effect.Effect<never, unknown, unknown> => {
+            (): Effect<never, unknown, unknown> => {
               throw useDied
             },
             () => Ref.set(release, true)

@@ -75,7 +75,7 @@ describe.concurrent("Effect", () => {
   it.effect("forkAll - empty input", () =>
     Effect.gen(function*($) {
       const result = yield* $(
-        pipe([] as ReadonlyArray<Effect.Effect<never, never, number>>, Effect.forkAll(), Effect.flatMap(Fiber.join))
+        pipe([] as ReadonlyArray<Effect<never, never, number>>, Effect.forkAll(), Effect.flatMap(Fiber.join))
       )
       assert.strictEqual(result.length, 0)
     }))

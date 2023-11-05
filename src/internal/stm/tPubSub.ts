@@ -1,4 +1,4 @@
-import * as Effect from "../../Effect"
+import { Effect } from "../../Effect"
 import { dual, identity, pipe } from "../../Function"
 import * as HashSet from "../../HashSet"
 import * as Option from "../../Option"
@@ -531,7 +531,7 @@ export const subscribe = <A>(self: TPubSub.TPubSub<A>): STM.STM<never, never, TQ
   )
 
 /** @internal */
-export const subscribeScoped = <A>(self: TPubSub.TPubSub<A>): Effect.Effect<Scope.Scope, never, TQueue.TDequeue<A>> =>
+export const subscribeScoped = <A>(self: TPubSub.TPubSub<A>): Effect<Scope.Scope, never, TQueue.TDequeue<A>> =>
   Effect.acquireRelease(
     subscribe(self),
     (dequeue) => tQueue.shutdown(dequeue)
