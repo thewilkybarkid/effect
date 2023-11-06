@@ -35,7 +35,7 @@
     ]
   },
   "effect": {
-    "generateIndex": true,
+    "generateIndex": false,
     "includeInternal": true
   },
   "repository": {
