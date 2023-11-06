@@ -94,7 +94,7 @@ export const make: <R, E, A>(
  *
  * ```ts
  * import * as Duration from "./Duration"
- * import * as Effect from "effect/Effect"
+ * import { Effect } from "effect/Effect"
  * import * as Pool from "effect/Pool"
  * import * as Scope from "effect/Scope"
  * import { pipe } from "./Function"

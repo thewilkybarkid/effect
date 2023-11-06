@@ -1,4 +1,4 @@
-import * as Effect from "effect/Effect"
+import { Effect } from "effect/Effect"
 import { pipe } from "effect/Function"
 import * as Ref from "effect/Ref"
 import type * as Scope from "effect/Scope"

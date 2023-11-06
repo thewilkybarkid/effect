@@ -1,7 +1,7 @@
 import * as ObservableResource from "effect-test/utils/cache/ObservableResource"
 import * as Chunk from "effect/Chunk"
 import * as Duration from "effect/Duration"
-import * as Effect from "effect/Effect"
+import { Effect } from "effect/Effect"
 import { identity, pipe } from "effect/Function"
 import * as HashMap from "effect/HashMap"
 import * as Option from "effect/Option"

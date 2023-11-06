@@ -1,4 +1,4 @@
-import * as Effect from "effect/Effect"
+import { Effect } from "effect/Effect"
 import * as List from "effect/List"
 import * as Option from "effect/Option"
 

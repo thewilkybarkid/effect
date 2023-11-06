@@ -1,5 +1,5 @@
 import type { Cause } from "effect/Cause"
-import * as Effect from "effect/Effect"
+import { Effect } from "effect/Effect"
 import { pipe } from "effect/Function"
 import * as Predicate from "effect/Predicate"
 

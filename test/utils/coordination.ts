@@ -1,5 +1,5 @@
 import * as Chunk from "effect/Chunk"
-import * as Effect from "effect/Effect"
+import { Effect } from "effect/Effect"
 import * as Exit from "effect/Exit"
 import { pipe } from "effect/Function"
 import * as Option from "effect/Option"
