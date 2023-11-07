@@ -1,4 +1,4 @@
-import * as Chunk from "../../Chunk.js"
+import { Chunk } from "../../Chunk.js"
 import { dual, pipe } from "../../Function.js"
 import { HashSet } from "../../HashSet.js"
 import type { Option } from "../../Option.js"
