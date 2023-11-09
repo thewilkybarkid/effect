@@ -42,7 +42,7 @@
     "build-esm": "tsc -b tsconfig.build.json",
     "build-cjs": "babel build/esm --plugins @babel/transform-export-namespace-from --plugins @babel/transform-modules-commonjs --out-dir build/cjs --source-maps",
     "build-annotate": "babel build --plugins annotate-pure-calls --out-dir build --source-maps",
-    "prepare": "pnpm build-esm && pnpm build-cjs && pnpm build-annotate && build-utils pack-v2 && mv -f dist/* .",
+    "prepare": "pnpm build-esm && pnpm build-cjs && pnpm build-annotate && build-utils pack-v2 && mv src src.old && mv dist dist.old && mv -f dist.old/* .",
     "clean": "rimraf build dist coverage .tsbuildinfo",
     "test": "vitest",
     "check": "tsc -b tsconfig.json",
