@@ -1,6 +1,6 @@
 ---
 title: Stream.ts
-nav_order: 107
+nav_order: 250
 parent: Modules
 ---
 
@@ -395,7 +395,7 @@ of the stream, by setting it to `None`.
 
 ```ts
 export declare const async: <R, E, A>(
-  register: (emit: Emit.Emit<R, E, A, void>) => void,
+  register: (emit: Emit.StreamEmit<R, E, A, void>) => void,
   outputBuffer?: number | undefined
 ) => Stream<R, E, A>
 ```
@@ -413,7 +413,7 @@ stream, by setting it to `None`.
 
 ```ts
 export declare const asyncEffect: <R, E, A>(
-  register: (emit: Emit.Emit<R, E, A, void>) => Effect.Effect<R, E, unknown>,
+  register: (emit: Emit.StreamEmit<R, E, A, void>) => Effect.Effect<R, E, unknown>,
   outputBuffer?: number
 ) => Stream<R, E, A>
 ```
@@ -431,7 +431,7 @@ be used to signal the end of the stream, by setting it to `None`.
 
 ```ts
 export declare const asyncInterrupt: <R, E, A>(
-  register: (emit: Emit.Emit<R, E, A, void>) => Either.Either<Effect.Effect<R, never, unknown>, Stream<R, E, A>>,
+  register: (emit: Emit.StreamEmit<R, E, A, void>) => Either.Either<Effect.Effect<R, never, unknown>, Stream<R, E, A>>,
   outputBuffer?: number
 ) => Stream<R, E, A>
 ```
@@ -449,7 +449,7 @@ the end of the stream, by setting it to `None`.
 
 ```ts
 export declare const asyncOption: <R, E, A>(
-  register: (emit: Emit.Emit<R, E, A, void>) => Option.Option<Stream<R, E, A>>,
+  register: (emit: Emit.StreamEmit<R, E, A, void>) => Option.Option<Stream<R, E, A>>,
   outputBuffer?: number
 ) => Stream<R, E, A>
 ```
@@ -467,7 +467,7 @@ end of the stream, by setting it to `None`.
 
 ```ts
 export declare const asyncScoped: <R, E, A>(
-  register: (emit: Emit.Emit<R, E, A, void>) => Effect.Effect<R, E, unknown>,
+  register: (emit: Emit.StreamEmit<R, E, A, void>) => Effect.Effect<R, E, unknown>,
   outputBuffer?: number
 ) => Stream<Exclude<R, Scope.Scope>, E, A>
 ```
@@ -2164,9 +2164,9 @@ predicate.
 
 ```ts
 export declare const find: {
-  <A, B extends A>(refinement: Refinement<A, B>): <R, E>(self: Stream<R, E, A>) => Stream<R, E, B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): <R, E>(self: Stream<R, E, A>) => Stream<R, E, B>
   <A, X extends A>(predicate: Predicate<X>): <R, E>(self: Stream<R, E, A>) => Stream<R, E, A>
-  <R, E, A, B extends A>(self: Stream<R, E, A>, refinement: Refinement<A, B>): Stream<R, E, B>
+  <R, E, A, B extends A>(self: Stream<R, E, A>, refinement: Predicate.Refinement<A, B>): Stream<R, E, B>
   <R, E, A, X extends A>(self: Stream<R, E, A>, predicate: Predicate<X>): Stream<R, E, A>
 }
 ```
@@ -2587,9 +2587,9 @@ Filters the elements emitted by this stream using the provided function.
 
 ```ts
 export declare const filter: {
-  <A, B extends A>(refinement: Refinement<A, B>): <R, E>(self: Stream<R, E, A>) => Stream<R, E, B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): <R, E>(self: Stream<R, E, A>) => Stream<R, E, B>
   <A, X extends A>(predicate: Predicate<X>): <R, E>(self: Stream<R, E, A>) => Stream<R, E, A>
-  <R, E, A, B extends A>(self: Stream<R, E, A>, refinement: Refinement<A, B>): Stream<R, E, B>
+  <R, E, A, B extends A>(self: Stream<R, E, A>, refinement: Predicate.Refinement<A, B>): Stream<R, E, B>
   <R, E, A, X extends A>(self: Stream<R, E, A>, predicate: Predicate<X>): Stream<R, E, A>
 }
 ```
@@ -3192,7 +3192,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const StreamTypeId: typeof StreamTypeId
+export declare const StreamTypeId: typeof Stream.StreamTypeId
 ```
 
 Added in v2.0.0
@@ -4180,9 +4180,9 @@ For example, to collect the first 2 words for every starting letter from a
 stream of words:
 
 ```ts
-import * as GroupBy from "./GroupBy"
-import * as Stream from "./Stream"
-import { pipe } from "./Function"
+import * as GroupBy from "../GroupBy"
+import * as Stream from "../Stream"
+import { pipe } from "../Function"
 
 pipe(
   Stream.fromIterable(["hello", "world", "hi", "holla"]),
@@ -5082,8 +5082,8 @@ Added in v2.0.0
 Emits a sliding window of `n` elements.
 
 ```ts
-import * as Stream from "./Stream"
-import { pipe } from "./Function"
+import * as Stream from "../Stream"
+import { pipe } from "../Function"
 
 pipe(Stream.make(1, 2, 3, 4), Stream.sliding(2), Stream.runCollect)
 // => Chunk(Chunk(1, 2), Chunk(2, 3), Chunk(3, 4))
@@ -5162,8 +5162,8 @@ Added in v2.0.0
 Splits elements based on a predicate.
 
 ```ts
-import * as Stream from "./Stream"
-import { pipe } from "./Function"
+import * as Stream from "../Stream"
+import { pipe } from "../Function"
 
 pipe(
   Stream.range(1, 10),

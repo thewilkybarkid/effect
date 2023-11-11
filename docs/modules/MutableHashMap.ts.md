@@ -1,6 +1,6 @@
 ---
 title: MutableHashMap.ts
-nav_order: 66
+nav_order: 209
 parent: Modules
 ---
 
@@ -24,6 +24,7 @@ Added in v2.0.0
 - [models](#models)
   - [MutableHashMap (interface)](#mutablehashmap-interface)
 - [symbol](#symbol)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 - [utils](#utils)
   - [modify](#modify)
@@ -121,13 +122,23 @@ export interface MutableHashMap<K, V> extends Iterable<[K, V]>, Pipeable, Inspec
   readonly [TypeId]: TypeId
 
   /** @internal */
-  readonly backingMap: MutableRef.MutableRef<HashMap.HashMap<K, V>>
+  readonly backingMap: MutableRef<HashMap<K, V>>
 }
 ```
 
 Added in v2.0.0
 
 # symbol
+
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof MutableHashMap.TypeId
+```
+
+Added in v2.0.0
 
 ## TypeId (type alias)
 

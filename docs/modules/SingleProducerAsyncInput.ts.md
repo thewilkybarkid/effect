@@ -1,6 +1,6 @@
 ---
 title: SingleProducerAsyncInput.ts
-nav_order: 102
+nav_order: 245
 parent: Modules
 ---
 
@@ -94,8 +94,8 @@ Features the following semantics:
 export interface SingleProducerAsyncInput<Err, Elem, Done>
   extends AsyncInputProducer<Err, Elem, Done>,
     AsyncInputConsumer<Err, Elem, Done> {
-  close(): Effect.Effect<never, never, unknown>
-  take(): Effect.Effect<never, never, Exit.Exit<Either.Either<Err, Done>, Elem>>
+  close(): Effect<never, never, unknown>
+  take(): Effect<never, never, Exit<Either<Err, Done>, Elem>>
 }
 ```
 

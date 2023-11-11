@@ -1,6 +1,6 @@
 ---
 title: MetricBoundaries.ts
-nav_order: 57
+nav_order: 200
 parent: Modules
 ---
 
@@ -79,9 +79,9 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface MetricBoundaries extends Equal.Equal, Pipeable {
+export interface MetricBoundaries extends Equal, Pipeable {
   readonly [MetricBoundariesTypeId]: MetricBoundariesTypeId
-  readonly values: Chunk.Chunk<number>
+  readonly values: Chunk<number>
 }
 ```
 
@@ -106,7 +106,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricBoundariesTypeId: typeof MetricBoundariesTypeId
+export declare const MetricBoundariesTypeId: typeof MetricBoundaries.MetricBoundariesTypeId
 ```
 
 Added in v2.0.0

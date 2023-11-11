@@ -126,8 +126,8 @@ Added in v2.0.0
 
 ```ts
 export declare const reduceWithContext: {
-  <C, Z>(context: C, reducer: ConfigErrorReducer<C, Z>): (self: ConfigError) => Z
-  <C, Z>(self: ConfigError, context: C, reducer: ConfigErrorReducer<C, Z>): Z
+  <C, Z>(context: C, reducer: ConfigError.ConfigErrorReducer<C, Z>): (self: ConfigError) => Z
+  <C, Z>(self: ConfigError, context: C, reducer: ConfigError.ConfigErrorReducer<C, Z>): Z
 }
 ```
 
@@ -270,7 +270,7 @@ Returns `true` if the specified `ConfigError` is an `And`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isAnd: (self: ConfigError) => self is And
+export declare const isAnd: (self: ConfigError) => self is ConfigError.And
 ```
 
 Added in v2.0.0
@@ -295,7 +295,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isInvalidData: (self: ConfigError) => self is InvalidData
+export declare const isInvalidData: (self: ConfigError) => self is ConfigError.InvalidData
 ```
 
 Added in v2.0.0
@@ -308,7 +308,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isMissingData: (self: ConfigError) => self is MissingData
+export declare const isMissingData: (self: ConfigError) => self is ConfigError.MissingData
 ```
 
 Added in v2.0.0
@@ -320,7 +320,7 @@ Returns `true` if the specified `ConfigError` is an `Or`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isOr: (self: ConfigError) => self is Or
+export declare const isOr: (self: ConfigError) => self is ConfigError.Or
 ```
 
 Added in v2.0.0
@@ -333,7 +333,7 @@ Returns `true` if the specified `ConfigError` is a `SourceUnavailable`,
 **Signature**
 
 ```ts
-export declare const isSourceUnavailable: (self: ConfigError) => self is SourceUnavailable
+export declare const isSourceUnavailable: (self: ConfigError) => self is ConfigError.SourceUnavailable
 ```
 
 Added in v2.0.0
@@ -346,7 +346,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isUnsupported: (self: ConfigError) => self is Unsupported
+export declare const isUnsupported: (self: ConfigError) => self is ConfigError.Unsupported
 ```
 
 Added in v2.0.0
@@ -358,7 +358,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ConfigErrorTypeId: typeof ConfigErrorTypeId
+export declare const ConfigErrorTypeId: typeof ConfigError.ConfigErrorTypeId
 ```
 
 Added in v2.0.0

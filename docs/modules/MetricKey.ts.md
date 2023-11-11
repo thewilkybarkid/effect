@@ -1,6 +1,6 @@
 ---
 title: MetricKey.ts
-nav_order: 59
+nav_order: 202
 parent: Modules
 ---
 
@@ -202,14 +202,11 @@ impossible to ever create different metrics with conflicting keys.
 **Signature**
 
 ```ts
-export interface MetricKey<Type extends MetricKeyType.MetricKeyType<any, any>>
-  extends MetricKey.Variance<Type>,
-    Equal.Equal,
-    Pipeable {
+export interface MetricKey<Type extends MetricKeyType<any, any>> extends MetricKey.Variance<Type>, Equal, Pipeable {
   readonly name: string
   readonly keyType: Type
-  readonly description: Option.Option<string>
-  readonly tags: HashSet.HashSet<MetricLabel.MetricLabel>
+  readonly description: Option<string>
+  readonly tags: HashSet<MetricLabel>
 }
 ```
 
@@ -234,7 +231,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricKeyTypeId: typeof MetricKeyTypeId
+export declare const MetricKeyTypeId: typeof MetricKey.MetricKeyTypeId
 ```
 
 Added in v2.0.0
@@ -274,7 +271,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Counter<A extends number | bigint> = MetricKey<MetricKeyType.MetricKeyType.Counter<A>>
+export type Counter<A extends number | bigint> = MetricKey<MetricKeyType.Counter<A>>
 ```
 
 Added in v2.0.0
@@ -284,7 +281,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Frequency = MetricKey<MetricKeyType.MetricKeyType.Frequency>
+export type Frequency = MetricKey<MetricKeyType.Frequency>
 ```
 
 Added in v2.0.0
@@ -294,7 +291,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Gauge<A extends number | bigint> = MetricKey<MetricKeyType.MetricKeyType.Gauge<A>>
+export type Gauge<A extends number | bigint> = MetricKey<MetricKeyType.Gauge<A>>
 ```
 
 Added in v2.0.0
@@ -304,7 +301,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Histogram = MetricKey<MetricKeyType.MetricKeyType.Histogram>
+export type Histogram = MetricKey<MetricKeyType.Histogram>
 ```
 
 Added in v2.0.0
@@ -314,7 +311,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Summary = MetricKey<MetricKeyType.MetricKeyType.Summary>
+export type Summary = MetricKey<MetricKeyType.Summary>
 ```
 
 Added in v2.0.0

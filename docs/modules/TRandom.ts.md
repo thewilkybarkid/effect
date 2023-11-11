@@ -1,6 +1,6 @@
 ---
 title: TRandom.ts
-nav_order: 134
+nav_order: 277
 parent: Modules
 ---
 
@@ -68,29 +68,29 @@ export interface TRandom {
   /**
    * Returns the next numeric value from the pseudo-random number generator.
    */
-  readonly next: STM.STM<never, never, number>
+  readonly next: STM<never, never, number>
   /**
    * Returns the next boolean value from the pseudo-random number generator.
    */
-  readonly nextBoolean: STM.STM<never, never, boolean>
+  readonly nextBoolean: STM<never, never, boolean>
   /**
    * Returns the next integer value from the pseudo-random number generator.
    */
-  readonly nextInt: STM.STM<never, never, number>
+  readonly nextInt: STM<never, never, number>
   /**
    * Returns the next numeric value in the specified range from the
    * pseudo-random number generator.
    */
-  nextRange(min: number, max: number): STM.STM<never, never, number>
+  nextRange(min: number, max: number): STM<never, never, number>
   /**
    * Returns the next integer value in the specified range from the
    * pseudo-random number generator.
    */
-  nextIntBetween(min: number, max: number): STM.STM<never, never, number>
+  nextIntBetween(min: number, max: number): STM<never, never, number>
   /**
    * Uses the pseudo-random number generator to shuffle the specified iterable.
    */
-  shuffle<A>(elements: Iterable<A>): STM.STM<never, never, Array<A>>
+  shuffle<A>(elements: Iterable<A>): STM<never, never, Array<A>>
 }
 ```
 
@@ -179,7 +179,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TRandomTypeId: typeof TRandomTypeId
+export declare const TRandomTypeId: typeof TRandom.TRandomTypeId
 ```
 
 Added in v2.0.0

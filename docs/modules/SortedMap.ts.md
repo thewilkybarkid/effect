@@ -1,6 +1,6 @@
 ---
 title: SortedMap.ts
-nav_order: 104
+nav_order: 247
 parent: Modules
 ---
 
@@ -40,6 +40,7 @@ Added in v2.0.0
 - [refinements](#refinements)
   - [isSortedMap](#issortedmap)
 - [symbol](#symbol)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 
 ---
@@ -238,10 +239,10 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface SortedMap<K, V> extends Iterable<[K, V]>, Equal.Equal, Pipeable, Inspectable {
+export interface SortedMap<K, V> extends Iterable<[K, V]>, Equal, Pipeable, Inspectable {
   readonly [TypeId]: TypeId
   /** @internal */
-  readonly tree: RBT.RedBlackTree<K, V>
+  readonly tree: RBT<K, V>
 }
 ```
 
@@ -285,6 +286,16 @@ export declare const isSortedMap: {
 Added in v2.0.0
 
 # symbol
+
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof SortedMap.TypeId
+```
+
+Added in v2.0.0
 
 ## TypeId (type alias)
 

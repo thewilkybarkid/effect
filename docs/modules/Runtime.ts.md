@@ -1,6 +1,6 @@
 ---
 title: Runtime.ts
-nav_order: 91
+nav_order: 234
 parent: Modules
 ---
 
@@ -210,7 +210,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const isAsyncFiberException: (u: unknown) => u is AsyncFiberException<unknown, unknown>
+export declare const isAsyncFiberException: (u: unknown) => u is Runtime.AsyncFiberException<unknown, unknown>
 ```
 
 Added in v2.0.0
@@ -220,7 +220,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const isFiberFailure: (u: unknown) => u is FiberFailure
+export declare const isFiberFailure: (u: unknown) => u is Runtime.FiberFailure
 ```
 
 Added in v2.0.0
@@ -287,15 +287,15 @@ export interface Runtime<R> extends Pipeable {
   /**
    * The context used as initial for forks
    */
-  readonly context: Context.Context<R>
+  readonly context: Context<R>
   /**
    * The runtime flags used as initial for forks
    */
-  readonly runtimeFlags: RuntimeFlags.RuntimeFlags
+  readonly runtimeFlags: RuntimeFlags
   /**
    * The fiber references used as initial for forks
    */
-  readonly fiberRefs: FiberRefs.FiberRefs
+  readonly fiberRefs: FiberRefs
 }
 ```
 
@@ -308,7 +308,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FiberFailureCauseId: typeof FiberFailureCauseId
+export declare const FiberFailureCauseId: typeof Runtime.FiberFailureCauseId
 ```
 
 Added in v2.0.0
@@ -318,7 +318,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FiberFailureId: typeof FiberFailureId
+export declare const FiberFailureId: typeof Runtime.FiberFailureId
 ```
 
 Added in v2.0.0

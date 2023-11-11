@@ -1,6 +1,6 @@
 ---
 title: TSet.ts
-nav_order: 138
+nav_order: 281
 parent: Modules
 ---
 
@@ -478,7 +478,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TSetTypeId: typeof TSetTypeId
+export declare const TSetTypeId: typeof TSet.TSetTypeId
 ```
 
 Added in v2.0.0

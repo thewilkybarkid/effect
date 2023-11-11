@@ -1,6 +1,6 @@
 ---
 title: Metric.ts
-nav_order: 56
+nav_order: 199
 parent: Modules
 ---
 
@@ -460,7 +460,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const make: MetricApply
+export declare const make: Metric.MetricApply
 ```
 
 Added in v2.0.0
@@ -765,10 +765,10 @@ export interface Metric<Type, In, Out> extends Metric.Variance<Type, In, Out>, P
    * `MetricKeyType.Counter` or `MetricKeyType.Gauge`.
    */
   readonly keyType: Type
-  readonly unsafeUpdate: (input: In, extraTags: HashSet.HashSet<MetricLabel.MetricLabel>) => void
-  readonly unsafeValue: (extraTags: HashSet.HashSet<MetricLabel.MetricLabel>) => Out
+  readonly unsafeUpdate: (input: In, extraTags: HashSet<MetricLabel>) => void
+  readonly unsafeValue: (extraTags: HashSet<MetricLabel>) => Out
   /** */
-  <R, E, A extends In>(effect: Effect.Effect<R, E, A>): Effect.Effect<R, E, A>
+  <R, E, A extends In>(effect: Effect<R, E, A>): Effect<R, E, A>
 }
 ```
 
@@ -797,7 +797,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricTypeId: typeof MetricTypeId
+export declare const MetricTypeId: typeof Metric.MetricTypeId
 ```
 
 Added in v2.0.0
@@ -838,7 +838,7 @@ Added in v2.0.0
 
 ```ts
 export interface Counter<In extends number | bigint>
-  extends Metric<MetricKeyType.MetricKeyType.Counter<In>, In, MetricState.MetricState.Counter<In>> {}
+  extends Metric<MetricKeyType.Counter<In>, In, MetricState.Counter<In>> {}
 ```
 
 Added in v2.0.0
@@ -848,8 +848,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface Frequency<In>
-  extends Metric<MetricKeyType.MetricKeyType.Frequency, In, MetricState.MetricState.Frequency> {}
+export interface Frequency<In> extends Metric<MetricKeyType.Frequency, In, MetricState.Frequency> {}
 ```
 
 Added in v2.0.0
@@ -859,8 +858,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface Gauge<In extends number | bigint>
-  extends Metric<MetricKeyType.MetricKeyType.Gauge<In>, In, MetricState.MetricState.Gauge<In>> {}
+export interface Gauge<In extends number | bigint> extends Metric<MetricKeyType.Gauge<In>, In, MetricState.Gauge<In>> {}
 ```
 
 Added in v2.0.0
@@ -870,8 +868,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface Histogram<In>
-  extends Metric<MetricKeyType.MetricKeyType.Histogram, In, MetricState.MetricState.Histogram> {}
+export interface Histogram<In> extends Metric<MetricKeyType.Histogram, In, MetricState.Histogram> {}
 ```
 
 Added in v2.0.0
@@ -881,7 +878,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface Summary<In> extends Metric<MetricKeyType.MetricKeyType.Summary, In, MetricState.MetricState.Summary> {}
+export interface Summary<In> extends Metric<MetricKeyType.Summary, In, MetricState.Summary> {}
 ```
 
 Added in v2.0.0

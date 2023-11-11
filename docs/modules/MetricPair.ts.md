@@ -1,6 +1,6 @@
 ---
 title: MetricPair.ts
-nav_order: 62
+nav_order: 205
 parent: Modules
 ---
 
@@ -50,11 +50,9 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface MetricPair<Type extends MetricKeyType.MetricKeyType<any, any>>
-  extends MetricPair.Variance<Type>,
-    Pipeable {
-  readonly metricKey: MetricKey.MetricKey<Type>
-  readonly metricState: MetricState.MetricState<MetricKeyType.MetricKeyType.OutType<Type>>
+export interface MetricPair<Type extends MetricKeyType<any, any>> extends MetricPair.Variance<Type>, Pipeable {
+  readonly metricKey: MetricKey<Type>
+  readonly metricState: MetricState<MetricKeyType.OutType<Type>>
 }
 ```
 
@@ -67,7 +65,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricPairTypeId: typeof MetricPairTypeId
+export declare const MetricPairTypeId: typeof MetricPair.MetricPairTypeId
 ```
 
 Added in v2.0.0
@@ -108,7 +106,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface Untyped extends MetricPair<MetricKeyType.MetricKeyType<any, any>> {}
+export interface Untyped extends MetricPair<MetricKeyType<any, any>> {}
 ```
 
 Added in v2.0.0
@@ -118,7 +116,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface Variance<Type extends MetricKeyType.MetricKeyType<any, any>> {
+export interface Variance<Type extends MetricKeyType<any, any>> {
   readonly [MetricPairTypeId]: {
     readonly _Type: (_: never) => Type
   }

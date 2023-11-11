@@ -498,7 +498,7 @@ Returns `true` if the specified `Exit` is a `Failure`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isFailure: <E, A>(self: Exit<E, A>) => self is Failure<E, A>
+export declare const isFailure: <E, A>(self: Exit<E, A>) => self is Exit.Failure<E, A>
 ```
 
 Added in v2.0.0
@@ -510,7 +510,7 @@ Returns `true` if the specified `Exit` is a `Success`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isSuccess: <E, A>(self: Exit<E, A>) => self is Success<E, A>
+export declare const isSuccess: <E, A>(self: Exit<E, A>) => self is Exit.Success<E, A>
 ```
 
 Added in v2.0.0

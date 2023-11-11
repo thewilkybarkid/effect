@@ -282,7 +282,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const gen: Gen.Gen<EitherTypeLambda, Gen.Adapter<EitherTypeLambda>>
+export declare const gen: Gen.Gen<Either.EitherTypeLambda, Gen.Adapter<Either.EitherTypeLambda>>
 ```
 
 Added in v2.0.0
@@ -496,7 +496,7 @@ Determine if a `Either` is a `Left`.
 **Signature**
 
 ```ts
-export declare const isLeft: <E, A>(self: Either<E, A>) => self is Left<E, A>
+export declare const isLeft: <E, A>(self: Either<E, A>) => self is Either.Left<E, A>
 ```
 
 **Example**
@@ -517,7 +517,7 @@ Determine if a `Either` is a `Right`.
 **Signature**
 
 ```ts
-export declare const isRight: <E, A>(self: Either<E, A>) => self is Right<E, A>
+export declare const isRight: <E, A>(self: Either<E, A>) => self is Either.Right<E, A>
 ```
 
 **Example**
@@ -716,7 +716,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TypeId: typeof TypeId
+export declare const TypeId: typeof Either.TypeId
 ```
 
 Added in v2.0.0

@@ -53,6 +53,7 @@ Added in v2.0.0
   - [lessThan](#lessthan)
   - [lessThanOrEqualTo](#lessthanorequalto)
 - [symbol](#symbol)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 - [utils](#utils)
   - [clamp](#clamp)
@@ -293,7 +294,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface Duration extends Equal.Equal, Pipeable, Inspectable {
+export interface Duration extends Equal, Pipeable, Inspectable {
   readonly [TypeId]: TypeId
   readonly value: DurationValue
 }
@@ -465,6 +466,16 @@ export declare const lessThanOrEqualTo: {
 Added in v2.0.0
 
 # symbol
+
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof Duration.TypeId
+```
+
+Added in v2.0.0
 
 ## TypeId (type alias)
 

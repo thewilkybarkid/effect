@@ -1,6 +1,6 @@
 ---
 title: Tracer.ts
-nav_order: 133
+nav_order: 276
 parent: Modules
 ---
 
@@ -24,7 +24,7 @@ Added in v2.0.0
   - [SpanStatus (type alias)](#spanstatus-type-alias)
 - [tags](#tags)
   - [ParentSpan](#parentspan)
-  - [Tracer](#tracer)
+  - [Tag](#tag)
 - [utils](#utils)
   - [Tracer (interface)](#tracer-interface)
   - [TracerTypeId](#tracertypeid)
@@ -162,17 +162,17 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ParentSpan: Context.Tag<ParentSpan, ParentSpan>
+export declare const ParentSpan: Context.Tag<Tracer.ParentSpan, Tracer.ParentSpan>
 ```
 
 Added in v2.0.0
 
-## Tracer
+## Tag
 
 **Signature**
 
 ```ts
-export declare const Tracer: Context.Tag<Tracer, Tracer>
+export declare const Tag: Context.Tag<Tracer, Tracer>
 ```
 
 Added in v2.0.0
@@ -188,8 +188,8 @@ export interface Tracer {
   readonly [TracerTypeId]: TracerTypeId
   readonly span: (
     name: string,
-    parent: Option.Option<ParentSpan>,
-    context: Context.Context<never>,
+    parent: Option<ParentSpan>,
+    context: Context<never>,
     links: ReadonlyArray<SpanLink>,
     startTime: bigint
   ) => Span
@@ -204,7 +204,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TracerTypeId: typeof TracerTypeId
+export declare const TracerTypeId: typeof Tracer.TracerTypeId
 ```
 
 Added in v2.0.0

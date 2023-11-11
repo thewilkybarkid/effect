@@ -1,6 +1,6 @@
 ---
 title: MergeDecision.ts
-nav_order: 53
+nav_order: 196
 parent: Modules
 ---
 
@@ -123,7 +123,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MergeDecisionTypeId: typeof MergeDecisionTypeId
+export declare const MergeDecisionTypeId: typeof MergeDecision.MergeDecisionTypeId
 ```
 
 Added in v2.0.0

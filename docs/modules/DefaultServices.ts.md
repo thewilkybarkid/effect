@@ -49,15 +49,12 @@ Added in v2.0.0
 
 ## DefaultServices (type alias)
 
+/\*\*
+
 **Signature**
 
 ```ts
-export type DefaultServices =
-  | Clock.Clock
-  | Console.Console
-  | Random.Random
-  | ConfigProvider.ConfigProvider
-  | Tracer.Tracer
+export type DefaultServices = Clock | Console | Random | ConfigProvider | Tracer
 ```
 
 Added in v2.0.0

@@ -26,7 +26,7 @@ Added in v2.0.0
   - [make](#make)
   - [makeFlat](#makeflat)
 - [context](#context)
-  - [ConfigProvider](#configprovider)
+  - [Tag](#tag)
 - [models](#models)
   - [ConfigProvider (interface)](#configprovider-interface)
 - [symbols](#symbols)
@@ -215,7 +215,7 @@ export declare const makeFlat: (options: {
   readonly enumerateChildren: (
     path: ReadonlyArray<string>
   ) => Effect.Effect<never, ConfigError.ConfigError, HashSet.HashSet<string>>
-  readonly patch: PathPatch.PathPatch
+  readonly patch: PathPatch.ConfigProviderPathPatch
 }) => ConfigProvider.Flat
 ```
 
@@ -223,14 +223,14 @@ Added in v2.0.0
 
 # context
 
-## ConfigProvider
+## Tag
 
 The service tag for `ConfigProvider`.
 
 **Signature**
 
 ```ts
-export declare const ConfigProvider: Context.Tag<ConfigProvider, ConfigProvider>
+export declare const Tag: Context.Tag<ConfigProvider, ConfigProvider>
 ```
 
 Added in v2.0.0
@@ -249,7 +249,7 @@ export interface ConfigProvider extends ConfigProvider.Proto, Pipeable {
   /**
    * Loads the specified configuration, or fails with a config error.
    */
-  load<A>(config: Config.Config<A>): Effect.Effect<never, ConfigError.ConfigError, A>
+  load<A>(config: Config<A>): Effect<never, ConfigError, A>
   /**
    * Flattens this config provider into a simplified config provider that knows
    * only how to deal with flat (key/value) properties.
@@ -267,7 +267,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ConfigProviderTypeId: typeof ConfigProviderTypeId
+export declare const ConfigProviderTypeId: typeof ConfigProvider.ConfigProviderTypeId
 ```
 
 Added in v2.0.0
@@ -287,7 +287,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FlatConfigProviderTypeId: typeof FlatConfigProviderTypeId
+export declare const FlatConfigProviderTypeId: typeof ConfigProvider.FlatConfigProviderTypeId
 ```
 
 Added in v2.0.0
@@ -319,13 +319,13 @@ special support for implementing them.
 ```ts
 export interface Flat {
   readonly [FlatConfigProviderTypeId]: FlatConfigProviderTypeId
-  patch: PathPatch.PathPatch
+  patch: ConfigProviderPathPatch
   load<A>(
     path: ReadonlyArray<string>,
-    config: Config.Config.Primitive<A>,
+    config: Config.Primitive<A>,
     split?: boolean
-  ): Effect.Effect<never, ConfigError.ConfigError, ReadonlyArray<A>>
-  enumerateChildren(path: ReadonlyArray<string>): Effect.Effect<never, ConfigError.ConfigError, HashSet.HashSet<string>>
+  ): Effect<never, ConfigError, ReadonlyArray<A>>
+  enumerateChildren(path: ReadonlyArray<string>): Effect<never, ConfigError, HashSet<string>>
 }
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: MutableHashSet.ts
-nav_order: 67
+nav_order: 210
 parent: Modules
 ---
 
@@ -24,6 +24,7 @@ Added in v2.0.0
 - [models](#models)
   - [MutableHashSet (interface)](#mutablehashset-interface)
 - [symbol](#symbol)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 
 ---
@@ -122,13 +123,23 @@ export interface MutableHashSet<V> extends Iterable<V>, Pipeable, Inspectable {
   readonly [TypeId]: TypeId
 
   /** @internal */
-  readonly keyMap: MutableHashMap.MutableHashMap<V, boolean>
+  readonly keyMap: MutableHashMap<V, boolean>
 }
 ```
 
 Added in v2.0.0
 
 # symbol
+
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof MutableHashSet.TypeId
+```
+
+Added in v2.0.0
 
 ## TypeId (type alias)
 

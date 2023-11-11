@@ -1150,7 +1150,7 @@ executed.
 **Signature**
 
 ```ts
-export declare const ChannelException: <E>(error: E) => ChannelException<E>
+export declare const ChannelException: <E>(error: E) => Channel.ChannelException<E>
 ```
 
 Added in v2.0.0
@@ -1491,7 +1491,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isChannelException: (u: unknown) => u is ChannelException<unknown>
+export declare const isChannelException: (u: unknown) => u is Channel.ChannelException<unknown>
 ```
 
 Added in v2.0.0
@@ -1593,7 +1593,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ChannelExceptionTypeId: typeof ChannelExceptionTypeId
+export declare const ChannelExceptionTypeId: typeof Channel.ChannelExceptionTypeId
 ```
 
 Added in v2.0.0
@@ -1613,7 +1613,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ChannelTypeId: typeof ChannelTypeId
+export declare const ChannelTypeId: typeof Channel.ChannelTypeId
 ```
 
 Added in v2.0.0

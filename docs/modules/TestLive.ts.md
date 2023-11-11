@@ -1,6 +1,6 @@
 ---
 title: TestLive.ts
-nav_order: 126
+nav_order: 269
 parent: Modules
 ---
 
@@ -13,7 +13,7 @@ Added in v2.0.0
 <h2 class="text-delta">Table of contents</h2>
 
 - [utils](#utils)
-  - [TestLive](#testlive)
+  - [Tag](#tag)
   - [TestLive (interface)](#testlive-interface)
   - [TestLiveTypeId](#testlivetypeid)
   - [TestLiveTypeId (type alias)](#testlivetypeid-type-alias)
@@ -23,12 +23,12 @@ Added in v2.0.0
 
 # utils
 
-## TestLive
+## Tag
 
 **Signature**
 
 ```ts
-export declare const TestLive: Context.Tag<TestLive, TestLive>
+export declare const Tag: Context.Tag<TestLive, TestLive>
 ```
 
 Added in v2.0.0
@@ -45,7 +45,7 @@ these services.
 ```ts
 export interface TestLive {
   readonly [TestLiveTypeId]: TestLiveTypeId
-  provide<R, E, A>(effect: Effect.Effect<R, E, A>): Effect.Effect<R, E, A>
+  provide<R, E, A>(effect: Effect<R, E, A>): Effect<R, E, A>
 }
 ```
 
@@ -56,7 +56,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TestLiveTypeId: typeof TestLiveTypeId
+export declare const TestLiveTypeId: typeof TestLive.TestLiveTypeId
 ```
 
 Added in v2.0.0

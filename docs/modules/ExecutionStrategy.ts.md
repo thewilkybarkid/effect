@@ -157,7 +157,7 @@ Returns `true` if the specified `ExecutionStrategy` is an instance of
 **Signature**
 
 ```ts
-export declare const isParallel: (self: ExecutionStrategy) => self is Parallel
+export declare const isParallel: (self: ExecutionStrategy) => self is ExecutionStrategy.Parallel
 ```
 
 Added in v2.0.0
@@ -170,7 +170,7 @@ Returns `true` if the specified `ExecutionStrategy` is an instance of
 **Signature**
 
 ```ts
-export declare const isParallelN: (self: ExecutionStrategy) => self is ParallelN
+export declare const isParallelN: (self: ExecutionStrategy) => self is ExecutionStrategy.ParallelN
 ```
 
 Added in v2.0.0
@@ -183,7 +183,7 @@ Returns `true` if the specified `ExecutionStrategy` is an instance of
 **Signature**
 
 ```ts
-export declare const isSequential: (self: ExecutionStrategy) => self is Sequential
+export declare const isSequential: (self: ExecutionStrategy) => self is ExecutionStrategy.Sequential
 ```
 
 Added in v2.0.0

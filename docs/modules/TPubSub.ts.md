@@ -1,6 +1,6 @@
 ---
 title: TPubSub.ts
-nav_order: 131
+nav_order: 274
 parent: Modules
 ---
 
@@ -254,7 +254,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TPubSubTypeId: typeof TPubSubTypeId
+export declare const TPubSubTypeId: typeof TPubSub.TPubSubTypeId
 ```
 
 Added in v2.0.0

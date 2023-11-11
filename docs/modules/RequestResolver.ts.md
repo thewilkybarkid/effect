@@ -1,6 +1,6 @@
 ---
 title: RequestResolver.ts
-nav_order: 89
+nav_order: 232
 parent: Modules
 ---
 
@@ -354,13 +354,13 @@ will cause a query to die with a `QueryFailure` when run.
 **Signature**
 
 ```ts
-export interface RequestResolver<A, R = never> extends Equal.Equal, Pipeable {
+export interface RequestResolver<A, R = never> extends Equal, Pipeable {
   /**
    * Execute a collection of requests. The outer `Chunk` represents batches
    * of requests that must be performed sequentially. The inner `Chunk`
    * represents a batch of requests that can be performed in parallel.
    */
-  runAll(requests: Array<Array<Request.Entry<A>>>): Effect.Effect<R, never, void>
+  runAll(requests: Array<Array<Request.Entry<A>>>): Effect<R, never, void>
 
   /**
    * Identify the data source using the specific identifier
@@ -392,7 +392,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RequestResolverTypeId: typeof RequestResolverTypeId
+export declare const RequestResolverTypeId: typeof RequestResolver.RequestResolverTypeId
 ```
 
 Added in v2.0.0

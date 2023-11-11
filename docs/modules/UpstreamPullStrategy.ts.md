@@ -1,6 +1,6 @@
 ---
 title: UpstreamPullStrategy.ts
-nav_order: 143
+nav_order: 286
 parent: Modules
 ---
 
@@ -130,7 +130,9 @@ Returns `true` if the specified `UpstreamPullStrategy` is a
 **Signature**
 
 ```ts
-export declare const isPullAfterAllEnqueued: <A>(self: UpstreamPullStrategy<A>) => self is PullAfterAllEnqueued<A>
+export declare const isPullAfterAllEnqueued: <A>(
+  self: UpstreamPullStrategy<A>
+) => self is UpstreamPullStrategy.PullAfterAllEnqueued<A>
 ```
 
 Added in v2.0.0
@@ -143,7 +145,9 @@ Returns `true` if the specified `UpstreamPullStrategy` is a `PullAfterNext`,
 **Signature**
 
 ```ts
-export declare const isPullAfterNext: <A>(self: UpstreamPullStrategy<A>) => self is PullAfterNext<A>
+export declare const isPullAfterNext: <A>(
+  self: UpstreamPullStrategy<A>
+) => self is UpstreamPullStrategy.PullAfterNext<A>
 ```
 
 Added in v2.0.0
@@ -168,7 +172,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const UpstreamPullStrategyTypeId: typeof UpstreamPullStrategyTypeId
+export declare const UpstreamPullStrategyTypeId: typeof UpstreamPullStrategy.UpstreamPullStrategyTypeId
 ```
 
 Added in v2.0.0

@@ -1,6 +1,6 @@
 ---
 title: MutableList.ts
-nav_order: 68
+nav_order: 211
 parent: Modules
 ---
 
@@ -27,6 +27,7 @@ Added in v2.0.0
 - [model](#model)
   - [MutableList (interface)](#mutablelist-interface)
 - [symbol](#symbol)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 - [traversing](#traversing)
   - [forEach](#foreach)
@@ -177,6 +178,16 @@ export interface MutableList<A> extends Iterable<A>, Pipeable, Inspectable {
 Added in v2.0.0
 
 # symbol
+
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof MutableList.TypeId
+```
+
+Added in v2.0.0
 
 ## TypeId (type alias)
 

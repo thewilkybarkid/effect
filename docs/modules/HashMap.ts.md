@@ -46,6 +46,7 @@ Added in v2.0.0
 - [sequencing](#sequencing)
   - [flatMap](#flatmap)
 - [symbol](#symbol)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 - [traversing](#traversing)
   - [forEach](#foreach)
@@ -411,6 +412,16 @@ Added in v2.0.0
 
 # symbol
 
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof HashMap.TypeId
+```
+
+Added in v2.0.0
+
 ## TypeId (type alias)
 
 **Signature**
@@ -475,12 +486,12 @@ export type Key<T extends HashMap<any, any>> = [T] extends [HashMap<infer _K, in
 **Example**
 
 ```ts
-import * as HashMap from "effect/HashMap"
+import { HashMap } from "effect/HashMap"
 
-declare const hm: HashMap.HashMap<string, number>
+declare const hm: HashMap<string, number>
 
 // $ExpectType string
-type K = HashMap.HashMap.Key<typeof hm>
+type K = HashMap.Key<typeof hm>
 ```
 
 Added in v2.0.0
@@ -508,12 +519,12 @@ export type Value<T extends HashMap<any, any>> = [T] extends [HashMap<infer _K, 
 **Example**
 
 ```ts
-import * as HashMap from "effect/HashMap"
+import { HashMap } from "effect/HashMap"
 
-declare const hm: HashMap.HashMap<string, number>
+declare const hm: HashMap<string, number>
 
 // $ExpectType number
-type V = HashMap.HashMap.Value<typeof hm>
+type V = HashMap.Value<typeof hm>
 ```
 
 Added in v2.0.0

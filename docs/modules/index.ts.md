@@ -1,6 +1,6 @@
 ---
 title: index.ts
-nav_order: 44
+nav_order: 187
 parent: Modules
 ---
 
@@ -12,151 +12,150 @@ Added in v2.0.0
 
 <h2 class="text-delta">Table of contents</h2>
 
-- [exports](#exports)
-  - [From "./BigDecimal.js"](#from-bigdecimaljs)
-  - [From "./BigInt.js"](#from-bigintjs)
-  - [From "./Boolean.js"](#from-booleanjs)
-  - [From "./Brand.js"](#from-brandjs)
-  - [From "./Cache.js"](#from-cachejs)
-  - [From "./Cause.js"](#from-causejs)
-  - [From "./Channel.js"](#from-channeljs)
-  - [From "./ChildExecutorDecision.js"](#from-childexecutordecisionjs)
-  - [From "./Chunk.js"](#from-chunkjs)
-  - [From "./Clock.js"](#from-clockjs)
-  - [From "./Config.js"](#from-configjs)
-  - [From "./ConfigError.js"](#from-configerrorjs)
-  - [From "./ConfigProvider.js"](#from-configproviderjs)
-  - [From "./ConfigProviderPathPatch.js"](#from-configproviderpathpatchjs)
-  - [From "./ConfigSecret.js"](#from-configsecretjs)
-  - [From "./Console.js"](#from-consolejs)
-  - [From "./Context.js"](#from-contextjs)
-  - [From "./Data.js"](#from-datajs)
-  - [From "./DefaultServices.js"](#from-defaultservicesjs)
-  - [From "./Deferred.js"](#from-deferredjs)
-  - [From "./Differ.js"](#from-differjs)
-  - [From "./Duration.js"](#from-durationjs)
-  - [From "./Effect.js"](#from-effectjs)
-  - [From "./Effectable.js"](#from-effectablejs)
-  - [From "./Either.js"](#from-eitherjs)
-  - [From "./Encoding.js"](#from-encodingjs)
-  - [From "./Equal.js"](#from-equaljs)
-  - [From "./Equivalence.js"](#from-equivalencejs)
-  - [From "./ExecutionStrategy.js"](#from-executionstrategyjs)
-  - [From "./Exit.js"](#from-exitjs)
-  - [From "./Fiber.js"](#from-fiberjs)
-  - [From "./FiberId.js"](#from-fiberidjs)
-  - [From "./FiberRef.js"](#from-fiberrefjs)
-  - [From "./FiberRefs.js"](#from-fiberrefsjs)
-  - [From "./FiberRefsPatch.js"](#from-fiberrefspatchjs)
-  - [From "./FiberStatus.js"](#from-fiberstatusjs)
-  - [From "./Function.js"](#from-functionjs)
-  - [From "./GlobalValue.js"](#from-globalvaluejs)
-  - [From "./GroupBy.js"](#from-groupbyjs)
-  - [From "./HKT.js"](#from-hktjs)
-  - [From "./Hash.js"](#from-hashjs)
-  - [From "./HashMap.js"](#from-hashmapjs)
-  - [From "./HashSet.js"](#from-hashsetjs)
-  - [From "./Inspectable.js"](#from-inspectablejs)
-  - [From "./KeyedPool.js"](#from-keyedpooljs)
-  - [From "./Layer.js"](#from-layerjs)
-  - [From "./List.js"](#from-listjs)
-  - [From "./LogLevel.js"](#from-logleveljs)
-  - [From "./LogSpan.js"](#from-logspanjs)
-  - [From "./Logger.js"](#from-loggerjs)
-  - [From "./Match.js"](#from-matchjs)
-  - [From "./MergeDecision.js"](#from-mergedecisionjs)
-  - [From "./MergeState.js"](#from-mergestatejs)
-  - [From "./MergeStrategy.js"](#from-mergestrategyjs)
-  - [From "./Metric.js"](#from-metricjs)
-  - [From "./MetricBoundaries.js"](#from-metricboundariesjs)
-  - [From "./MetricHook.js"](#from-metrichookjs)
-  - [From "./MetricKey.js"](#from-metrickeyjs)
-  - [From "./MetricKeyType.js"](#from-metrickeytypejs)
-  - [From "./MetricLabel.js"](#from-metriclabeljs)
-  - [From "./MetricPair.js"](#from-metricpairjs)
-  - [From "./MetricPolling.js"](#from-metricpollingjs)
-  - [From "./MetricRegistry.js"](#from-metricregistryjs)
-  - [From "./MetricState.js"](#from-metricstatejs)
-  - [From "./MutableHashMap.js"](#from-mutablehashmapjs)
-  - [From "./MutableHashSet.js"](#from-mutablehashsetjs)
-  - [From "./MutableList.js"](#from-mutablelistjs)
-  - [From "./MutableQueue.js"](#from-mutablequeuejs)
-  - [From "./MutableRef.js"](#from-mutablerefjs)
-  - [From "./NonEmptyIterable.js"](#from-nonemptyiterablejs)
-  - [From "./Number.js"](#from-numberjs)
-  - [From "./Option.js"](#from-optionjs)
-  - [From "./Order.js"](#from-orderjs)
-  - [From "./Ordering.js"](#from-orderingjs)
-  - [From "./Pipeable.js"](#from-pipeablejs)
-  - [From "./Pool.js"](#from-pooljs)
-  - [From "./Predicate.js"](#from-predicatejs)
-  - [From "./PubSub.js"](#from-pubsubjs)
-  - [From "./Queue.js"](#from-queuejs)
-  - [From "./Random.js"](#from-randomjs)
-  - [From "./ReadonlyArray.js"](#from-readonlyarrayjs)
-  - [From "./ReadonlyRecord.js"](#from-readonlyrecordjs)
-  - [From "./RedBlackTree.js"](#from-redblacktreejs)
-  - [From "./Ref.js"](#from-refjs)
-  - [From "./Reloadable.js"](#from-reloadablejs)
-  - [From "./Request.js"](#from-requestjs)
-  - [From "./RequestBlock.js"](#from-requestblockjs)
-  - [From "./RequestResolver.js"](#from-requestresolverjs)
-  - [From "./Resource.js"](#from-resourcejs)
-  - [From "./Runtime.js"](#from-runtimejs)
-  - [From "./RuntimeFlags.js"](#from-runtimeflagsjs)
-  - [From "./RuntimeFlagsPatch.js"](#from-runtimeflagspatchjs)
-  - [From "./STM.js"](#from-stmjs)
-  - [From "./Schedule.js"](#from-schedulejs)
-  - [From "./ScheduleDecision.js"](#from-scheduledecisionjs)
-  - [From "./ScheduleInterval.js"](#from-scheduleintervaljs)
-  - [From "./ScheduleIntervals.js"](#from-scheduleintervalsjs)
-  - [From "./Scheduler.js"](#from-schedulerjs)
-  - [From "./Scope.js"](#from-scopejs)
-  - [From "./ScopedCache.js"](#from-scopedcachejs)
-  - [From "./ScopedRef.js"](#from-scopedrefjs)
-  - [From "./SingleProducerAsyncInput.js"](#from-singleproducerasyncinputjs)
-  - [From "./Sink.js"](#from-sinkjs)
-  - [From "./SortedMap.js"](#from-sortedmapjs)
-  - [From "./SortedSet.js"](#from-sortedsetjs)
-  - [From "./Stream.js"](#from-streamjs)
-  - [From "./StreamEmit.js"](#from-streamemitjs)
-  - [From "./StreamHaltStrategy.js"](#from-streamhaltstrategyjs)
-  - [From "./Streamable.js"](#from-streamablejs)
-  - [From "./String.js"](#from-stringjs)
-  - [From "./Struct.js"](#from-structjs)
-  - [From "./SubscriptionRef.js"](#from-subscriptionrefjs)
-  - [From "./Supervisor.js"](#from-supervisorjs)
-  - [From "./Symbol.js"](#from-symboljs)
-  - [From "./SynchronizedRef.js"](#from-synchronizedrefjs)
-  - [From "./TArray.js"](#from-tarrayjs)
-  - [From "./TDeferred.js"](#from-tdeferredjs)
-  - [From "./TMap.js"](#from-tmapjs)
-  - [From "./TPriorityQueue.js"](#from-tpriorityqueuejs)
-  - [From "./TPubSub.js"](#from-tpubsubjs)
-  - [From "./TQueue.js"](#from-tqueuejs)
-  - [From "./TRandom.js"](#from-trandomjs)
-  - [From "./TReentrantLock.js"](#from-treentrantlockjs)
-  - [From "./TRef.js"](#from-trefjs)
-  - [From "./TSemaphore.js"](#from-tsemaphorejs)
-  - [From "./TSet.js"](#from-tsetjs)
-  - [From "./Take.js"](#from-takejs)
-  - [From "./TestAnnotation.js"](#from-testannotationjs)
-  - [From "./TestAnnotationMap.js"](#from-testannotationmapjs)
-  - [From "./TestAnnotations.js"](#from-testannotationsjs)
-  - [From "./TestClock.js"](#from-testclockjs)
-  - [From "./TestConfig.js"](#from-testconfigjs)
-  - [From "./TestContext.js"](#from-testcontextjs)
-  - [From "./TestLive.js"](#from-testlivejs)
-  - [From "./TestServices.js"](#from-testservicesjs)
-  - [From "./TestSized.js"](#from-testsizedjs)
-  - [From "./Tracer.js"](#from-tracerjs)
-  - [From "./Tuple.js"](#from-tuplejs)
-  - [From "./Types.js"](#from-typesjs)
-  - [From "./Unify.js"](#from-unifyjs)
-  - [From "./UpstreamPullRequest.js"](#from-upstreampullrequestjs)
-  - [From "./UpstreamPullStrategy.js"](#from-upstreampullstrategyjs)
-  - [From "./Utils.js"](#from-utilsjs)
 - [utils](#utils)
+  - [BigDecimal](#bigdecimal)
+  - [BigInt](#bigint)
+  - [Boolean](#boolean)
+  - [Brand](#brand)
+  - [Cache](#cache)
+  - [Cause](#cause)
+  - [Channel](#channel)
+  - [ChildExecutorDecision](#childexecutordecision)
+  - [Chunk](#chunk)
+  - [Clock](#clock)
+  - [Config](#config)
+  - [ConfigError](#configerror)
+  - [ConfigProvider](#configprovider)
+  - [ConfigProviderPathPatch](#configproviderpathpatch)
+  - [ConfigSecret](#configsecret)
+  - [Console](#console)
+  - [Context](#context)
+  - [Data](#data)
+  - [DefaultServices](#defaultservices)
+  - [Deferred](#deferred)
+  - [Differ](#differ)
+  - [Duration](#duration)
+  - [Effect](#effect)
+  - [Effectable](#effectable)
+  - [Either](#either)
+  - [Encoding](#encoding)
+  - [Equal](#equal)
+  - [Equivalence](#equivalence)
+  - [ExecutionStrategy](#executionstrategy)
+  - [Exit](#exit)
+  - [Fiber](#fiber)
+  - [FiberId](#fiberid)
+  - [FiberRef](#fiberref)
+  - [FiberRefs](#fiberrefs)
+  - [FiberRefsPatch](#fiberrefspatch)
+  - [FiberStatus](#fiberstatus)
+  - [Function](#function)
+  - [GlobalValue](#globalvalue)
+  - [GroupBy](#groupby)
+  - [HKT](#hkt)
+  - [Hash](#hash)
+  - [HashMap](#hashmap)
+  - [HashSet](#hashset)
+  - [Inspectable](#inspectable)
+  - [KeyedPool](#keyedpool)
+  - [Layer](#layer)
+  - [List](#list)
+  - [LogLevel](#loglevel)
+  - [LogSpan](#logspan)
+  - [Logger](#logger)
+  - [Match](#match)
+  - [MergeDecision](#mergedecision)
+  - [MergeState](#mergestate)
+  - [MergeStrategy](#mergestrategy)
+  - [Metric](#metric)
+  - [MetricBoundaries](#metricboundaries)
+  - [MetricHook](#metrichook)
+  - [MetricKey](#metrickey)
+  - [MetricKeyType](#metrickeytype)
+  - [MetricLabel](#metriclabel)
+  - [MetricPair](#metricpair)
+  - [MetricPolling](#metricpolling)
+  - [MetricRegistry](#metricregistry)
+  - [MetricState](#metricstate)
+  - [MutableHashMap](#mutablehashmap)
+  - [MutableHashSet](#mutablehashset)
+  - [MutableList](#mutablelist)
+  - [MutableQueue](#mutablequeue)
+  - [MutableRef](#mutableref)
+  - [NonEmptyIterable](#nonemptyiterable)
+  - [Number](#number)
+  - [Option](#option)
+  - [Order](#order)
+  - [Ordering](#ordering)
+  - [Pipeable](#pipeable)
+  - [Pool](#pool)
+  - [Predicate](#predicate)
+  - [PubSub](#pubsub)
+  - [Queue](#queue)
+  - [Random](#random)
+  - [ReadonlyArray](#readonlyarray)
+  - [ReadonlyRecord](#readonlyrecord)
+  - [RedBlackTree](#redblacktree)
+  - [Ref](#ref)
+  - [Reloadable](#reloadable)
+  - [Request](#request)
+  - [RequestBlock](#requestblock)
+  - [RequestResolver](#requestresolver)
+  - [Resource](#resource)
+  - [Runtime](#runtime)
+  - [RuntimeFlags](#runtimeflags)
+  - [RuntimeFlagsPatch](#runtimeflagspatch)
+  - [STM](#stm)
+  - [Schedule](#schedule)
+  - [ScheduleDecision](#scheduledecision)
+  - [ScheduleInterval](#scheduleinterval)
+  - [ScheduleIntervals](#scheduleintervals)
+  - [Scheduler](#scheduler)
+  - [Scope](#scope)
+  - [ScopedCache](#scopedcache)
+  - [ScopedRef](#scopedref)
+  - [SingleProducerAsyncInput](#singleproducerasyncinput)
+  - [Sink](#sink)
+  - [SortedMap](#sortedmap)
+  - [SortedSet](#sortedset)
+  - [Stream](#stream)
+  - [StreamEmit](#streamemit)
+  - [StreamHaltStrategy](#streamhaltstrategy)
+  - [Streamable](#streamable)
+  - [String](#string)
+  - [Struct](#struct)
+  - [SubscriptionRef](#subscriptionref)
+  - [Supervisor](#supervisor)
+  - [Symbol](#symbol)
+  - [SynchronizedRef](#synchronizedref)
+  - [TArray](#tarray)
+  - [TDeferred](#tdeferred)
+  - [TMap](#tmap)
+  - [TPriorityQueue](#tpriorityqueue)
+  - [TPubSub](#tpubsub)
+  - [TQueue](#tqueue)
+  - [TRandom](#trandom)
+  - [TReentrantLock](#treentrantlock)
+  - [TRef](#tref)
+  - [TSemaphore](#tsemaphore)
+  - [TSet](#tset)
+  - [Take](#take)
+  - [TestAnnotation](#testannotation)
+  - [TestAnnotationMap](#testannotationmap)
+  - [TestAnnotations](#testannotations)
+  - [TestClock](#testclock)
+  - [TestConfig](#testconfig)
+  - [TestContext](#testcontext)
+  - [TestLive](#testlive)
+  - [TestServices](#testservices)
+  - [TestSized](#testsized)
+  - [Tracer](#tracer)
+  - [Tuple](#tuple)
+  - [Types](#types)
+  - [Unify](#unify)
+  - [UpstreamPullRequest](#upstreampullrequest)
+  - [UpstreamPullStrategy](#upstreampullstrategy)
+  - [Utils](#utils-1)
   - [absurd](#absurd)
   - [flow](#flow)
   - [hole](#hole)
@@ -166,9 +165,9 @@ Added in v2.0.0
 
 ---
 
-# exports
+# utils
 
-## From "./BigDecimal.js"
+## BigDecimal
 
 This module provides utility functions and type class instances for working with the `BigDecimal` type in TypeScript.
 It includes functions for basic arithmetic operations, as well as type class instances for `Equivalence` and `Order`.
@@ -185,12 +184,12 @@ may be unexpected.
 **Signature**
 
 ```ts
-export * as BigDecimal from "./BigDecimal.js"
+export declare const BigDecimal: typeof BigDecimal
 ```
 
 Added in v2.0.0
 
-## From "./BigInt.js"
+## BigInt
 
 This module provides utility functions and type class instances for working with the `bigint` type in TypeScript.
 It includes functions for basic arithmetic operations, as well as type class instances for
@@ -199,12 +198,12 @@ It includes functions for basic arithmetic operations, as well as type class ins
 **Signature**
 
 ```ts
-export * as BigInt from "./BigInt.js"
+export declare const BigInt: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/BigInt")
 ```
 
 Added in v2.0.0
 
-## From "./Boolean.js"
+## Boolean
 
 This module provides utility functions and type class instances for working with the `boolean` type in TypeScript.
 It includes functions for basic boolean operations, as well as type class instances for
@@ -213,12 +212,12 @@ It includes functions for basic boolean operations, as well as type class instan
 **Signature**
 
 ```ts
-export * as Boolean from "./Boolean.js"
+export declare const Boolean: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/Boolean")
 ```
 
 Added in v2.0.0
 
-## From "./Brand.js"
+## Brand
 
 This module provides types and utility functions to create and work with branded types,
 which are TypeScript types with an added type tag to prevent accidental usage of a value in the wrong context.
@@ -238,24 +237,22 @@ If the input data fails the validation, a `BrandErrors` is returned, which provi
 **Signature**
 
 ```ts
-export * as Brand from "./Brand.js"
+export declare const Brand: typeof Brand
 ```
 
 Added in v2.0.0
 
-## From "./Cache.js"
-
-Re-exports all named exports from the "./Cache.js" module as `Cache`.
+## Cache
 
 **Signature**
 
 ```ts
-export * as Cache from "./Cache.js"
+export declare const Cache: typeof Cache
 ```
 
 Added in v2.0.0
 
-## From "./Cause.js"
+## Cause
 
 The `Effect<R, E, A>` type is polymorphic in values of type `E` and we can
 work with any error type that we want. However, there is a lot of information
@@ -280,132 +277,112 @@ occurring within our codebase.
 **Signature**
 
 ```ts
-export * as Cause from "./Cause.js"
+export declare const Cause: typeof Cause
 ```
 
 Added in v2.0.0
 
-## From "./Channel.js"
-
-Re-exports all named exports from the "./Channel.js" module as `Channel`.
+## Channel
 
 **Signature**
 
 ```ts
-export * as Channel from "./Channel.js"
+export declare const Channel: typeof Channel
 ```
 
 Added in v2.0.0
 
-## From "./ChildExecutorDecision.js"
-
-Re-exports all named exports from the "./ChildExecutorDecision.js" module as `ChildExecutorDecision`.
+## ChildExecutorDecision
 
 **Signature**
 
 ```ts
-export * as ChildExecutorDecision from "./ChildExecutorDecision.js"
+export declare const ChildExecutorDecision: typeof ChildExecutorDecision
 ```
 
 Added in v2.0.0
 
-## From "./Chunk.js"
-
-Re-exports all named exports from the "./Chunk.js" module as `Chunk`.
+## Chunk
 
 **Signature**
 
 ```ts
-export * as Chunk from "./Chunk.js"
+export declare const Chunk: typeof Chunk
 ```
 
 Added in v2.0.0
 
-## From "./Clock.js"
-
-Re-exports all named exports from the "./Clock.js" module as `Clock`.
+## Clock
 
 **Signature**
 
 ```ts
-export * as Clock from "./Clock.js"
+export declare const Clock: typeof Clock
 ```
 
 Added in v2.0.0
 
-## From "./Config.js"
-
-Re-exports all named exports from the "./Config.js" module as `Config`.
+## Config
 
 **Signature**
 
 ```ts
-export * as Config from "./Config.js"
+export declare const Config: typeof Config
 ```
 
 Added in v2.0.0
 
-## From "./ConfigError.js"
-
-Re-exports all named exports from the "./ConfigError.js" module as `ConfigError`.
+## ConfigError
 
 **Signature**
 
 ```ts
-export * as ConfigError from "./ConfigError.js"
+export declare const ConfigError: typeof ConfigError
 ```
 
 Added in v2.0.0
 
-## From "./ConfigProvider.js"
-
-Re-exports all named exports from the "./ConfigProvider.js" module as `ConfigProvider`.
+## ConfigProvider
 
 **Signature**
 
 ```ts
-export * as ConfigProvider from "./ConfigProvider.js"
+export declare const ConfigProvider: typeof ConfigProvider
 ```
 
 Added in v2.0.0
 
-## From "./ConfigProviderPathPatch.js"
-
-Re-exports all named exports from the "./ConfigProviderPathPatch.js" module as `ConfigProviderPathPatch`.
+## ConfigProviderPathPatch
 
 **Signature**
 
 ```ts
-export * as ConfigProviderPathPatch from "./ConfigProviderPathPatch.js"
+export declare const ConfigProviderPathPatch: typeof ConfigProviderPathPatch
 ```
 
 Added in v2.0.0
 
-## From "./ConfigSecret.js"
-
-Re-exports all named exports from the "./ConfigSecret.js" module as `ConfigSecret`.
+## ConfigSecret
 
 **Signature**
 
 ```ts
-export * as ConfigSecret from "./ConfigSecret.js"
+export declare const ConfigSecret: typeof ConfigSecret
 ```
 
 Added in v2.0.0
 
-## From "./Console.js"
-
-Re-exports all named exports from the "./Console.js" module as `Console`.
+## Console
 
 **Signature**
 
 ```ts
-export * as Console from "./Console.js"
+export declare const Console: typeof Console
 ```
 
 Added in v2.0.0
 
-## From "./Context.js"
+## Context
 
 This module provides a data structure called `Context` that can be used for dependency injection in effectful
 programs. It is essentially a table mapping `Tag`s to their implementations (called `Service`s), and can be used to
@@ -416,108 +393,92 @@ query the contents of a `Context`, as well as a number of utility types for work
 **Signature**
 
 ```ts
-export * as Context from "./Context.js"
+export declare const Context: typeof Context
 ```
 
 Added in v2.0.0
 
-## From "./Data.js"
-
-Re-exports all named exports from the "./Data.js" module as `Data`.
+## Data
 
 **Signature**
 
 ```ts
-export * as Data from "./Data.js"
+export declare const Data: typeof Data
 ```
 
 Added in v2.0.0
 
-## From "./DefaultServices.js"
-
-Re-exports all named exports from the "./DefaultServices.js" module as `DefaultServices`.
+## DefaultServices
 
 **Signature**
 
 ```ts
-export * as DefaultServices from "./DefaultServices.js"
+export declare const DefaultServices: typeof DefaultServices
 ```
 
 Added in v2.0.0
 
-## From "./Deferred.js"
-
-Re-exports all named exports from the "./Deferred.js" module as `Deferred`.
+## Deferred
 
 **Signature**
 
 ```ts
-export * as Deferred from "./Deferred.js"
+export declare const Deferred: typeof Deferred
 ```
 
 Added in v2.0.0
 
-## From "./Differ.js"
-
-Re-exports all named exports from the "./Differ.js" module as `Differ`.
+## Differ
 
 **Signature**
 
 ```ts
-export * as Differ from "./Differ.js"
+export declare const Differ: typeof Differ
 ```
 
 Added in v2.0.0
 
-## From "./Duration.js"
-
-Re-exports all named exports from the "./Duration.js" module as `Duration`.
+## Duration
 
 **Signature**
 
 ```ts
-export * as Duration from "./Duration.js"
+export declare const Duration: typeof Duration
 ```
 
 Added in v2.0.0
 
-## From "./Effect.js"
-
-Re-exports all named exports from the "./Effect.js" module as `Effect`.
+## Effect
 
 **Signature**
 
 ```ts
-export * as Effect from "./Effect.js"
+export declare const Effect: typeof Effect
 ```
 
 Added in v2.0.0
 
-## From "./Effectable.js"
-
-Re-exports all named exports from the "./Effectable.js" module as `Effectable`.
+## Effectable
 
 **Signature**
 
 ```ts
-export * as Effectable from "./Effectable.js"
+export declare const Effectable: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/Effectable")
 ```
 
 Added in v2.0.0
 
-## From "./Either.js"
-
-Re-exports all named exports from the "./Either.js" module as `Either`.
+## Either
 
 **Signature**
 
 ```ts
-export * as Either from "./Either.js"
+export declare const Either: typeof Either
 ```
 
 Added in v2.0.0
 
-## From "./Encoding.js"
+## Encoding
 
 This module provides encoding & decoding functionality for:
 
@@ -528,24 +489,22 @@ This module provides encoding & decoding functionality for:
 **Signature**
 
 ```ts
-export * as Encoding from "./Encoding.js"
+export declare const Encoding: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/Encoding")
 ```
 
 Added in v2.0.0
 
-## From "./Equal.js"
-
-Re-exports all named exports from the "./Equal.js" module as `Equal`.
+## Equal
 
 **Signature**
 
 ```ts
-export * as Equal from "./Equal.js"
+export declare const Equal: typeof Equal
 ```
 
 Added in v2.0.0
 
-## From "./Equivalence.js"
+## Equivalence
 
 This module provides an implementation of the `Equivalence` type class, which defines a binary relation
 that is reflexive, symmetric, and transitive. In other words, it defines a notion of equivalence between values of a certain type.
@@ -554,216 +513,182 @@ These properties are also known in mathematics as an "equivalence relation".
 **Signature**
 
 ```ts
-export * as Equivalence from "./Equivalence.js"
+export declare const Equivalence: typeof Equivalence
 ```
 
 Added in v2.0.0
 
-## From "./ExecutionStrategy.js"
-
-Re-exports all named exports from the "./ExecutionStrategy.js" module as `ExecutionStrategy`.
+## ExecutionStrategy
 
 **Signature**
 
 ```ts
-export * as ExecutionStrategy from "./ExecutionStrategy.js"
+export declare const ExecutionStrategy: typeof ExecutionStrategy
 ```
 
 Added in v2.0.0
 
-## From "./Exit.js"
-
-Re-exports all named exports from the "./Exit.js" module as `Exit`.
+## Exit
 
 **Signature**
 
 ```ts
-export * as Exit from "./Exit.js"
+export declare const Exit: typeof Exit
 ```
 
 Added in v2.0.0
 
-## From "./Fiber.js"
-
-Re-exports all named exports from the "./Fiber.js" module as `Fiber`.
+## Fiber
 
 **Signature**
 
 ```ts
-export * as Fiber from "./Fiber.js"
+export declare const Fiber: typeof Fiber
 ```
 
 Added in v2.0.0
 
-## From "./FiberId.js"
-
-Re-exports all named exports from the "./FiberId.js" module as `FiberId`.
+## FiberId
 
 **Signature**
 
 ```ts
-export * as FiberId from "./FiberId.js"
+export declare const FiberId: typeof FiberId
 ```
 
 Added in v2.0.0
 
-## From "./FiberRef.js"
-
-Re-exports all named exports from the "./FiberRef.js" module as `FiberRef`.
+## FiberRef
 
 **Signature**
 
 ```ts
-export * as FiberRef from "./FiberRef.js"
+export declare const FiberRef: typeof FiberRef
 ```
 
 Added in v2.0.0
 
-## From "./FiberRefs.js"
-
-Re-exports all named exports from the "./FiberRefs.js" module as `FiberRefs`.
+## FiberRefs
 
 **Signature**
 
 ```ts
-export * as FiberRefs from "./FiberRefs.js"
+export declare const FiberRefs: typeof FiberRefs
 ```
 
 Added in v2.0.0
 
-## From "./FiberRefsPatch.js"
-
-Re-exports all named exports from the "./FiberRefsPatch.js" module as `FiberRefsPatch`.
+## FiberRefsPatch
 
 **Signature**
 
 ```ts
-export * as FiberRefsPatch from "./FiberRefsPatch.js"
+export declare const FiberRefsPatch: typeof FiberRefsPatch
 ```
 
 Added in v2.0.0
 
-## From "./FiberStatus.js"
-
-Re-exports all named exports from the "./FiberStatus.js" module as `FiberStatus`.
+## FiberStatus
 
 **Signature**
 
 ```ts
-export * as FiberStatus from "./FiberStatus.js"
+export declare const FiberStatus: typeof FiberStatus
 ```
 
 Added in v2.0.0
 
-## From "./Function.js"
-
-Re-exports all named exports from the "./Function.js" module as `Function`.
+## Function
 
 **Signature**
 
 ```ts
-export * as Function from "./Function.js"
+export declare const Function: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/Function")
 ```
 
 Added in v2.0.0
 
-## From "./GlobalValue.js"
-
-Re-exports all named exports from the "./GlobalValue.js" module as `GlobalValue`.
+## GlobalValue
 
 **Signature**
 
 ```ts
-export * as GlobalValue from "./GlobalValue.js"
+export declare const GlobalValue: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/GlobalValue")
 ```
 
 Added in v2.0.0
 
-## From "./GroupBy.js"
-
-Re-exports all named exports from the "./GroupBy.js" module as `GroupBy`.
+## GroupBy
 
 **Signature**
 
 ```ts
-export * as GroupBy from "./GroupBy.js"
+export declare const GroupBy: typeof GroupBy
 ```
 
 Added in v2.0.0
 
-## From "./HKT.js"
-
-Re-exports all named exports from the "./HKT.js" module as `HKT`.
+## HKT
 
 **Signature**
 
 ```ts
-export * as HKT from "./HKT.js"
+export declare const HKT: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/HKT")
 ```
 
 Added in v2.0.0
 
-## From "./Hash.js"
-
-Re-exports all named exports from the "./Hash.js" module as `Hash`.
+## Hash
 
 **Signature**
 
 ```ts
-export * as Hash from "./Hash.js"
+export declare const Hash: typeof Hash
 ```
 
 Added in v2.0.0
 
-## From "./HashMap.js"
-
-Re-exports all named exports from the "./HashMap.js" module as `HashMap`.
+## HashMap
 
 **Signature**
 
 ```ts
-export * as HashMap from "./HashMap.js"
+export declare const HashMap: typeof HashMap
 ```
 
 Added in v2.0.0
 
-## From "./HashSet.js"
-
-Re-exports all named exports from the "./HashSet.js" module as `HashSet`.
+## HashSet
 
 **Signature**
 
 ```ts
-export * as HashSet from "./HashSet.js"
+export declare const HashSet: typeof HashSet
 ```
 
 Added in v2.0.0
 
-## From "./Inspectable.js"
-
-Re-exports all named exports from the "./Inspectable.js" module as `Inspectable`.
+## Inspectable
 
 **Signature**
 
 ```ts
-export * as Inspectable from "./Inspectable.js"
+export declare const Inspectable: typeof Inspectable
 ```
 
 Added in v2.0.0
 
-## From "./KeyedPool.js"
-
-Re-exports all named exports from the "./KeyedPool.js" module as `KeyedPool`.
+## KeyedPool
 
 **Signature**
 
 ```ts
-export * as KeyedPool from "./KeyedPool.js"
+export declare const KeyedPool: typeof KeyedPool
 ```
 
 Added in v2.0.0
 
-## From "./Layer.js"
+## Layer
 
 A `Layer<RIn, E, ROut>` describes how to build one or more services in your
 application. Services can be injected into effects via
@@ -784,12 +709,12 @@ way in Effect-TS to create services that depend on other services.
 **Signature**
 
 ```ts
-export * as Layer from "./Layer.js"
+export declare const Layer: typeof Layer
 ```
 
 Added in v2.0.0
 
-## From "./List.js"
+## List
 
 A data type for immutable linked lists representing ordered collections of elements of type `A`.
 
@@ -803,288 +728,242 @@ This data type is optimal for last-in-first-out (LIFO), stack-like access patter
 **Signature**
 
 ```ts
-export * as List from "./List.js"
+export declare const List: typeof List
 ```
 
 Added in v2.0.0
 
-## From "./LogLevel.js"
-
-Re-exports all named exports from the "./LogLevel.js" module as `LogLevel`.
+## LogLevel
 
 **Signature**
 
 ```ts
-export * as LogLevel from "./LogLevel.js"
+export declare const LogLevel: typeof LogLevel
 ```
 
 Added in v2.0.0
 
-## From "./LogSpan.js"
-
-Re-exports all named exports from the "./LogSpan.js" module as `LogSpan`.
+## LogSpan
 
 **Signature**
 
 ```ts
-export * as LogSpan from "./LogSpan.js"
+export declare const LogSpan: typeof LogSpan
 ```
 
 Added in v2.0.0
 
-## From "./Logger.js"
-
-Re-exports all named exports from the "./Logger.js" module as `Logger`.
+## Logger
 
 **Signature**
 
 ```ts
-export * as Logger from "./Logger.js"
+export declare const Logger: typeof Logger
 ```
 
 Added in v2.0.0
 
-## From "./Match.js"
-
-Re-exports all named exports from the "./Match.js" module as `Match`.
+## Match
 
 **Signature**
 
 ```ts
-export * as Match from "./Match.js"
-```
-
-Added in v1.0.0
-
-## From "./MergeDecision.js"
-
-Re-exports all named exports from the "./MergeDecision.js" module as `MergeDecision`.
-
-**Signature**
-
-```ts
-export * as MergeDecision from "./MergeDecision.js"
+export declare const Match: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/Match")
 ```
 
 Added in v2.0.0
 
-## From "./MergeState.js"
-
-Re-exports all named exports from the "./MergeState.js" module as `MergeState`.
+## MergeDecision
 
 **Signature**
 
 ```ts
-export * as MergeState from "./MergeState.js"
+export declare const MergeDecision: typeof MergeDecision
 ```
 
 Added in v2.0.0
 
-## From "./MergeStrategy.js"
-
-Re-exports all named exports from the "./MergeStrategy.js" module as `MergeStrategy`.
+## MergeState
 
 **Signature**
 
 ```ts
-export * as MergeStrategy from "./MergeStrategy.js"
+export declare const MergeState: typeof MergeState
 ```
 
 Added in v2.0.0
 
-## From "./Metric.js"
-
-Re-exports all named exports from the "./Metric.js" module as `Metric`.
+## MergeStrategy
 
 **Signature**
 
 ```ts
-export * as Metric from "./Metric.js"
+export declare const MergeStrategy: typeof MergeStrategy
 ```
 
 Added in v2.0.0
 
-## From "./MetricBoundaries.js"
-
-Re-exports all named exports from the "./MetricBoundaries.js" module as `MetricBoundaries`.
+## Metric
 
 **Signature**
 
 ```ts
-export * as MetricBoundaries from "./MetricBoundaries.js"
+export declare const Metric: typeof Metric
 ```
 
 Added in v2.0.0
 
-## From "./MetricHook.js"
-
-Re-exports all named exports from the "./MetricHook.js" module as `MetricHook`.
+## MetricBoundaries
 
 **Signature**
 
 ```ts
-export * as MetricHook from "./MetricHook.js"
+export declare const MetricBoundaries: typeof MetricBoundaries
 ```
 
 Added in v2.0.0
 
-## From "./MetricKey.js"
-
-Re-exports all named exports from the "./MetricKey.js" module as `MetricKey`.
+## MetricHook
 
 **Signature**
 
 ```ts
-export * as MetricKey from "./MetricKey.js"
+export declare const MetricHook: typeof MetricHook
 ```
 
 Added in v2.0.0
 
-## From "./MetricKeyType.js"
-
-Re-exports all named exports from the "./MetricKeyType.js" module as `MetricKeyType`.
+## MetricKey
 
 **Signature**
 
 ```ts
-export * as MetricKeyType from "./MetricKeyType.js"
+export declare const MetricKey: typeof MetricKey
 ```
 
 Added in v2.0.0
 
-## From "./MetricLabel.js"
-
-Re-exports all named exports from the "./MetricLabel.js" module as `MetricLabel`.
+## MetricKeyType
 
 **Signature**
 
 ```ts
-export * as MetricLabel from "./MetricLabel.js"
+export declare const MetricKeyType: typeof MetricKeyType
 ```
 
 Added in v2.0.0
 
-## From "./MetricPair.js"
-
-Re-exports all named exports from the "./MetricPair.js" module as `MetricPair`.
+## MetricLabel
 
 **Signature**
 
 ```ts
-export * as MetricPair from "./MetricPair.js"
+export declare const MetricLabel: typeof MetricLabel
 ```
 
 Added in v2.0.0
 
-## From "./MetricPolling.js"
-
-Re-exports all named exports from the "./MetricPolling.js" module as `MetricPolling`.
+## MetricPair
 
 **Signature**
 
 ```ts
-export * as MetricPolling from "./MetricPolling.js"
+export declare const MetricPair: typeof MetricPair
 ```
 
 Added in v2.0.0
 
-## From "./MetricRegistry.js"
-
-Re-exports all named exports from the "./MetricRegistry.js" module as `MetricRegistry`.
+## MetricPolling
 
 **Signature**
 
 ```ts
-export * as MetricRegistry from "./MetricRegistry.js"
+export declare const MetricPolling: typeof MetricPolling
 ```
 
 Added in v2.0.0
 
-## From "./MetricState.js"
-
-Re-exports all named exports from the "./MetricState.js" module as `MetricState`.
+## MetricRegistry
 
 **Signature**
 
 ```ts
-export * as MetricState from "./MetricState.js"
+export declare const MetricRegistry: typeof MetricRegistry
 ```
 
 Added in v2.0.0
 
-## From "./MutableHashMap.js"
-
-Re-exports all named exports from the "./MutableHashMap.js" module as `MutableHashMap`.
+## MetricState
 
 **Signature**
 
 ```ts
-export * as MutableHashMap from "./MutableHashMap.js"
+export declare const MetricState: typeof MetricState
 ```
 
 Added in v2.0.0
 
-## From "./MutableHashSet.js"
-
-Re-exports all named exports from the "./MutableHashSet.js" module as `MutableHashSet`.
+## MutableHashMap
 
 **Signature**
 
 ```ts
-export * as MutableHashSet from "./MutableHashSet.js"
+export declare const MutableHashMap: typeof MutableHashMap
 ```
 
 Added in v2.0.0
 
-## From "./MutableList.js"
-
-Re-exports all named exports from the "./MutableList.js" module as `MutableList`.
+## MutableHashSet
 
 **Signature**
 
 ```ts
-export * as MutableList from "./MutableList.js"
+export declare const MutableHashSet: typeof MutableHashSet
 ```
 
 Added in v2.0.0
 
-## From "./MutableQueue.js"
-
-Re-exports all named exports from the "./MutableQueue.js" module as `MutableQueue`.
+## MutableList
 
 **Signature**
 
 ```ts
-export * as MutableQueue from "./MutableQueue.js"
+export declare const MutableList: typeof MutableList
 ```
 
 Added in v2.0.0
 
-## From "./MutableRef.js"
-
-Re-exports all named exports from the "./MutableRef.js" module as `MutableRef`.
+## MutableQueue
 
 **Signature**
 
 ```ts
-export * as MutableRef from "./MutableRef.js"
+export declare const MutableQueue: typeof MutableQueue
 ```
 
 Added in v2.0.0
 
-## From "./NonEmptyIterable.js"
-
-Re-exports all named exports from the "./NonEmptyIterable.js" module as `NonEmptyIterable`.
+## MutableRef
 
 **Signature**
 
 ```ts
-export * as NonEmptyIterable from "./NonEmptyIterable.js"
+export declare const MutableRef: typeof MutableRef
 ```
 
 Added in v2.0.0
 
-## From "./Number.js"
+## NonEmptyIterable
+
+**Signature**
+
+```ts
+export declare const NonEmptyIterable: typeof NonEmptyIterable
+```
+
+Added in v2.0.0
+
+## Number
 
 This module provides utility functions and type class instances for working with the `number` type in TypeScript.
 It includes functions for basic arithmetic operations, as well as type class instances for
@@ -1093,468 +972,396 @@ It includes functions for basic arithmetic operations, as well as type class ins
 **Signature**
 
 ```ts
-export * as Number from "./Number.js"
+export declare const Number: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/Number")
 ```
 
 Added in v2.0.0
 
-## From "./Option.js"
-
-Re-exports all named exports from the "./Option.js" module as `Option`.
+## Option
 
 **Signature**
 
 ```ts
-export * as Option from "./Option.js"
+export declare const Option: typeof Option
 ```
 
 Added in v2.0.0
 
-## From "./Order.js"
-
-Re-exports all named exports from the "./Order.js" module as `Order`.
+## Order
 
 **Signature**
 
 ```ts
-export * as Order from "./Order.js"
+export declare const Order: typeof Order
 ```
 
 Added in v2.0.0
 
-## From "./Ordering.js"
-
-Re-exports all named exports from the "./Ordering.js" module as `Ordering`.
+## Ordering
 
 **Signature**
 
 ```ts
-export * as Ordering from "./Ordering.js"
+export declare const Ordering: typeof Ordering
 ```
 
 Added in v2.0.0
 
-## From "./Pipeable.js"
-
-Re-exports all named exports from the "./Pipeable.js" module as `Pipeable`.
+## Pipeable
 
 **Signature**
 
 ```ts
-export * as Pipeable from "./Pipeable.js"
+export declare const Pipeable: typeof Pipeable
 ```
 
 Added in v2.0.0
 
-## From "./Pool.js"
-
-Re-exports all named exports from the "./Pool.js" module as `Pool`.
+## Pool
 
 **Signature**
 
 ```ts
-export * as Pool from "./Pool.js"
+export declare const Pool: typeof Pool
 ```
 
 Added in v2.0.0
 
-## From "./Predicate.js"
-
-Re-exports all named exports from the "./Predicate.js" module as `Predicate`.
+## Predicate
 
 **Signature**
 
 ```ts
-export * as Predicate from "./Predicate.js"
+export declare const Predicate: typeof Predicate
 ```
 
 Added in v2.0.0
 
-## From "./PubSub.js"
-
-Re-exports all named exports from the "./PubSub.js" module as `PubSub`.
+## PubSub
 
 **Signature**
 
 ```ts
-export * as PubSub from "./PubSub.js"
+export declare const PubSub: typeof PubSub
 ```
 
 Added in v2.0.0
 
-## From "./Queue.js"
-
-Re-exports all named exports from the "./Queue.js" module as `Queue`.
+## Queue
 
 **Signature**
 
 ```ts
-export * as Queue from "./Queue.js"
+export declare const Queue: typeof Queue
 ```
 
 Added in v2.0.0
 
-## From "./Random.js"
-
-Re-exports all named exports from the "./Random.js" module as `Random`.
+## Random
 
 **Signature**
 
 ```ts
-export * as Random from "./Random.js"
+export declare const Random: typeof Random
 ```
 
 Added in v2.0.0
 
-## From "./ReadonlyArray.js"
+## ReadonlyArray
 
 This module provides utility functions for working with arrays in TypeScript.
 
 **Signature**
 
 ```ts
-export * as ReadonlyArray from "./ReadonlyArray.js"
+export declare const ReadonlyArray: typeof ReadonlyArray
 ```
 
 Added in v2.0.0
 
-## From "./ReadonlyRecord.js"
+## ReadonlyRecord
 
 This module provides utility functions for working with records in TypeScript.
 
 **Signature**
 
 ```ts
-export * as ReadonlyRecord from "./ReadonlyRecord.js"
+export declare const ReadonlyRecord: typeof ReadonlyRecord
 ```
 
 Added in v2.0.0
 
-## From "./RedBlackTree.js"
-
-Re-exports all named exports from the "./RedBlackTree.js" module as `RedBlackTree`.
+## RedBlackTree
 
 **Signature**
 
 ```ts
-export * as RedBlackTree from "./RedBlackTree.js"
+export declare const RedBlackTree: typeof RedBlackTree
 ```
 
 Added in v2.0.0
 
-## From "./Ref.js"
-
-Re-exports all named exports from the "./Ref.js" module as `Ref`.
+## Ref
 
 **Signature**
 
 ```ts
-export * as Ref from "./Ref.js"
+export declare const Ref: typeof Ref
 ```
 
 Added in v2.0.0
 
-## From "./Reloadable.js"
-
-Re-exports all named exports from the "./Reloadable.js" module as `Reloadable`.
+## Reloadable
 
 **Signature**
 
 ```ts
-export * as Reloadable from "./Reloadable.js"
+export declare const Reloadable: typeof Reloadable
 ```
 
 Added in v2.0.0
 
-## From "./Request.js"
-
-Re-exports all named exports from the "./Request.js" module as `Request`.
+## Request
 
 **Signature**
 
 ```ts
-export * as Request from "./Request.js"
+export declare const Request: typeof Request
 ```
 
 Added in v2.0.0
 
-## From "./RequestBlock.js"
-
-Re-exports all named exports from the "./RequestBlock.js" module as `RequestBlock`.
+## RequestBlock
 
 **Signature**
 
 ```ts
-export * as RequestBlock from "./RequestBlock.js"
+export declare const RequestBlock: typeof RequestBlock
 ```
 
 Added in v2.0.0
 
-## From "./RequestResolver.js"
-
-Re-exports all named exports from the "./RequestResolver.js" module as `RequestResolver`.
+## RequestResolver
 
 **Signature**
 
 ```ts
-export * as RequestResolver from "./RequestResolver.js"
+export declare const RequestResolver: typeof RequestResolver
 ```
 
 Added in v2.0.0
 
-## From "./Resource.js"
-
-Re-exports all named exports from the "./Resource.js" module as `Resource`.
+## Resource
 
 **Signature**
 
 ```ts
-export * as Resource from "./Resource.js"
+export declare const Resource: typeof Resource
 ```
 
 Added in v2.0.0
 
-## From "./Runtime.js"
-
-Re-exports all named exports from the "./Runtime.js" module as `Runtime`.
+## Runtime
 
 **Signature**
 
 ```ts
-export * as Runtime from "./Runtime.js"
+export declare const Runtime: typeof Runtime
 ```
 
 Added in v2.0.0
 
-## From "./RuntimeFlags.js"
-
-Re-exports all named exports from the "./RuntimeFlags.js" module as `RuntimeFlags`.
+## RuntimeFlags
 
 **Signature**
 
 ```ts
-export * as RuntimeFlags from "./RuntimeFlags.js"
+export declare const RuntimeFlags: typeof RuntimeFlags
 ```
 
 Added in v2.0.0
 
-## From "./RuntimeFlagsPatch.js"
-
-Re-exports all named exports from the "./RuntimeFlagsPatch.js" module as `RuntimeFlagsPatch`.
+## RuntimeFlagsPatch
 
 **Signature**
 
 ```ts
-export * as RuntimeFlagsPatch from "./RuntimeFlagsPatch.js"
+export declare const RuntimeFlagsPatch: typeof RuntimeFlagsPatch
 ```
 
 Added in v2.0.0
 
-## From "./STM.js"
-
-Re-exports all named exports from the "./STM.js" module as `STM`.
+## STM
 
 **Signature**
 
 ```ts
-export * as STM from "./STM.js"
+export declare const STM: typeof STM
 ```
 
 Added in v2.0.0
 
-## From "./Schedule.js"
-
-Re-exports all named exports from the "./Schedule.js" module as `Schedule`.
+## Schedule
 
 **Signature**
 
 ```ts
-export * as Schedule from "./Schedule.js"
+export declare const Schedule: typeof Schedule
 ```
 
 Added in v2.0.0
 
-## From "./ScheduleDecision.js"
-
-Re-exports all named exports from the "./ScheduleDecision.js" module as `ScheduleDecision`.
+## ScheduleDecision
 
 **Signature**
 
 ```ts
-export * as ScheduleDecision from "./ScheduleDecision.js"
+export declare const ScheduleDecision: typeof ScheduleDecision
 ```
 
 Added in v2.0.0
 
-## From "./ScheduleInterval.js"
-
-Re-exports all named exports from the "./ScheduleInterval.js" module as `ScheduleInterval`.
+## ScheduleInterval
 
 **Signature**
 
 ```ts
-export * as ScheduleInterval from "./ScheduleInterval.js"
+export declare const ScheduleInterval: typeof ScheduleInterval
 ```
 
 Added in v2.0.0
 
-## From "./ScheduleIntervals.js"
-
-Re-exports all named exports from the "./ScheduleIntervals.js" module as `ScheduleIntervals`.
+## ScheduleIntervals
 
 **Signature**
 
 ```ts
-export * as ScheduleIntervals from "./ScheduleIntervals.js"
+export declare const ScheduleIntervals: typeof ScheduleIntervals
 ```
 
 Added in v2.0.0
 
-## From "./Scheduler.js"
-
-Re-exports all named exports from the "./Scheduler.js" module as `Scheduler`.
+## Scheduler
 
 **Signature**
 
 ```ts
-export * as Scheduler from "./Scheduler.js"
+export declare const Scheduler: typeof Scheduler
 ```
 
 Added in v2.0.0
 
-## From "./Scope.js"
-
-Re-exports all named exports from the "./Scope.js" module as `Scope`.
+## Scope
 
 **Signature**
 
 ```ts
-export * as Scope from "./Scope.js"
+export declare const Scope: typeof Scope
 ```
 
 Added in v2.0.0
 
-## From "./ScopedCache.js"
-
-Re-exports all named exports from the "./ScopedCache.js" module as `ScopedCache`.
+## ScopedCache
 
 **Signature**
 
 ```ts
-export * as ScopedCache from "./ScopedCache.js"
+export declare const ScopedCache: typeof ScopedCache
 ```
 
 Added in v2.0.0
 
-## From "./ScopedRef.js"
-
-Re-exports all named exports from the "./ScopedRef.js" module as `ScopedRef`.
+## ScopedRef
 
 **Signature**
 
 ```ts
-export * as ScopedRef from "./ScopedRef.js"
+export declare const ScopedRef: typeof ScopedRef
 ```
 
 Added in v2.0.0
 
-## From "./SingleProducerAsyncInput.js"
-
-Re-exports all named exports from the "./SingleProducerAsyncInput.js" module as `SingleProducerAsyncInput`.
+## SingleProducerAsyncInput
 
 **Signature**
 
 ```ts
-export * as SingleProducerAsyncInput from "./SingleProducerAsyncInput.js"
+export declare const SingleProducerAsyncInput: typeof SingleProducerAsyncInput
 ```
 
 Added in v2.0.0
 
-## From "./Sink.js"
-
-Re-exports all named exports from the "./Sink.js" module as `Sink`.
+## Sink
 
 **Signature**
 
 ```ts
-export * as Sink from "./Sink.js"
+export declare const Sink: typeof Sink
 ```
 
 Added in v2.0.0
 
-## From "./SortedMap.js"
-
-Re-exports all named exports from the "./SortedMap.js" module as `SortedMap`.
+## SortedMap
 
 **Signature**
 
 ```ts
-export * as SortedMap from "./SortedMap.js"
+export declare const SortedMap: typeof SortedMap
 ```
 
 Added in v2.0.0
 
-## From "./SortedSet.js"
-
-Re-exports all named exports from the "./SortedSet.js" module as `SortedSet`.
+## SortedSet
 
 **Signature**
 
 ```ts
-export * as SortedSet from "./SortedSet.js"
+export declare const SortedSet: typeof SortedSet
 ```
 
 Added in v2.0.0
 
-## From "./Stream.js"
-
-Re-exports all named exports from the "./Stream.js" module as `Stream`.
+## Stream
 
 **Signature**
 
 ```ts
-export * as Stream from "./Stream.js"
+export declare const Stream: typeof Stream
 ```
 
 Added in v2.0.0
 
-## From "./StreamEmit.js"
-
-Re-exports all named exports from the "./StreamEmit.js" module as `StreamEmit`.
+## StreamEmit
 
 **Signature**
 
 ```ts
-export * as StreamEmit from "./StreamEmit.js"
+export declare const StreamEmit: typeof StreamEmit
 ```
 
 Added in v2.0.0
 
-## From "./StreamHaltStrategy.js"
-
-Re-exports all named exports from the "./StreamHaltStrategy.js" module as `StreamHaltStrategy`.
+## StreamHaltStrategy
 
 **Signature**
 
 ```ts
-export * as StreamHaltStrategy from "./StreamHaltStrategy.js"
+export declare const StreamHaltStrategy: typeof StreamHaltStrategy
 ```
 
 Added in v2.0.0
 
-## From "./Streamable.js"
-
-Re-exports all named exports from the "./Streamable.js" module as `Streamable`.
+## Streamable
 
 **Signature**
 
 ```ts
-export * as Streamable from "./Streamable.js"
+export declare const Streamable: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/Streamable")
 ```
 
 Added in v2.0.0
 
-## From "./String.js"
+## String
 
 This module provides utility functions and type class instances for working with the `string` type in TypeScript.
 It includes functions for basic string manipulation, as well as type class instances for
@@ -1563,36 +1370,34 @@ It includes functions for basic string manipulation, as well as type class insta
 **Signature**
 
 ```ts
-export * as String from "./String.js"
+export declare const String: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/String")
 ```
 
 Added in v2.0.0
 
-## From "./Struct.js"
+## Struct
 
 This module provides utility functions for working with structs in TypeScript.
 
 **Signature**
 
 ```ts
-export * as Struct from "./Struct.js"
+export declare const Struct: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/Struct")
 ```
 
 Added in v2.0.0
 
-## From "./SubscriptionRef.js"
-
-Re-exports all named exports from the "./SubscriptionRef.js" module as `SubscriptionRef`.
+## SubscriptionRef
 
 **Signature**
 
 ```ts
-export * as SubscriptionRef from "./SubscriptionRef.js"
+export declare const SubscriptionRef: typeof SubscriptionRef
 ```
 
 Added in v2.0.0
 
-## From "./Supervisor.js"
+## Supervisor
 
 A `Supervisor<T>` is allowed to supervise the launching and termination of
 fibers, producing some visible value of type `T` from the supervision.
@@ -1600,372 +1405,314 @@ fibers, producing some visible value of type `T` from the supervision.
 **Signature**
 
 ```ts
-export * as Supervisor from "./Supervisor.js"
+export declare const Supervisor: typeof Supervisor
 ```
 
 Added in v2.0.0
 
-## From "./Symbol.js"
-
-Re-exports all named exports from the "./Symbol.js" module as `Symbol`.
+## Symbol
 
 **Signature**
 
 ```ts
-export * as Symbol from "./Symbol.js"
+export declare const Symbol: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/Symbol")
 ```
 
 Added in v2.0.0
 
-## From "./SynchronizedRef.js"
-
-Re-exports all named exports from the "./SynchronizedRef.js" module as `SynchronizedRef`.
+## SynchronizedRef
 
 **Signature**
 
 ```ts
-export * as SynchronizedRef from "./SynchronizedRef.js"
+export declare const SynchronizedRef: typeof SynchronizedRef
 ```
 
 Added in v2.0.0
 
-## From "./TArray.js"
-
-Re-exports all named exports from the "./TArray.js" module as `TArray`.
+## TArray
 
 **Signature**
 
 ```ts
-export * as TArray from "./TArray.js"
+export declare const TArray: typeof TArray
 ```
 
 Added in v2.0.0
 
-## From "./TDeferred.js"
-
-Re-exports all named exports from the "./TDeferred.js" module as `TDeferred`.
+## TDeferred
 
 **Signature**
 
 ```ts
-export * as TDeferred from "./TDeferred.js"
+export declare const TDeferred: typeof TDeferred
 ```
 
 Added in v2.0.0
 
-## From "./TMap.js"
-
-Re-exports all named exports from the "./TMap.js" module as `TMap`.
+## TMap
 
 **Signature**
 
 ```ts
-export * as TMap from "./TMap.js"
+export declare const TMap: typeof TMap
 ```
 
 Added in v2.0.0
 
-## From "./TPriorityQueue.js"
-
-Re-exports all named exports from the "./TPriorityQueue.js" module as `TPriorityQueue`.
+## TPriorityQueue
 
 **Signature**
 
 ```ts
-export * as TPriorityQueue from "./TPriorityQueue.js"
+export declare const TPriorityQueue: typeof TPriorityQueue
 ```
 
 Added in v2.0.0
 
-## From "./TPubSub.js"
-
-Re-exports all named exports from the "./TPubSub.js" module as `TPubSub`.
+## TPubSub
 
 **Signature**
 
 ```ts
-export * as TPubSub from "./TPubSub.js"
+export declare const TPubSub: typeof TPubSub
 ```
 
 Added in v2.0.0
 
-## From "./TQueue.js"
-
-Re-exports all named exports from the "./TQueue.js" module as `TQueue`.
+## TQueue
 
 **Signature**
 
 ```ts
-export * as TQueue from "./TQueue.js"
+export declare const TQueue: typeof TQueue
 ```
 
 Added in v2.0.0
 
-## From "./TRandom.js"
-
-Re-exports all named exports from the "./TRandom.js" module as `TRandom`.
+## TRandom
 
 **Signature**
 
 ```ts
-export * as TRandom from "./TRandom.js"
+export declare const TRandom: typeof TRandom
 ```
 
 Added in v2.0.0
 
-## From "./TReentrantLock.js"
-
-Re-exports all named exports from the "./TReentrantLock.js" module as `TReentrantLock`.
+## TReentrantLock
 
 **Signature**
 
 ```ts
-export * as TReentrantLock from "./TReentrantLock.js"
+export declare const TReentrantLock: typeof TReentrantLock
 ```
 
 Added in v2.0.0
 
-## From "./TRef.js"
-
-Re-exports all named exports from the "./TRef.js" module as `TRef`.
+## TRef
 
 **Signature**
 
 ```ts
-export * as TRef from "./TRef.js"
+export declare const TRef: typeof TRef
 ```
 
 Added in v2.0.0
 
-## From "./TSemaphore.js"
-
-Re-exports all named exports from the "./TSemaphore.js" module as `TSemaphore`.
+## TSemaphore
 
 **Signature**
 
 ```ts
-export * as TSemaphore from "./TSemaphore.js"
+export declare const TSemaphore: typeof TSemaphore
 ```
 
 Added in v2.0.0
 
-## From "./TSet.js"
-
-Re-exports all named exports from the "./TSet.js" module as `TSet`.
+## TSet
 
 **Signature**
 
 ```ts
-export * as TSet from "./TSet.js"
+export declare const TSet: typeof TSet
 ```
 
 Added in v2.0.0
 
-## From "./Take.js"
-
-Re-exports all named exports from the "./Take.js" module as `Take`.
+## Take
 
 **Signature**
 
 ```ts
-export * as Take from "./Take.js"
+export declare const Take: typeof Take
 ```
 
 Added in v2.0.0
 
-## From "./TestAnnotation.js"
-
-Re-exports all named exports from the "./TestAnnotation.js" module as `TestAnnotation`.
+## TestAnnotation
 
 **Signature**
 
 ```ts
-export * as TestAnnotation from "./TestAnnotation.js"
+export declare const TestAnnotation: typeof TestAnnotation
 ```
 
 Added in v2.0.0
 
-## From "./TestAnnotationMap.js"
-
-Re-exports all named exports from the "./TestAnnotationMap.js" module as `TestAnnotationMap`.
+## TestAnnotationMap
 
 **Signature**
 
 ```ts
-export * as TestAnnotationMap from "./TestAnnotationMap.js"
+export declare const TestAnnotationMap: typeof TestAnnotationMap
 ```
 
 Added in v2.0.0
 
-## From "./TestAnnotations.js"
-
-Re-exports all named exports from the "./TestAnnotations.js" module as `TestAnnotations`.
+## TestAnnotations
 
 **Signature**
 
 ```ts
-export * as TestAnnotations from "./TestAnnotations.js"
+export declare const TestAnnotations: typeof TestAnnotations
 ```
 
 Added in v2.0.0
 
-## From "./TestClock.js"
-
-Re-exports all named exports from the "./TestClock.js" module as `TestClock`.
+## TestClock
 
 **Signature**
 
 ```ts
-export * as TestClock from "./TestClock.js"
+export declare const TestClock: typeof TestClock
 ```
 
 Added in v2.0.0
 
-## From "./TestConfig.js"
-
-Re-exports all named exports from the "./TestConfig.js" module as `TestConfig`.
+## TestConfig
 
 **Signature**
 
 ```ts
-export * as TestConfig from "./TestConfig.js"
+export declare const TestConfig: typeof TestConfig
 ```
 
 Added in v2.0.0
 
-## From "./TestContext.js"
-
-Re-exports all named exports from the "./TestContext.js" module as `TestContext`.
+## TestContext
 
 **Signature**
 
 ```ts
-export * as TestContext from "./TestContext.js"
+export declare const TestContext: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/TestContext")
 ```
 
 Added in v2.0.0
 
-## From "./TestLive.js"
-
-Re-exports all named exports from the "./TestLive.js" module as `TestLive`.
+## TestLive
 
 **Signature**
 
 ```ts
-export * as TestLive from "./TestLive.js"
+export declare const TestLive: typeof TestLive
 ```
 
 Added in v2.0.0
 
-## From "./TestServices.js"
-
-Re-exports all named exports from the "./TestServices.js" module as `TestServices`.
+## TestServices
 
 **Signature**
 
 ```ts
-export * as TestServices from "./TestServices.js"
+export declare const TestServices: typeof TestServices
 ```
 
 Added in v2.0.0
 
-## From "./TestSized.js"
-
-Re-exports all named exports from the "./TestSized.js" module as `TestSized`.
+## TestSized
 
 **Signature**
 
 ```ts
-export * as TestSized from "./TestSized.js"
+export declare const TestSized: typeof TestSized
 ```
 
 Added in v2.0.0
 
-## From "./Tracer.js"
-
-Re-exports all named exports from the "./Tracer.js" module as `Tracer`.
+## Tracer
 
 **Signature**
 
 ```ts
-export * as Tracer from "./Tracer.js"
+export declare const Tracer: typeof Tracer
 ```
 
 Added in v2.0.0
 
-## From "./Tuple.js"
+## Tuple
 
 This module provides utility functions for working with tuples in TypeScript.
 
 **Signature**
 
 ```ts
-export * as Tuple from "./Tuple.js"
+export declare const Tuple: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/Tuple")
 ```
 
 Added in v2.0.0
 
-## From "./Types.js"
+## Types
 
 A collection of types that are commonly used types.
 
 **Signature**
 
 ```ts
-export * as Types from "./Types.js"
+export declare const Types: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/Types")
 ```
 
 Added in v2.0.0
 
-## From "./Unify.js"
-
-Re-exports all named exports from the "./Unify.js" module as `Unify`.
+## Unify
 
 **Signature**
 
 ```ts
-export * as Unify from "./Unify.js"
+export declare const Unify: typeof Unify
 ```
 
 Added in v2.0.0
 
-## From "./UpstreamPullRequest.js"
-
-Re-exports all named exports from the "./UpstreamPullRequest.js" module as `UpstreamPullRequest`.
+## UpstreamPullRequest
 
 **Signature**
 
 ```ts
-export * as UpstreamPullRequest from "./UpstreamPullRequest.js"
+export declare const UpstreamPullRequest: typeof UpstreamPullRequest
 ```
 
 Added in v2.0.0
 
-## From "./UpstreamPullStrategy.js"
-
-Re-exports all named exports from the "./UpstreamPullStrategy.js" module as `UpstreamPullStrategy`.
+## UpstreamPullStrategy
 
 **Signature**
 
 ```ts
-export * as UpstreamPullStrategy from "./UpstreamPullStrategy.js"
+export declare const UpstreamPullStrategy: typeof UpstreamPullStrategy
 ```
 
 Added in v2.0.0
 
-## From "./Utils.js"
-
-Re-exports all named exports from the "./Utils.js" module as `Utils`.
+## Utils
 
 **Signature**
 
 ```ts
-export * as Utils from "./Utils.js"
+export declare const Utils: typeof import("/Users/patrickroza/pj/effect/effect/src/impl/Utils")
 ```
 
 Added in v2.0.0
-
-# utils
 
 ## absurd
 

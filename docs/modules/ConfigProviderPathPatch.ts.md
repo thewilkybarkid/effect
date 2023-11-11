@@ -20,10 +20,10 @@ Added in v2.0.0
   - [unnested](#unnested)
 - [models](#models)
   - [AndThen (interface)](#andthen-interface)
+  - [ConfigProviderPathPatch (type alias)](#configproviderpathpatch-type-alias)
   - [Empty (interface)](#empty-interface)
   - [MapName (interface)](#mapname-interface)
   - [Nested (interface)](#nested-interface)
-  - [PathPatch (type alias)](#pathpatch-type-alias)
   - [Unnested (interface)](#unnested-interface)
 
 ---
@@ -36,8 +36,8 @@ Added in v2.0.0
 
 ```ts
 export declare const andThen: {
-  (that: PathPatch): (self: PathPatch) => PathPatch
-  (self: PathPatch, that: PathPatch): PathPatch
+  (that: ConfigProviderPathPatch): (self: ConfigProviderPathPatch) => ConfigProviderPathPatch
+  (self: ConfigProviderPathPatch, that: ConfigProviderPathPatch): ConfigProviderPathPatch
 }
 ```
 
@@ -48,7 +48,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const empty: PathPatch
+export declare const empty: ConfigProviderPathPatch
 ```
 
 Added in v2.0.0
@@ -59,8 +59,8 @@ Added in v2.0.0
 
 ```ts
 export declare const mapName: {
-  (f: (string: string) => string): (self: PathPatch) => PathPatch
-  (self: PathPatch, f: (string: string) => string): PathPatch
+  (f: (string: string) => string): (self: ConfigProviderPathPatch) => ConfigProviderPathPatch
+  (self: ConfigProviderPathPatch, f: (string: string) => string): ConfigProviderPathPatch
 }
 ```
 
@@ -72,8 +72,8 @@ Added in v2.0.0
 
 ```ts
 export declare const nested: {
-  (name: string): (self: PathPatch) => PathPatch
-  (self: PathPatch, name: string): PathPatch
+  (name: string): (self: ConfigProviderPathPatch) => ConfigProviderPathPatch
+  (self: ConfigProviderPathPatch, name: string): ConfigProviderPathPatch
 }
 ```
 
@@ -85,8 +85,8 @@ Added in v2.0.0
 
 ```ts
 export declare const unnested: {
-  (name: string): (self: PathPatch) => PathPatch
-  (self: PathPatch, name: string): PathPatch
+  (name: string): (self: ConfigProviderPathPatch) => ConfigProviderPathPatch
+  (self: ConfigProviderPathPatch, name: string): ConfigProviderPathPatch
 }
 ```
 
@@ -101,9 +101,22 @@ Added in v2.0.0
 ```ts
 export interface AndThen {
   readonly _tag: "AndThen"
-  readonly first: PathPatch
-  readonly second: PathPatch
+  readonly first: ConfigProviderPathPatch
+  readonly second: ConfigProviderPathPatch
 }
+```
+
+Added in v2.0.0
+
+## ConfigProviderPathPatch (type alias)
+
+Represents a description of how to modify the path to a configuration
+value.
+
+**Signature**
+
+```ts
+export type ConfigProviderPathPatch = Empty | AndThen | MapName | Nested | Unnested
 ```
 
 Added in v2.0.0
@@ -142,19 +155,6 @@ export interface Nested {
   readonly _tag: "Nested"
   readonly name: string
 }
-```
-
-Added in v2.0.0
-
-## PathPatch (type alias)
-
-Represents a description of how to modify the path to a configuration
-value.
-
-**Signature**
-
-```ts
-export type PathPatch = Empty | AndThen | MapName | Nested | Unnested
 ```
 
 Added in v2.0.0

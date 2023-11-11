@@ -1,6 +1,6 @@
 ---
 title: StreamEmit.ts
-nav_order: 109
+nav_order: 252
 parent: Modules
 ---
 
@@ -13,31 +13,12 @@ Added in v2.0.0
 <h2 class="text-delta">Table of contents</h2>
 
 - [models](#models)
-  - [Emit (interface)](#emit-interface)
   - [EmitOps (interface)](#emitops-interface)
+  - [StreamEmit (interface)](#streamemit-interface)
 
 ---
 
 # models
-
-## Emit (interface)
-
-An `Emit<R, E, A, B>` represents an asynchronous callback that can be
-called multiple times. The callback can be called with a value of type
-`Effect<R, Option<E>, Chunk<A>>`, where succeeding with a `Chunk<A>`
-indicates to emit those elements, failing with `Some<E>` indicates to
-terminate with that error, and failing with `None` indicates to terminate
-with an end of stream signal.
-
-**Signature**
-
-```ts
-export interface Emit<R, E, A, B> extends EmitOps<R, E, A, B> {
-  (f: Effect.Effect<R, Option.Option<E>, Chunk.Chunk<A>>): Promise<B>
-}
-```
-
-Added in v2.0.0
 
 ## EmitOps (interface)
 
@@ -98,6 +79,25 @@ export interface EmitOps<R, E, A, B> {
    * Emits a chunk containing the specified value.
    */
   readonly single: (value: A) => Promise<B>
+}
+```
+
+Added in v2.0.0
+
+## StreamEmit (interface)
+
+An `Emit<R, E, A, B>` represents an asynchronous callback that can be
+called multiple times. The callback can be called with a value of type
+`Effect<R, Option<E>, Chunk<A>>`, where succeeding with a `Chunk<A>`
+indicates to emit those elements, failing with `Some<E>` indicates to
+terminate with that error, and failing with `None` indicates to terminate
+with an end of stream signal.
+
+**Signature**
+
+```ts
+export interface StreamEmit<R, E, A, B> extends EmitOps<R, E, A, B> {
+  (f: Effect<R, Option<E>, Chunk<A>>): Promise<B>
 }
 ```
 

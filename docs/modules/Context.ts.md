@@ -37,6 +37,7 @@ Added in v2.0.0
   - [ValidTagsById (type alias)](#validtagsbyid-type-alias)
 - [symbol](#symbol)
   - [TagTypeId (type alias)](#tagtypeid-type-alias)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 - [unsafe](#unsafe)
   - [unsafeGet](#unsafeget)
@@ -66,7 +67,7 @@ desireable to preserve the instance across reloads.
 **Signature**
 
 ```ts
-export declare const Tag: <Identifier, Service = Identifier>(identifier?: unknown) => Tag<Identifier, Service>
+export declare const Tag: <Identifier, Service = Identifier>(identifier?: unknown) => Context.Tag<Identifier, Service>
 ```
 
 **Example**
@@ -107,7 +108,10 @@ Creates a new `Context` with a single service associated to the tag.
 **Signature**
 
 ```ts
-export declare const make: <T extends Tag<any, any>>(tag: T, service: Tag.Service<T>) => Context<Tag.Identifier<T>>
+export declare const make: <T extends Context.Tag<any, any>>(
+  tag: T,
+  service: Context.Tag.Service<T>
+) => Context<Context.Tag.Identifier<T>>
 ```
 
 **Example**
@@ -144,8 +148,8 @@ Get a service from the context that corresponds to the given tag.
 
 ```ts
 export declare const get: {
-  <Services, T extends ValidTagsById<Services>>(tag: T): (self: Context<Services>) => Tag.Service<T>
-  <Services, T extends ValidTagsById<Services>>(self: Context<Services>, tag: T): Tag.Service<T>
+  <Services, T extends Context.ValidTagsById<Services>>(tag: T): (self: Context<Services>) => Context.Tag.Service<T>
+  <Services, T extends Context.ValidTagsById<Services>>(self: Context<Services>, tag: T): Context.Tag.Service<T>
 }
 ```
 
@@ -174,8 +178,8 @@ found, the `Option` object will be `None`.
 
 ```ts
 export declare const getOption: {
-  <S, I>(tag: Tag<I, S>): <Services>(self: Context<Services>) => Option<S>
-  <Services, S, I>(self: Context<Services>, tag: Tag<I, S>): Option<S>
+  <S, I>(tag: Context.Tag<I, S>): <Services>(self: Context<Services>) => Option<S>
+  <Services, S, I>(self: Context<Services>, tag: Context.Tag<I, S>): Option<S>
 }
 ```
 
@@ -225,7 +229,7 @@ Checks if the provided argument is a `Tag`.
 **Signature**
 
 ```ts
-export declare const isTag: (input: unknown) => input is Tag<any, any>
+export declare const isTag: (input: unknown) => input is Context.Tag<any, any>
 ```
 
 **Example**
@@ -323,6 +327,16 @@ export type TagTypeId = typeof TagTypeId
 
 Added in v2.0.0
 
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof Context.TypeId
+```
+
+Added in v2.0.0
+
 ## TypeId (type alias)
 
 **Signature**
@@ -346,8 +360,8 @@ For a safer version see {@link getOption}.
 
 ```ts
 export declare const unsafeGet: {
-  <S, I>(tag: Tag<I, S>): <Services>(self: Context<Services>) => S
-  <Services, S, I>(self: Context<Services>, tag: Tag<I, S>): S
+  <S, I>(tag: Context.Tag<I, S>): <Services>(self: Context<Services>) => S
+  <Services, S, I>(self: Context<Services>, tag: Context.Tag<I, S>): S
 }
 ```
 
@@ -401,15 +415,15 @@ Adds a service to a given `Context`.
 
 ```ts
 export declare const add: {
-  <T extends Tag<any, any>>(
+  <T extends Context.Tag<any, any>>(
     tag: T,
-    service: Tag.Service<T>
-  ): <Services>(self: Context<Services>) => Context<Services | Tag.Identifier<T>>
-  <Services, T extends Tag<any, any>>(
+    service: Context.Tag.Service<T>
+  ): <Services>(self: Context<Services>) => Context<Services | Context.Tag.Identifier<T>>
+  <Services, T extends Context.Tag<any, any>>(
     self: Context<Services>,
     tag: T,
-    service: Tag.Service<T>
-  ): Context<Services | Tag.Identifier<T>>
+    service: Context.Tag.Service<T>
+  ): Context<Services | Context.Tag.Identifier<T>>
 }
 ```
 
@@ -469,9 +483,9 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const omit: <Services, S extends ValidTagsById<Services>[]>(
+export declare const omit: <Services, S extends Context.ValidTagsById<Services>[]>(
   ...tags: S
-) => (self: Context<Services>) => Context<Exclude<Services, { [k in keyof S]: Tag.Identifier<S[k]> }[keyof S]>>
+) => (self: Context<Services>) => Context<Exclude<Services, { [k in keyof S]: Context.Tag.Identifier<S[k]> }[keyof S]>>
 ```
 
 Added in v2.0.0
@@ -483,9 +497,9 @@ Returns a new `Context` that contains only the specified services.
 **Signature**
 
 ```ts
-export declare const pick: <Services, S extends ValidTagsById<Services>[]>(
+export declare const pick: <Services, S extends Context.ValidTagsById<Services>[]>(
   ...tags: S
-) => (self: Context<Services>) => Context<{ [k in keyof S]: Tag.Identifier<S[k]> }[number]>
+) => (self: Context<Services>) => Context<{ [k in keyof S]: Context.Tag.Identifier<S[k]> }[number]>
 ```
 
 **Example**

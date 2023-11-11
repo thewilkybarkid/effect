@@ -1,6 +1,6 @@
 ---
 title: Take.ts
-nav_order: 117
+nav_order: 260
 parent: Modules
 ---
 
@@ -325,7 +325,7 @@ or an end-of-stream marker.
 ```ts
 export interface Take<E, A> extends Take.Variance<E, A>, Pipeable {
   /** @internal */
-  readonly exit: Exit.Exit<Option.Option<E>, Chunk.Chunk<A>>
+  readonly exit: Exit<Option<E>, Chunk<A>>
 }
 ```
 
@@ -360,7 +360,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TakeTypeId: typeof TakeTypeId
+export declare const TakeTypeId: typeof Take.TakeTypeId
 ```
 
 Added in v2.0.0

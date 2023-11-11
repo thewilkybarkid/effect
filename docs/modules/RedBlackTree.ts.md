@@ -1,6 +1,6 @@
 ---
 title: RedBlackTree.ts
-nav_order: 84
+nav_order: 227
 parent: Modules
 ---
 
@@ -39,6 +39,7 @@ Added in v2.0.0
 - [refinements](#refinements)
   - [isRedBlackTree](#isredblacktree)
 - [symbol](#symbol)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 - [traversing](#traversing)
   - [at](#at)
@@ -331,6 +332,16 @@ export declare const isRedBlackTree: {
 Added in v2.0.0
 
 # symbol
+
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof RedBlackTree.TypeId
+```
+
+Added in v2.0.0
 
 ## TypeId (type alias)
 

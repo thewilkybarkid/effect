@@ -1,6 +1,6 @@
 ---
 title: Ref.ts
-nav_order: 85
+nav_order: 228
 parent: Modules
 ---
 
@@ -72,7 +72,7 @@ Added in v2.0.0
 
 ```ts
 export interface Ref<A> extends Ref.Variance<A>, Pipeable {
-  modify<B>(f: (a: A) => readonly [B, A]): Effect.Effect<never, never, B>
+  modify<B>(f: (a: A) => readonly [B, A]): Effect<never, never, B>
 }
 ```
 
@@ -103,7 +103,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RefTypeId: typeof RefTypeId
+export declare const RefTypeId: typeof Ref.RefTypeId
 ```
 
 Added in v2.0.0

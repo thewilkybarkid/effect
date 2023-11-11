@@ -26,6 +26,11 @@ Added in v2.0.0
   - [empty](#empty)
   - [patch](#patch-1)
 - [symbol](#symbol)
+  - [ChunkPatchTypeId](#chunkpatchtypeid)
+  - [ContextPatchTypeId](#contextpatchtypeid)
+  - [HashMapPatchTypeId](#hashmappatchtypeid)
+  - [HashSetPatchTypeId](#hashsetpatchtypeid)
+  - [OrPatchTypeId](#orpatchtypeid)
   - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 - [utils](#utils)
@@ -226,12 +231,62 @@ Added in v2.0.0
 
 # symbol
 
+## ChunkPatchTypeId
+
+**Signature**
+
+```ts
+export declare const ChunkPatchTypeId: typeof Differ.ChunkPatchTypeId
+```
+
+Added in v2.0.0
+
+## ContextPatchTypeId
+
+**Signature**
+
+```ts
+export declare const ContextPatchTypeId: typeof Differ.ContextPatchTypeId
+```
+
+Added in v2.0.0
+
+## HashMapPatchTypeId
+
+**Signature**
+
+```ts
+export declare const HashMapPatchTypeId: typeof Differ.HashMapPatchTypeId
+```
+
+Added in v2.0.0
+
+## HashSetPatchTypeId
+
+**Signature**
+
+```ts
+export declare const HashSetPatchTypeId: typeof Differ.HashSetPatchTypeId
+```
+
+Added in v2.0.0
+
+## OrPatchTypeId
+
+**Signature**
+
+```ts
+export declare const OrPatchTypeId: typeof Differ.OrPatchTypeId
+```
+
+Added in v2.0.0
+
 ## TypeId
 
 **Signature**
 
 ```ts
-export declare const TypeId: typeof TypeId
+export declare const TypeId: typeof Differ.TypeId
 ```
 
 Added in v2.0.0

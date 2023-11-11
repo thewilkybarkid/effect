@@ -39,6 +39,7 @@ Added in v2.0.0
 - [sequencing](#sequencing)
   - [flatMap](#flatmap)
 - [symbol](#symbol)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 - [traversing](#traversing)
   - [forEach](#foreach)
@@ -103,9 +104,9 @@ Check if a predicate holds true for every `HashSet` element.
 
 ```ts
 export declare const every: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: HashSet<A>) => self is HashSet<B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: HashSet<A>) => self is HashSet<B>
   <A>(predicate: Predicate<A>): (self: HashSet<A>) => boolean
-  <A, B extends A>(self: HashSet<A>, refinement: Refinement<A, B>): self is HashSet<B>
+  <A, B extends A>(self: HashSet<A>, refinement: Predicate.Refinement<A, B>): self is HashSet<B>
   <A>(self: HashSet<A>, predicate: Predicate<A>): boolean
 }
 ```
@@ -167,9 +168,9 @@ Filters values out of a `HashSet` using the specified predicate.
 
 ```ts
 export declare const filter: {
-  <A, B extends A>(f: Refinement<A, B>): (self: HashSet<A>) => HashSet<B>
+  <A, B extends A>(f: Predicate.Refinement<A, B>): (self: HashSet<A>) => HashSet<B>
   <A>(f: Predicate<A>): (self: HashSet<A>) => HashSet<A>
-  <A, B extends A>(self: HashSet<A>, f: Refinement<A, B>): HashSet<B>
+  <A, B extends A>(self: HashSet<A>, f: Predicate.Refinement<A, B>): HashSet<B>
   <A>(self: HashSet<A>, f: Predicate<A>): HashSet<A>
 }
 ```
@@ -265,12 +266,12 @@ the left side.
 ```ts
 export declare const partition: {
   <C extends A, B extends A, A = C>(
-    refinement: Refinement<A, B>
+    refinement: Predicate.Refinement<A, B>
   ): (self: HashSet<C>) => [HashSet<Exclude<C, B>>, HashSet<B>]
   <B extends A, A = B>(predicate: (a: A) => boolean): (self: HashSet<B>) => [HashSet<B>, HashSet<B>]
   <C extends A, B extends A, A = C>(
     self: HashSet<C>,
-    refinement: Refinement<A, B>
+    refinement: Predicate.Refinement<A, B>
   ): [HashSet<Exclude<C, B>>, HashSet<B>]
   <B extends A, A = B>(self: HashSet<B>, predicate: (a: A) => boolean): [HashSet<B>, HashSet<B>]
 }
@@ -308,6 +309,16 @@ export declare const flatMap: {
 Added in v2.0.0
 
 # symbol
+
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof HashSet.TypeId
+```
+
+Added in v2.0.0
 
 ## TypeId (type alias)
 

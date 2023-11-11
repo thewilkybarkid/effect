@@ -1,6 +1,6 @@
 ---
 title: TestClock.ts
-nav_order: 123
+nav_order: 266
 parent: Modules
 ---
 
@@ -14,7 +14,7 @@ Added in v2.0.0
 
 - [utils](#utils)
   - [Data (interface)](#data-interface)
-  - [TestClock](#testclock)
+  - [Tag](#tag)
   - [TestClock (interface)](#testclock-interface)
   - [adjust](#adjust)
   - [adjustWith](#adjustwith)
@@ -26,7 +26,7 @@ Added in v2.0.0
   - [setTime](#settime)
   - [sleep](#sleep)
   - [sleeps](#sleeps)
-  - [testClock](#testclock-1)
+  - [testClock](#testclock)
   - [testClockWith](#testclockwith)
 
 ---
@@ -48,12 +48,12 @@ export interface Data {
 
 Added in v2.0.1
 
-## TestClock
+## Tag
 
 **Signature**
 
 ```ts
-export declare const TestClock: Context.Tag<TestClock, TestClock>
+export declare const Tag: Context.Tag<TestClock, TestClock>
 ```
 
 Added in v2.0.0
@@ -72,11 +72,11 @@ run in order.
 For example, here is how we can test `Effect.timeout` using `TestClock`:
 
 ```ts
-import * as Duration from "effect/Duration"
-import * as Effect from "effect/Effect"
-import * as Fiber from "effect/Fiber"
-import * as TestClock from "effect/TestClock"
-import * as Option from "effect/Option"
+import { Duration } from "effect/Duration"
+import { Effect } from "effect/Effect"
+import { Fiber } from "effect/Fiber"
+import { TestClock } from "effect/TestClock"
+import { Option } from "effect/Option"
 
 Effect.gen(function* () {
   const fiber = yield* pipe(Effect.sleep(Duration.minutes(5)), Effect.timeout(Duration.minutes(1)), Effect.fork)
@@ -97,12 +97,12 @@ expected effects have been performed.
 **Signature**
 
 ```ts
-export interface TestClock extends Clock.Clock {
-  adjust(duration: Duration.DurationInput): Effect.Effect<never, never, void>
-  adjustWith(duration: Duration.DurationInput): <R, E, A>(effect: Effect.Effect<R, E, A>) => Effect.Effect<R, E, A>
-  save(): Effect.Effect<never, never, Effect.Effect<never, never, void>>
-  setTime(time: number): Effect.Effect<never, never, void>
-  sleeps(): Effect.Effect<never, never, Chunk.Chunk<number>>
+export interface TestClock extends Clock {
+  adjust(duration: Duration.DurationInput): Effect<never, never, void>
+  adjustWith(duration: Duration.DurationInput): <R, E, A>(effect: Effect<R, E, A>) => Effect<R, E, A>
+  save(): Effect<never, never, Effect<never, never, void>>
+  setTime(time: number): Effect<never, never, void>
+  sleeps(): Effect<never, never, Chunk<number>>
 }
 ```
 

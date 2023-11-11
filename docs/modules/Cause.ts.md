@@ -411,8 +411,8 @@ Also allows for accessing the provided context during reduction.
 
 ```ts
 export declare const reduceWithContext: {
-  <C, E, Z>(context: C, reducer: CauseReducer<C, E, Z>): (self: Cause<E>) => Z
-  <C, E, Z>(self: Cause<E>, context: C, reducer: CauseReducer<C, E, Z>): Z
+  <C, E, Z>(context: C, reducer: Cause.CauseReducer<C, E, Z>): (self: Cause<E>) => Z
+  <C, E, Z>(self: Cause<E>, context: C, reducer: Cause.CauseReducer<C, E, Z>): Z
 }
 ```
 
@@ -937,7 +937,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isDieType: <E>(self: Cause<E>) => self is Die
+export declare const isDieType: <E>(self: Cause<E>) => self is Cause.Die
 ```
 
 Added in v2.0.0
@@ -950,7 +950,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isEmptyType: <E>(self: Cause<E>) => self is Empty
+export declare const isEmptyType: <E>(self: Cause<E>) => self is Cause.Empty
 ```
 
 Added in v2.0.0
@@ -963,7 +963,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isFailType: <E>(self: Cause<E>) => self is Fail<E>
+export declare const isFailType: <E>(self: Cause<E>) => self is Cause.Fail<E>
 ```
 
 Added in v2.0.0
@@ -976,7 +976,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isIllegalArgumentException: (u: unknown) => u is IllegalArgumentException
+export declare const isIllegalArgumentException: (u: unknown) => u is Cause.IllegalArgumentException
 ```
 
 Added in v2.0.0
@@ -989,7 +989,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isInterruptType: <E>(self: Cause<E>) => self is Interrupt
+export declare const isInterruptType: <E>(self: Cause<E>) => self is Cause.Interrupt
 ```
 
 Added in v2.0.0
@@ -1002,7 +1002,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isInterruptedException: (u: unknown) => u is InterruptedException
+export declare const isInterruptedException: (u: unknown) => u is Cause.InterruptedException
 ```
 
 Added in v2.0.0
@@ -1015,7 +1015,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isNoSuchElementException: (u: unknown) => u is NoSuchElementException
+export declare const isNoSuchElementException: (u: unknown) => u is Cause.NoSuchElementException
 ```
 
 Added in v2.0.0
@@ -1028,7 +1028,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isParallelType: <E>(self: Cause<E>) => self is Parallel<E>
+export declare const isParallelType: <E>(self: Cause<E>) => self is Cause.Parallel<E>
 ```
 
 Added in v2.0.0
@@ -1041,7 +1041,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isRuntimeException: (u: unknown) => u is RuntimeException
+export declare const isRuntimeException: (u: unknown) => u is Cause.RuntimeException
 ```
 
 Added in v2.0.0
@@ -1054,7 +1054,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isSequentialType: <E>(self: Cause<E>) => self is Sequential<E>
+export declare const isSequentialType: <E>(self: Cause<E>) => self is Cause.Sequential<E>
 ```
 
 Added in v2.0.0
@@ -1105,7 +1105,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const CauseTypeId: typeof CauseTypeId
+export declare const CauseTypeId: typeof Cause.CauseTypeId
 ```
 
 Added in v2.0.0
@@ -1125,7 +1125,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const IllegalArgumentExceptionTypeId: typeof IllegalArgumentExceptionTypeId
+export declare const IllegalArgumentExceptionTypeId: typeof Cause.IllegalArgumentExceptionTypeId
 ```
 
 Added in v2.0.0
@@ -1145,7 +1145,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const InterruptedExceptionTypeId: typeof InterruptedExceptionTypeId
+export declare const InterruptedExceptionTypeId: typeof Cause.InterruptedExceptionTypeId
 ```
 
 Added in v2.0.0
@@ -1165,7 +1165,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const InvalidPubSubCapacityExceptionTypeId: typeof InvalidPubSubCapacityExceptionTypeId
+export declare const InvalidPubSubCapacityExceptionTypeId: typeof Cause.InvalidPubSubCapacityExceptionTypeId
 ```
 
 Added in v2.0.0
@@ -1185,7 +1185,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const NoSuchElementExceptionTypeId: typeof NoSuchElementExceptionTypeId
+export declare const NoSuchElementExceptionTypeId: typeof Cause.NoSuchElementExceptionTypeId
 ```
 
 Added in v2.0.0
@@ -1205,7 +1205,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RuntimeExceptionTypeId: typeof RuntimeExceptionTypeId
+export declare const RuntimeExceptionTypeId: typeof Cause.RuntimeExceptionTypeId
 ```
 
 Added in v2.0.0

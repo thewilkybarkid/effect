@@ -285,7 +285,7 @@ Constructs a config from some configuration wrapped with the `Wrap<A>` utility t
 For example:
 
 ```
-import { Config, unwrap } from "./Config"
+import { Config, unwrap } from "../Config"
 
 interface Options { key: string }
 
@@ -341,7 +341,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ConfigTypeId: typeof ConfigTypeId
+export declare const ConfigTypeId: typeof Config.ConfigTypeId
 ```
 
 Added in v2.0.0
@@ -369,7 +369,7 @@ Added in v2.0.0
 ```ts
 export interface Primitive<A> extends Config<A> {
   readonly description: string
-  parse(text: string): Either.Either<ConfigError.ConfigError, A>
+  parse(text: string): Either<ConfigError, A>
 }
 ```
 
@@ -554,12 +554,12 @@ performs validation during loading.
 export declare const validate: {
   <A, B extends A>(options: {
     readonly message: string
-    readonly validation: Refinement<A, B>
+    readonly validation: Predicate.Refinement<A, B>
   }): (self: Config<A>) => Config<B>
   <A>(options: { readonly message: string; readonly validation: Predicate<A> }): (self: Config<A>) => Config<A>
   <A, B extends A>(
     self: Config<A>,
-    options: { readonly message: string; readonly validation: Refinement<A, B> }
+    options: { readonly message: string; readonly validation: Predicate.Refinement<A, B> }
   ): Config<B>
   <A>(self: Config<A>, options: { readonly message: string; readonly validation: Predicate<A> }): Config<A>
 }

@@ -1,6 +1,6 @@
 ---
 title: TestAnnotation.ts
-nav_order: 120
+nav_order: 263
 parent: Modules
 ---
 
@@ -34,7 +34,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface TestAnnotation<A> extends Equal.Equal {
+export interface TestAnnotation<A> extends Equal {
   readonly [TestAnnotationTypeId]: TestAnnotationTypeId
   readonly identifier: string
   readonly tag: Context.Tag<A, A>
@@ -50,7 +50,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TestAnnotationTypeId: typeof TestAnnotationTypeId
+export declare const TestAnnotationTypeId: typeof TestAnnotation.TestAnnotationTypeId
 ```
 
 Added in v2.0.0

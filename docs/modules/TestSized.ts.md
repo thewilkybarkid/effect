@@ -1,6 +1,6 @@
 ---
 title: TestSized.ts
-nav_order: 128
+nav_order: 271
 parent: Modules
 ---
 
@@ -13,7 +13,7 @@ Added in v2.0.0
 <h2 class="text-delta">Table of contents</h2>
 
 - [utils](#utils)
-  - [TestSized](#testsized)
+  - [Tag](#tag)
   - [TestSized (interface)](#testsized-interface)
   - [TestSizedTypeId](#testsizedtypeid)
   - [TestSizedTypeId (type alias)](#testsizedtypeid-type-alias)
@@ -24,12 +24,12 @@ Added in v2.0.0
 
 # utils
 
-## TestSized
+## Tag
 
 **Signature**
 
 ```ts
-export declare const TestSized: Context.Tag<TestSized, TestSized>
+export declare const Tag: Context.Tag<TestSized, TestSized>
 ```
 
 Added in v2.0.0
@@ -41,9 +41,9 @@ Added in v2.0.0
 ```ts
 export interface TestSized {
   readonly [TestSizedTypeId]: TestSizedTypeId
-  readonly fiberRef: FiberRef.FiberRef<number>
-  size(): Effect.Effect<never, never, number>
-  withSize(size: number): <R, E, A>(effect: Effect.Effect<R, E, A>) => Effect.Effect<R, E, A>
+  readonly fiberRef: FiberRef<number>
+  size(): Effect<never, never, number>
+  withSize(size: number): <R, E, A>(effect: Effect<R, E, A>) => Effect<R, E, A>
 }
 ```
 
@@ -54,7 +54,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TestSizedTypeId: typeof TestSizedTypeId
+export declare const TestSizedTypeId: typeof TestSized.TestSizedTypeId
 ```
 
 Added in v2.0.0

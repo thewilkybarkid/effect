@@ -1,6 +1,6 @@
 ---
 title: ScopedRef.ts
-nav_order: 101
+nav_order: 244
 parent: Modules
 ---
 
@@ -108,7 +108,7 @@ for the old value whenever a new value is obtained.
 ```ts
 export interface ScopedRef<A> extends ScopedRef.Variance<A>, Pipeable {
   /** @internal */
-  readonly ref: Synchronized.SynchronizedRef<readonly [Scope.Scope.Closeable, A]>
+  readonly ref: SynchronizedRef<readonly [Scope.Closeable, A]>
 }
 ```
 
@@ -121,7 +121,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ScopedRefTypeId: typeof ScopedRefTypeId
+export declare const ScopedRefTypeId: typeof ScopedRef.ScopedRefTypeId
 ```
 
 Added in v2.0.0

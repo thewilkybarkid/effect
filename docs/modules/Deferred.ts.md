@@ -132,9 +132,9 @@ higher-level concurrent or asynchronous structures.
 ```ts
 export interface Deferred<E, A> extends Deferred.Variance<E, A>, Pipeable {
   /** @internal */
-  readonly state: MutableRef.MutableRef<internal.State<E, A>>
+  readonly state: MutableRef<internal.State<E, A>>
   /** @internal */
-  readonly blockingOn: FiberId.FiberId
+  readonly blockingOn: FiberId
 }
 ```
 
@@ -147,7 +147,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const DeferredTypeId: typeof DeferredTypeId
+export declare const DeferredTypeId: typeof Deferred.DeferredTypeId
 ```
 
 Added in v2.0.0

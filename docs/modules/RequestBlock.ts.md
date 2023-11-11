@@ -1,6 +1,6 @@
 ---
 title: RequestBlock.ts
-nav_order: 88
+nav_order: 231
 parent: Modules
 ---
 
@@ -157,10 +157,7 @@ Added in v2.0.0
 export interface Reducer<R, Z> {
   readonly emptyCase: () => Z
   readonly parCase: (left: Z, right: Z) => Z
-  readonly singleCase: (
-    dataSource: RequestResolver.RequestResolver<unknown, R>,
-    blockedRequest: Request.Entry<unknown>
-  ) => Z
+  readonly singleCase: (dataSource: RequestResolver<unknown, R>, blockedRequest: Request.Entry<unknown>) => Z
   readonly seqCase: (left: Z, right: Z) => Z
 }
 ```

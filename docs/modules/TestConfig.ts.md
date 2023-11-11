@@ -1,6 +1,6 @@
 ---
 title: TestConfig.ts
-nav_order: 124
+nav_order: 267
 parent: Modules
 ---
 
@@ -13,20 +13,54 @@ Added in v2.0.0
 <h2 class="text-delta">Table of contents</h2>
 
 - [utils](#utils)
-  - [TestConfig](#testconfig)
+  - [Tag](#tag)
   - [TestConfig (interface)](#testconfig-interface)
+  - [TestConfig (interface)](#testconfig-interface-1)
   - [make](#make)
 
 ---
 
 # utils
 
-## TestConfig
+## Tag
 
 **Signature**
 
 ```ts
-export declare const TestConfig: Context.Tag<TestConfig, TestConfig>
+export declare const Tag: Context.Tag<TestConfig, TestConfig>
+```
+
+Added in v2.0.0
+
+## TestConfig (interface)
+
+The `TestConfig` service provides access to default configuration settings
+used by tests, including the number of times to repeat tests to ensure
+they are stable, the number of times to retry flaky tests, the sufficient
+number of samples to check from a random variable, and the maximum number of
+shrinkings to minimize large failures.
+
+**Signature**
+
+```ts
+export interface TestConfig {
+  /**
+   * The number of times to repeat tests to ensure they are stable.
+   */
+  readonly repeats: number
+  /**
+   * The number of times to retry flaky tests.
+   */
+  readonly retries: number
+  /**
+   * The number of sufficient samples to check for a random variable.
+   */
+  readonly samples: number
+  /**
+   * The maximum number of shrinkings to minimize large failures
+   */
+  readonly shrinks: number
+}
 ```
 
 Added in v2.0.0

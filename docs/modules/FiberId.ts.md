@@ -227,7 +227,7 @@ Returns `true` if the `FiberId` is a `Composite`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isComposite: (self: FiberId) => self is Composite
+export declare const isComposite: (self: FiberId) => self is FiberId.Composite
 ```
 
 Added in v2.0.0
@@ -252,7 +252,7 @@ Returns `true` if the `FiberId` is a `None`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isNone: (self: FiberId) => self is None
+export declare const isNone: (self: FiberId) => self is FiberId.None
 ```
 
 Added in v2.0.0
@@ -264,7 +264,7 @@ Returns `true` if the `FiberId` is a `Runtime`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isRuntime: (self: FiberId) => self is Runtime
+export declare const isRuntime: (self: FiberId) => self is FiberId.Runtime
 ```
 
 Added in v2.0.0
@@ -276,7 +276,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FiberIdTypeId: typeof FiberIdTypeId
+export declare const FiberIdTypeId: typeof FiberId.FiberIdTypeId
 ```
 
 Added in v2.0.0

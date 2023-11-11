@@ -1,6 +1,6 @@
 ---
 title: MetricHook.ts
-nav_order: 58
+nav_order: 201
 parent: Modules
 ---
 
@@ -128,7 +128,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricHookTypeId: typeof MetricHookTypeId
+export declare const MetricHookTypeId: typeof MetricHook.MetricHookTypeId
 ```
 
 Added in v2.0.0
@@ -169,7 +169,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Counter<A extends number | bigint> = MetricHook<A, MetricState.MetricState.Counter<A>>
+export type Counter<A extends number | bigint> = MetricHook<A, MetricState.Counter<A>>
 ```
 
 Added in v2.0.0
@@ -179,7 +179,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Frequency = MetricHook<string, MetricState.MetricState.Frequency>
+export type Frequency = MetricHook<string, MetricState.Frequency>
 ```
 
 Added in v2.0.0
@@ -189,7 +189,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Gauge<A extends number | bigint> = MetricHook<A, MetricState.MetricState.Gauge<A>>
+export type Gauge<A extends number | bigint> = MetricHook<A, MetricState.Gauge<A>>
 ```
 
 Added in v2.0.0
@@ -199,7 +199,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Histogram = MetricHook<number, MetricState.MetricState.Histogram>
+export type Histogram = MetricHook<number, MetricState.Histogram>
 ```
 
 Added in v2.0.0
@@ -209,7 +209,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Root = MetricHook<any, MetricState.MetricState.Untyped>
+export type Root = MetricHook<any, MetricState.Untyped>
 ```
 
 Added in v2.0.0
@@ -219,7 +219,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Summary = MetricHook<readonly [number, number], MetricState.MetricState.Summary>
+export type Summary = MetricHook<readonly [number, number], MetricState.Summary>
 ```
 
 Added in v2.0.0

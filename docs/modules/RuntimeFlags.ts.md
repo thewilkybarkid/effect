@@ -1,6 +1,6 @@
 ---
 title: RuntimeFlags.ts
-nav_order: 92
+nav_order: 235
 parent: Modules
 ---
 
@@ -70,7 +70,7 @@ yield to another fiber.
 **Signature**
 
 ```ts
-export declare const CooperativeYielding: RuntimeFlag
+export declare const CooperativeYielding: RuntimeFlags.RuntimeFlag
 ```
 
 Added in v2.0.0
@@ -83,7 +83,7 @@ interrupt a fiber.
 **Signature**
 
 ```ts
-export declare const Interruption: RuntimeFlag
+export declare const Interruption: RuntimeFlags.RuntimeFlag
 ```
 
 Added in v2.0.0
@@ -95,7 +95,7 @@ No runtime flags.
 **Signature**
 
 ```ts
-export declare const None: RuntimeFlag
+export declare const None: RuntimeFlags.RuntimeFlag
 ```
 
 Added in v2.0.0
@@ -110,7 +110,7 @@ profiling.
 **Signature**
 
 ```ts
-export declare const OpSupervision: RuntimeFlag
+export declare const OpSupervision: RuntimeFlags.RuntimeFlag
 ```
 
 Added in v2.0.0
@@ -126,7 +126,7 @@ Prometheus or other tools via Effect Metrics.
 **Signature**
 
 ```ts
-export declare const RuntimeMetrics: RuntimeFlag
+export declare const RuntimeMetrics: RuntimeFlags.RuntimeFlag
 ```
 
 Added in v2.0.0
@@ -141,7 +141,7 @@ execution uninterrupted.
 **Signature**
 
 ```ts
-export declare const WindDown: RuntimeFlag
+export declare const WindDown: RuntimeFlags.RuntimeFlag
 ```
 
 Added in v2.0.0

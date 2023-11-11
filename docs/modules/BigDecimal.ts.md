@@ -590,7 +590,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface BigDecimal extends Equal.Equal, Pipeable, Inspectable {
+export interface BigDecimal extends Equal, Pipeable, Inspectable {
   readonly [TypeId]: TypeId
   readonly value: bigint
   readonly scale: number
@@ -892,7 +892,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TypeId: typeof TypeId
+export declare const TypeId: typeof BigDecimal.TypeId
 ```
 
 Added in v2.0.0

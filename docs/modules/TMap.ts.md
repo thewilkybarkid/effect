@@ -1,6 +1,6 @@
 ---
 title: TMap.ts
-nav_order: 129
+nav_order: 272
 parent: Modules
 ---
 
@@ -684,7 +684,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TMapTypeId: typeof TMapTypeId
+export declare const TMapTypeId: typeof TMap.TMapTypeId
 ```
 
 Added in v2.0.0

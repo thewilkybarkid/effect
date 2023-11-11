@@ -1,6 +1,6 @@
 ---
 title: Logger.ts
-nav_order: 49
+nav_order: 192
 parent: Modules
 ---
 
@@ -370,7 +370,16 @@ Added in v2.0.0
 
 ```ts
 export interface Logger<Message, Output> extends Logger.Variance<Message, Output>, Pipeable {
-  readonly log: (options: Logger.Options<Message>) => Output
+  readonly log: (options: {
+    readonly fiberId: FiberId
+    readonly logLevel: LogLevel
+    readonly message: Message
+    readonly cause: Cause<unknown>
+    readonly context: FiberRefs
+    readonly spans: List<LogSpan>
+    readonly annotations: HashMap<string, unknown>
+    readonly date: Date
+  }) => Output
 }
 ```
 
@@ -383,7 +392,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const LoggerTypeId: typeof LoggerTypeId
+export declare const LoggerTypeId: typeof Logger.LoggerTypeId
 ```
 
 Added in v2.0.0
@@ -410,13 +419,13 @@ Added in v2.0.0
 
 ```ts
 export interface Options<Message> {
-  readonly fiberId: FiberId.FiberId
-  readonly logLevel: LogLevel.LogLevel
+  readonly fiberId: FiberId
+  readonly logLevel: LogLevel
   readonly message: Message
-  readonly cause: Cause.Cause<unknown>
-  readonly context: FiberRefs.FiberRefs
-  readonly spans: List.List<LogSpan.LogSpan>
-  readonly annotations: HashMap.HashMap<string, unknown>
+  readonly cause: Cause<unknown>
+  readonly context: FiberRefs
+  readonly spans: List<LogSpan>
+  readonly annotations: HashMap<string, unknown>
   readonly date: Date
 }
 ```

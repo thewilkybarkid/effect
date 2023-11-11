@@ -1,6 +1,6 @@
 ---
 title: TSemaphore.ts
-nav_order: 137
+nav_order: 280
 parent: Modules
 ---
 
@@ -178,7 +178,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TSemaphoreTypeId: typeof TSemaphoreTypeId
+export declare const TSemaphoreTypeId: typeof TSemaphore.TSemaphoreTypeId
 ```
 
 Added in v2.0.0

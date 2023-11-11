@@ -1,6 +1,6 @@
 ---
 title: Queue.ts
-nav_order: 80
+nav_order: 223
 parent: Modules
 ---
 
@@ -109,7 +109,10 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const make: <A>(queue: BackingQueue<A>, strategy: Strategy<A>) => Effect.Effect<never, never, Queue<A>>
+export declare const make: <A>(
+  queue: Queue.BackingQueue<A>,
+  strategy: Queue.Strategy<A>
+) => Effect.Effect<never, never, Queue<A>>
 ```
 
 Added in v2.0.0
@@ -154,7 +157,7 @@ Returns the number of elements the queue can hold.
 **Signature**
 
 ```ts
-export declare const capacity: <A>(self: Dequeue<A> | Enqueue<A>) => number
+export declare const capacity: <A>(self: Queue.Dequeue<A> | Queue.Enqueue<A>) => number
 ```
 
 Added in v2.0.0
@@ -166,7 +169,7 @@ Returns `true` if the `Queue` contains zero elements, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isEmpty: <A>(self: Dequeue<A> | Enqueue<A>) => Effect.Effect<never, never, boolean>
+export declare const isEmpty: <A>(self: Queue.Dequeue<A> | Queue.Enqueue<A>) => Effect.Effect<never, never, boolean>
 ```
 
 Added in v2.0.0
@@ -179,7 +182,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isFull: <A>(self: Dequeue<A> | Enqueue<A>) => Effect.Effect<never, never, boolean>
+export declare const isFull: <A>(self: Queue.Dequeue<A> | Queue.Enqueue<A>) => Effect.Effect<never, never, boolean>
 ```
 
 Added in v2.0.0
@@ -191,7 +194,7 @@ Returns `true` if `shutdown` has been called, otherwise returns `false`.
 **Signature**
 
 ```ts
-export declare const isShutdown: <A>(self: Dequeue<A> | Enqueue<A>) => Effect.Effect<never, never, boolean>
+export declare const isShutdown: <A>(self: Queue.Dequeue<A> | Queue.Enqueue<A>) => Effect.Effect<never, never, boolean>
 ```
 
 Added in v2.0.0
@@ -205,7 +208,7 @@ elements to be added to the queue.
 **Signature**
 
 ```ts
-export declare const size: <A>(self: Dequeue<A> | Enqueue<A>) => Effect.Effect<never, never, number>
+export declare const size: <A>(self: Queue.Dequeue<A> | Queue.Enqueue<A>) => Effect.Effect<never, never, number>
 ```
 
 Added in v2.0.0
@@ -400,11 +403,11 @@ export interface Queue<A> extends Enqueue<A>, Dequeue<A>, Pipeable {
   /** @internal */
   readonly queue: BackingQueue<A>
   /** @internal */
-  readonly takers: MutableQueue.MutableQueue<Deferred.Deferred<never, A>>
+  readonly takers: MutableQueue<Deferred<never, A>>
   /** @internal */
-  readonly shutdownHook: Deferred.Deferred<never, void>
+  readonly shutdownHook: Deferred<never, void>
   /** @internal */
-  readonly shutdownFlag: MutableRef.MutableRef<boolean>
+  readonly shutdownFlag: MutableRef<boolean>
   /** @internal */
   readonly strategy: Strategy<A>
 }
@@ -467,7 +470,7 @@ Returns `true` if the specified value is a `Dequeue`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isDequeue: (u: unknown) => u is Dequeue<unknown>
+export declare const isDequeue: (u: unknown) => u is Queue.Dequeue<unknown>
 ```
 
 Added in v2.0.0
@@ -479,7 +482,7 @@ Returns `true` if the specified value is a `Enqueue`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isEnqueue: (u: unknown) => u is Enqueue<unknown>
+export declare const isEnqueue: (u: unknown) => u is Queue.Enqueue<unknown>
 ```
 
 Added in v2.0.0
@@ -503,7 +506,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const backPressureStrategy: <A>() => Strategy<A>
+export declare const backPressureStrategy: <A>() => Queue.Strategy<A>
 ```
 
 Added in v2.0.0
@@ -513,7 +516,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const droppingStrategy: <A>() => Strategy<A>
+export declare const droppingStrategy: <A>() => Queue.Strategy<A>
 ```
 
 Added in v2.0.0
@@ -523,7 +526,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const slidingStrategy: <A>() => Strategy<A>
+export declare const slidingStrategy: <A>() => Queue.Strategy<A>
 ```
 
 Added in v2.0.0
@@ -535,7 +538,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const DequeueTypeId: typeof DequeueTypeId
+export declare const DequeueTypeId: typeof Queue.DequeueTypeId
 ```
 
 Added in v2.0.0
@@ -555,7 +558,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const EnqueueTypeId: typeof EnqueueTypeId
+export declare const EnqueueTypeId: typeof Queue.EnqueueTypeId
 ```
 
 Added in v2.0.0
@@ -575,7 +578,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const QueueStrategyTypeId: typeof QueueStrategyTypeId
+export declare const QueueStrategyTypeId: typeof Queue.QueueStrategyTypeId
 ```
 
 Added in v2.0.0
@@ -647,7 +650,7 @@ shutdown, the `Effect` will resume right away.
 **Signature**
 
 ```ts
-export declare const awaitShutdown: <A>(self: Dequeue<A> | Enqueue<A>) => Effect.Effect<never, never, void>
+export declare const awaitShutdown: <A>(self: Queue.Dequeue<A> | Queue.Enqueue<A>) => Effect.Effect<never, never, void>
 ```
 
 Added in v2.0.0
@@ -660,8 +663,8 @@ Places one value in the queue.
 
 ```ts
 export declare const offer: {
-  <A>(value: A): (self: Enqueue<A>) => Effect.Effect<never, never, boolean>
-  <A>(self: Enqueue<A>, value: A): Effect.Effect<never, never, boolean>
+  <A>(value: A): (self: Queue.Enqueue<A>) => Effect.Effect<never, never, boolean>
+  <A>(self: Queue.Enqueue<A>, value: A): Effect.Effect<never, never, boolean>
 }
 ```
 
@@ -687,8 +690,8 @@ queue but if there is no room it will not enqueue them and return false.
 
 ```ts
 export declare const offerAll: {
-  <A>(iterable: Iterable<A>): (self: Enqueue<A>) => Effect.Effect<never, never, boolean>
-  <A>(self: Enqueue<A>, iterable: Iterable<A>): Effect.Effect<never, never, boolean>
+  <A>(iterable: Iterable<A>): (self: Queue.Enqueue<A>) => Effect.Effect<never, never, boolean>
+  <A>(self: Queue.Enqueue<A>, iterable: Iterable<A>): Effect.Effect<never, never, boolean>
 }
 ```
 
@@ -702,7 +705,7 @@ is empty.
 **Signature**
 
 ```ts
-export declare const poll: <A>(self: Dequeue<A>) => Effect.Effect<never, never, Option.Option<A>>
+export declare const poll: <A>(self: Queue.Dequeue<A>) => Effect.Effect<never, never, Option.Option<A>>
 ```
 
 Added in v2.0.0
@@ -715,7 +718,7 @@ to `offer*` and `take*` will be interrupted immediately.
 **Signature**
 
 ```ts
-export declare const shutdown: <A>(self: Dequeue<A> | Enqueue<A>) => Effect.Effect<never, never, void>
+export declare const shutdown: <A>(self: Queue.Dequeue<A> | Queue.Enqueue<A>) => Effect.Effect<never, never, void>
 ```
 
 Added in v2.0.0
@@ -728,7 +731,7 @@ a computation that resumes when an item has been added to the queue.
 **Signature**
 
 ```ts
-export declare const take: <A>(self: Dequeue<A>) => Effect.Effect<never, never, A>
+export declare const take: <A>(self: Queue.Dequeue<A>) => Effect.Effect<never, never, A>
 ```
 
 Added in v2.0.0
@@ -741,7 +744,7 @@ empty returns an empty collection.
 **Signature**
 
 ```ts
-export declare const takeAll: <A>(self: Dequeue<A>) => Effect.Effect<never, never, Chunk.Chunk<A>>
+export declare const takeAll: <A>(self: Queue.Dequeue<A>) => Effect.Effect<never, never, Chunk.Chunk<A>>
 ```
 
 Added in v2.0.0
@@ -756,8 +759,8 @@ suspends until at least the minimum number of elements have been collected.
 
 ```ts
 export declare const takeBetween: {
-  (min: number, max: number): <A>(self: Dequeue<A>) => Effect.Effect<never, never, Chunk.Chunk<A>>
-  <A>(self: Dequeue<A>, min: number, max: number): Effect.Effect<never, never, Chunk.Chunk<A>>
+  (min: number, max: number): <A>(self: Queue.Dequeue<A>) => Effect.Effect<never, never, Chunk.Chunk<A>>
+  <A>(self: Queue.Dequeue<A>, min: number, max: number): Effect.Effect<never, never, Chunk.Chunk<A>>
 }
 ```
 
@@ -773,8 +776,8 @@ become available.
 
 ```ts
 export declare const takeN: {
-  (n: number): <A>(self: Dequeue<A>) => Effect.Effect<never, never, Chunk.Chunk<A>>
-  <A>(self: Dequeue<A>, n: number): Effect.Effect<never, never, Chunk.Chunk<A>>
+  (n: number): <A>(self: Queue.Dequeue<A>) => Effect.Effect<never, never, Chunk.Chunk<A>>
+  <A>(self: Queue.Dequeue<A>, n: number): Effect.Effect<never, never, Chunk.Chunk<A>>
 }
 ```
 
@@ -788,8 +791,8 @@ Takes up to max number of values from the queue.
 
 ```ts
 export declare const takeUpTo: {
-  (max: number): <A>(self: Dequeue<A>) => Effect.Effect<never, never, Chunk.Chunk<A>>
-  <A>(self: Dequeue<A>, max: number): Effect.Effect<never, never, Chunk.Chunk<A>>
+  (max: number): <A>(self: Queue.Dequeue<A>) => Effect.Effect<never, never, Chunk.Chunk<A>>
+  <A>(self: Queue.Dequeue<A>, max: number): Effect.Effect<never, never, Chunk.Chunk<A>>
 }
 ```
 
@@ -803,8 +806,8 @@ Places one value in the queue.
 
 ```ts
 export declare const unsafeOffer: {
-  <A>(value: A): (self: Enqueue<A>) => boolean
-  <A>(self: Enqueue<A>, value: A): boolean
+  <A>(value: A): (self: Queue.Enqueue<A>) => boolean
+  <A>(self: Queue.Enqueue<A>, value: A): boolean
 }
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: TReentrantLock.ts
-nav_order: 135
+nav_order: 278
 parent: Modules
 ---
 
@@ -315,7 +315,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TReentrantLockTypeId: typeof TReentrantLockTypeId
+export declare const TReentrantLockTypeId: typeof TReentrantLock.TReentrantLockTypeId
 ```
 
 Added in v2.0.0

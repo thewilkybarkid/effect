@@ -1,6 +1,6 @@
 ---
 title: Option.ts
-nav_order: 73
+nav_order: 216
 parent: Modules
 ---
 
@@ -818,7 +818,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const gen: Gen.Gen<OptionTypeLambda, Gen.Adapter<OptionTypeLambda>>
+export declare const gen: Gen.Gen<Option.OptionTypeLambda, Gen.Adapter<Option.OptionTypeLambda>>
 ```
 
 Added in v2.0.0
@@ -913,7 +913,7 @@ Determine if a `Option` is a `None`.
 **Signature**
 
 ```ts
-export declare const isNone: <A>(self: Option<A>) => self is None<A>
+export declare const isNone: <A>(self: Option<A>) => self is Option.None<A>
 ```
 
 **Example**
@@ -956,7 +956,7 @@ Determine if a `Option` is a `Some`.
 **Signature**
 
 ```ts
-export declare const isSome: <A>(self: Option<A>) => self is Some<A>
+export declare const isSome: <A>(self: Option<A>) => self is Option.Some<A>
 ```
 
 **Example**
@@ -995,7 +995,7 @@ if the predicate returns `false`.
 
 ```ts
 export declare const liftPredicate: {
-  <C extends A, B extends A, A = C>(refinement: Refinement<A, B>): (c: C) => Option<B>
+  <C extends A, B extends A, A = C>(refinement: Predicate.Refinement<A, B>): (c: C) => Option<B>
   <B extends A, A = B>(predicate: Predicate<A>): (b: B) => Option<B>
 }
 ```
@@ -1161,7 +1161,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TypeId: typeof TypeId
+export declare const TypeId: typeof Option.TypeId
 ```
 
 Added in v2.0.0

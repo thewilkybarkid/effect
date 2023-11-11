@@ -1,6 +1,6 @@
 ---
 title: MetricLabel.ts
-nav_order: 61
+nav_order: 204
 parent: Modules
 ---
 
@@ -50,7 +50,7 @@ clients.
 **Signature**
 
 ```ts
-export interface MetricLabel extends Equal.Equal, Pipeable {
+export interface MetricLabel extends Equal, Pipeable {
   readonly [MetricLabelTypeId]: MetricLabelTypeId
   readonly key: string
   readonly value: string
@@ -78,7 +78,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricLabelTypeId: typeof MetricLabelTypeId
+export declare const MetricLabelTypeId: typeof MetricLabel.MetricLabelTypeId
 ```
 
 Added in v2.0.0

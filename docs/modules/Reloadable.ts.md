@@ -1,6 +1,6 @@
 ---
 title: Reloadable.ts
-nav_order: 86
+nav_order: 229
 parent: Modules
 ---
 
@@ -163,11 +163,11 @@ export interface Reloadable<A> extends Reloadable.Variance<A> {
   /**
    * @internal
    */
-  readonly scopedRef: ScopedRef.ScopedRef<A>
+  readonly scopedRef: ScopedRef<A>
   /**
    * @internal
    */
-  reload(): Effect.Effect<never, unknown, void>
+  reload(): Effect<never, unknown, void>
 }
 ```
 
@@ -180,7 +180,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ReloadableTypeId: typeof ReloadableTypeId
+export declare const ReloadableTypeId: typeof Reloadable.ReloadableTypeId
 ```
 
 Added in v2.0.0

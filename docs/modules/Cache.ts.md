@@ -45,7 +45,7 @@ lookup function.
 export declare const make: <Key, Environment, Error, Value>(options: {
   readonly capacity: number
   readonly timeToLive: Duration.DurationInput
-  readonly lookup: Lookup<Key, Environment, Error, Value>
+  readonly lookup: Cache.Lookup<Key, Environment, Error, Value>
 }) => Effect.Effect<Environment, never, Cache<Key, Error, Value>>
 ```
 
@@ -90,7 +90,7 @@ returned by the lookup function.
 ```ts
 export declare const makeWith: <Key, Environment, Error, Value>(options: {
   readonly capacity: number
-  readonly lookup: Lookup<Key, Environment, Error, Value>
+  readonly lookup: Cache.Lookup<Key, Environment, Error, Value>
   readonly timeToLive: (exit: Exit.Exit<Error, Value>) => Duration.DurationInput
 }) => Effect.Effect<Environment, never, Cache<Key, Error, Value>>
 ```
@@ -127,14 +127,14 @@ export interface Cache<Key, Error, Value> extends ConsumerCache<Key, Error, Valu
    * Otherwise computes the value with the lookup function, puts it in the
    * cache, and returns it.
    */
-  get(key: Key): Effect.Effect<never, Error, Value>
+  get(key: Key): Effect<never, Error, Value>
 
   /**
    * Retrieves the value associated with the specified key if it exists as a left.
    * Otherwise computes the value with the lookup function, puts it in the
    * cache, and returns it as a right.
    */
-  getEither(key: Key): Effect.Effect<never, Error, Either<Value, Value>>
+  getEither(key: Key): Effect<never, Error, Either<Value, Value>>
 
   /**
    * Computes the value associated with the specified key, with the lookup
@@ -145,12 +145,12 @@ export interface Cache<Key, Error, Value> extends ConsumerCache<Key, Error, Valu
    * by the lookup function. Additionally, `refresh` always triggers the
    * lookup function, disregarding the last `Error`.
    */
-  refresh(key: Key): Effect.Effect<never, Error, void>
+  refresh(key: Key): Effect<never, Error, void>
 
   /**
    * Associates the specified value with the specified key in the cache.
    */
-  set<Key, Error, Value>(this: Cache<Key, Error, Value>, key: Key, value: Value): Effect.Effect<never, never, void>
+  set<Key, Error, Value>(this: Cache<Key, Error, Value>, key: Key, value: Value): Effect<never, never, void>
 }
 ```
 
@@ -285,7 +285,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const CacheTypeId: typeof CacheTypeId
+export declare const CacheTypeId: typeof Cache.CacheTypeId
 ```
 
 Added in v2.0.0

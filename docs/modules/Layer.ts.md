@@ -1,6 +1,6 @@
 ---
 title: Layer.ts
-nav_order: 47
+nav_order: 190
 parent: Modules
 ---
 
@@ -916,7 +916,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const LayerTypeId: typeof LayerTypeId
+export declare const LayerTypeId: typeof Layer.LayerTypeId
 ```
 
 Added in v2.0.0

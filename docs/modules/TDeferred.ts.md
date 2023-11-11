@@ -1,6 +1,6 @@
 ---
 title: TDeferred.ts
-nav_order: 119
+nav_order: 262
 parent: Modules
 ---
 
@@ -126,7 +126,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TDeferredTypeId: typeof TDeferredTypeId
+export declare const TDeferredTypeId: typeof TDeferred.TDeferredTypeId
 ```
 
 Added in v2.0.0

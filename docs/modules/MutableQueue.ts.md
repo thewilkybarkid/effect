@@ -1,6 +1,6 @@
 ---
 title: MutableQueue.ts
-nav_order: 69
+nav_order: 212
 parent: Modules
 ---
 
@@ -24,6 +24,7 @@ Added in v2.0.0
   - [MutableQueue (interface)](#mutablequeue-interface)
 - [symbol](#symbol)
   - [EmptyMutableQueue](#emptymutablequeue)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 - [utils](#utils)
   - [MutableQueue (namespace)](#mutablequeue-namespace)
@@ -125,7 +126,7 @@ export interface MutableQueue<A> extends Iterable<A>, Pipeable, Inspectable {
   readonly [TypeId]: TypeId
 
   /** @internal */
-  queue: MutableList.MutableList<A>
+  queue: MutableList<A>
   /** @internal */
   capacity: number | undefined
 }
@@ -140,7 +141,17 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const EmptyMutableQueue: typeof EmptyMutableQueue
+export declare const EmptyMutableQueue: typeof MutableQueue.EmptyMutableQueue
+```
+
+Added in v2.0.0
+
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof MutableQueue.TypeId
 ```
 
 Added in v2.0.0

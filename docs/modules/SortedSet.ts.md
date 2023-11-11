@@ -1,6 +1,6 @@
 ---
 title: SortedSet.ts
-nav_order: 105
+nav_order: 248
 parent: Modules
 ---
 
@@ -39,6 +39,7 @@ Added in v2.0.0
 - [sequencing](#sequencing)
   - [flatMap](#flatmap)
 - [symbol](#symbol)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 - [traversing](#traversing)
   - [forEach](#foreach)
@@ -109,9 +110,9 @@ Check if a predicate holds true for every `SortedSet` element.
 
 ```ts
 export declare const every: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: SortedSet<A>) => self is SortedSet<B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: SortedSet<A>) => self is SortedSet<B>
   <A>(predicate: Predicate<A>): (self: SortedSet<A>) => boolean
-  <A, B extends A>(self: SortedSet<A>, refinement: Refinement<A, B>): self is SortedSet<B>
+  <A, B extends A>(self: SortedSet<A>, refinement: Predicate.Refinement<A, B>): self is SortedSet<B>
   <A>(self: SortedSet<A>, predicate: Predicate<A>): boolean
 }
 ```
@@ -190,9 +191,9 @@ Added in v2.0.0
 
 ```ts
 export declare const filter: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: SortedSet<A>) => SortedSet<B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: SortedSet<A>) => SortedSet<B>
   <A>(predicate: Predicate<A>): (self: SortedSet<A>) => SortedSet<A>
-  <A, B extends A>(self: SortedSet<A>, refinement: Refinement<A, B>): SortedSet<B>
+  <A, B extends A>(self: SortedSet<A>, refinement: Predicate.Refinement<A, B>): SortedSet<B>
   <A>(self: SortedSet<A>, predicate: Predicate<A>): SortedSet<A>
 }
 ```
@@ -206,12 +207,12 @@ Added in v2.0.0
 ```ts
 export declare const partition: {
   <C extends A, B extends A, A = C>(
-    refinement: Refinement<A, B>
+    refinement: Predicate.Refinement<A, B>
   ): (self: SortedSet<C>) => [SortedSet<Exclude<C, B>>, SortedSet<B>]
   <B extends A, A = B>(predicate: (a: A) => boolean): (self: SortedSet<B>) => [SortedSet<B>, SortedSet<B>]
   <C extends A, B extends A, A = C>(
     self: SortedSet<C>,
-    refinement: Refinement<A, B>
+    refinement: Predicate.Refinement<A, B>
   ): [SortedSet<Exclude<C, B>>, SortedSet<B>]
   <B extends A, A = B>(self: SortedSet<B>, predicate: (a: A) => boolean): [SortedSet<B>, SortedSet<B>]
 }
@@ -263,12 +264,12 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface SortedSet<A> extends Iterable<A>, Equal.Equal, Pipeable, Inspectable {
+export interface SortedSet<A> extends Iterable<A>, Equal, Pipeable, Inspectable {
   readonly [TypeId]: {
     readonly _A: (_: never) => A
   }
   /** @internal */
-  readonly keyTree: RBT.RedBlackTree<A, boolean>
+  readonly keyTree: RBT<A, boolean>
 }
 ```
 
@@ -302,6 +303,16 @@ export declare const flatMap: {
 Added in v2.0.0
 
 # symbol
+
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof SortedSet.TypeId
+```
+
+Added in v2.0.0
 
 ## TypeId (type alias)
 

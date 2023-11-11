@@ -1,6 +1,6 @@
 ---
 title: TestAnnotationMap.ts
-nav_order: 121
+nav_order: 264
 parent: Modules
 ---
 
@@ -39,7 +39,7 @@ An annotation map keeps track of annotations of different types.
 export interface TestAnnotationMap {
   readonly [TestAnnotationMapTypeId]: TestAnnotationMapTypeId
   /** @internal */
-  readonly map: ReadonlyMap<TestAnnotation.TestAnnotation<unknown>, unknown>
+  readonly map: ReadonlyMap<TestAnnotation<unknown>, unknown>
 }
 ```
 
@@ -50,7 +50,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TestAnnotationMapTypeId: typeof TestAnnotationMapTypeId
+export declare const TestAnnotationMapTypeId: typeof TestAnnotationMap.TestAnnotationMapTypeId
 ```
 
 Added in v2.0.0

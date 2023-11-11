@@ -1,6 +1,6 @@
 ---
 title: STM.ts
-nav_order: 106
+nav_order: 249
 parent: Modules
 ---
 
@@ -209,7 +209,7 @@ struct.
 **Signature**
 
 ```ts
-export declare const all: All.Signature
+export declare const all: STM.All.Signature
 ```
 
 Added in v2.0.0
@@ -458,11 +458,11 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const gen: <Eff extends STMGen<any, any, any>, AEff>(
+export declare const gen: <Eff extends STM.STMGen<any, any, any>, AEff>(
   f: (resume: Adapter) => Generator<Eff, AEff, any>
 ) => STM<
-  [Eff] extends [never] ? never : [Eff] extends [STMGen<infer R, any, any>] ? R : never,
-  [Eff] extends [never] ? never : [Eff] extends [STMGen<any, infer E, any>] ? E : never,
+  [Eff] extends [never] ? never : [Eff] extends [STM.STMGen<infer R, any, any>] ? R : never,
+  [Eff] extends [never] ? never : [Eff] extends [STM.STMGen<any, infer E, any>] ? E : never,
   AEff
 >
 ```
@@ -1233,9 +1233,16 @@ Dies with specified defect if the predicate fails.
 
 ```ts
 export declare const filterOrDie: {
-  <A, B extends A>(refinement: Refinement<A, B>, defect: LazyArg<unknown>): <R, E>(self: STM<R, E, A>) => STM<R, E, B>
+  <A, B extends A>(
+    refinement: Predicate.Refinement<A, B>,
+    defect: LazyArg<unknown>
+  ): <R, E>(self: STM<R, E, A>) => STM<R, E, B>
   <A, X extends A>(predicate: Predicate<X>, defect: LazyArg<unknown>): <R, E>(self: STM<R, E, A>) => STM<R, E, A>
-  <R, E, A, B extends A>(self: STM<R, E, A>, refinement: Refinement<A, B>, defect: LazyArg<unknown>): STM<R, E, B>
+  <R, E, A, B extends A>(
+    self: STM<R, E, A>,
+    refinement: Predicate.Refinement<A, B>,
+    defect: LazyArg<unknown>
+  ): STM<R, E, B>
   <R, E, A, X extends A>(self: STM<R, E, A>, predicate: Predicate<X>, defect: LazyArg<unknown>): STM<R, E, A>
 }
 ```
@@ -1251,9 +1258,9 @@ predicate fails.
 
 ```ts
 export declare const filterOrDieMessage: {
-  <A, B extends A>(refinement: Refinement<A, B>, message: string): <R, E>(self: STM<R, E, A>) => STM<R, E, B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>, message: string): <R, E>(self: STM<R, E, A>) => STM<R, E, B>
   <A, X extends A>(predicate: Predicate<X>, message: string): <R, E>(self: STM<R, E, A>) => STM<R, E, A>
-  <R, E, A, B extends A>(self: STM<R, E, A>, refinement: Refinement<A, B>, message: string): STM<R, E, B>
+  <R, E, A, B extends A>(self: STM<R, E, A>, refinement: Predicate.Refinement<A, B>, message: string): STM<R, E, B>
   <R, E, A, X extends A>(self: STM<R, E, A>, predicate: Predicate<X>, message: string): STM<R, E, A>
 }
 ```
@@ -1269,7 +1276,7 @@ Supplies `orElse` if the predicate fails.
 ```ts
 export declare const filterOrElse: {
   <A, B extends A, X extends A, R2, E2, A2>(
-    refinement: Refinement<A, B>,
+    refinement: Predicate.Refinement<A, B>,
     orElse: (a: X) => STM<R2, E2, A2>
   ): <R, E>(self: STM<R, E, A>) => STM<R2 | R, E2 | E, B | A2>
   <A, X extends A, Y extends A, R2, E2, A2>(
@@ -1278,7 +1285,7 @@ export declare const filterOrElse: {
   ): <R, E>(self: STM<R, E, A>) => STM<R2 | R, E2 | E, A | A2>
   <R, E, A, B extends A, X extends A, R2, E2, A2>(
     self: STM<R, E, A>,
-    refinement: Refinement<A, B>,
+    refinement: Predicate.Refinement<A, B>,
     orElse: (a: X) => STM<R2, E2, A2>
   ): STM<R | R2, E | E2, B | A2>
   <R, E, A, X extends A, Y extends A, R2, E2, A2>(
@@ -1300,7 +1307,7 @@ Fails with the specified error if the predicate fails.
 ```ts
 export declare const filterOrFail: {
   <A, B extends A, X extends A, E2>(
-    refinement: Refinement<A, B>,
+    refinement: Predicate.Refinement<A, B>,
     orFailWith: (a: X) => E2
   ): <R, E>(self: STM<R, E, A>) => STM<R, E2 | E, B>
   <A, X extends A, Y extends A, E2>(
@@ -1309,7 +1316,7 @@ export declare const filterOrFail: {
   ): <R, E>(self: STM<R, E, A>) => STM<R, E2 | E, A>
   <R, E, A, B extends A, X extends A, E2>(
     self: STM<R, E, A>,
-    refinement: Refinement<A, B>,
+    refinement: Predicate.Refinement<A, B>,
     orFailWith: (a: X) => E2
   ): STM<R, E | E2, B>
   <R, E, A, X extends A, Y extends A, E2>(
@@ -1883,7 +1890,7 @@ synchronization of Fibers and transactional data-types can be quite useful.
 **Signature**
 
 ```ts
-export interface STM<R, E, A> extends Effect.Effect<R, E, A>, STM.Variance<R, E, A>, Pipeable {
+export interface STM<R, E, A> extends Effect<R, E, A>, STM.Variance<R, E, A>, Pipeable {
   [Unify.typeSymbol]?: unknown
   [Unify.unifySymbol]?: STMUnify<this>
   [Unify.ignoreSymbol]?: STMUnifyIgnore
@@ -2460,7 +2467,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const STMTypeId: typeof STMTypeId
+export declare const STMTypeId: typeof STM.STMTypeId
 ```
 
 Added in v2.0.0

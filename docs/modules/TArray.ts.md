@@ -1,6 +1,6 @@
 ---
 title: TArray.ts
-nav_order: 118
+nav_order: 261
 parent: Modules
 ---
 
@@ -696,7 +696,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TArrayTypeId: typeof TArrayTypeId
+export declare const TArrayTypeId: typeof TArray.TArrayTypeId
 ```
 
 Added in v2.0.0

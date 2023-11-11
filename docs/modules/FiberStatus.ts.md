@@ -127,7 +127,7 @@ Returns `true` if the specified `FiberStatus` is `Done`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isDone: (self: FiberStatus) => self is Done
+export declare const isDone: (self: FiberStatus) => self is FiberStatus.Done
 ```
 
 Added in v2.0.0
@@ -152,7 +152,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isRunning: (self: FiberStatus) => self is Running
+export declare const isRunning: (self: FiberStatus) => self is FiberStatus.Running
 ```
 
 Added in v2.0.0
@@ -165,7 +165,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isSuspended: (self: FiberStatus) => self is Suspended
+export declare const isSuspended: (self: FiberStatus) => self is FiberStatus.Suspended
 ```
 
 Added in v2.0.0
@@ -177,7 +177,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FiberStatusTypeId: typeof FiberStatusTypeId
+export declare const FiberStatusTypeId: typeof FiberStatus.FiberStatusTypeId
 ```
 
 Added in v2.0.0

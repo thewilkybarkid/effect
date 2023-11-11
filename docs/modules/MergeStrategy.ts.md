@@ -1,6 +1,6 @@
 ---
 title: MergeStrategy.ts
-nav_order: 55
+nav_order: 198
 parent: Modules
 ---
 
@@ -119,7 +119,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isBackPressure: (self: MergeStrategy) => self is BackPressure
+export declare const isBackPressure: (self: MergeStrategy) => self is MergeStrategy.BackPressure
 ```
 
 Added in v2.0.0
@@ -132,7 +132,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isBufferSliding: (self: MergeStrategy) => self is BufferSliding
+export declare const isBufferSliding: (self: MergeStrategy) => self is MergeStrategy.BufferSliding
 ```
 
 Added in v2.0.0
@@ -157,7 +157,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MergeStrategyTypeId: typeof MergeStrategyTypeId
+export declare const MergeStrategyTypeId: typeof MergeStrategy.MergeStrategyTypeId
 ```
 
 Added in v2.0.0

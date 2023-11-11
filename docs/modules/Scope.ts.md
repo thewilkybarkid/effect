@@ -1,6 +1,6 @@
 ---
 title: Scope.ts
-nav_order: 99
+nav_order: 242
 parent: Modules
 ---
 
@@ -15,7 +15,7 @@ Added in v2.0.0
 - [constructors](#constructors)
   - [make](#make)
 - [context](#context)
-  - [Scope](#scope)
+  - [Tag](#tag)
 - [destructors](#destructors)
   - [close](#close)
   - [use](#use)
@@ -58,12 +58,12 @@ Added in v2.0.0
 
 # context
 
-## Scope
+## Tag
 
 **Signature**
 
 ```ts
-export declare const Scope: Context.Tag<Scope, Scope>
+export declare const Tag: Context.Tag<Scope, Scope>
 ```
 
 Added in v2.0.0
@@ -130,15 +130,15 @@ Added in v2.0.0
 ```ts
 export interface Scope extends Pipeable {
   readonly [ScopeTypeId]: ScopeTypeId
-  readonly strategy: ExecutionStrategy.ExecutionStrategy
+  readonly strategy: ExecutionStrategy
   /**
    * @internal
    */
-  readonly fork: (strategy: ExecutionStrategy.ExecutionStrategy) => Effect.Effect<never, never, Scope.Closeable>
+  readonly fork: (strategy: ExecutionStrategy) => Effect<never, never, Scope.Closeable>
   /**
    * @internal
    */
-  readonly addFinalizer: (finalizer: Scope.Finalizer) => Effect.Effect<never, never, void>
+  readonly addFinalizer: (finalizer: Scope.Finalizer) => Effect<never, never, void>
 }
 ```
 
@@ -151,7 +151,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const CloseableScopeTypeId: typeof CloseableScopeTypeId
+export declare const CloseableScopeTypeId: typeof Scope.CloseableScopeTypeId
 ```
 
 Added in v2.0.0
@@ -171,7 +171,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ScopeTypeId: typeof ScopeTypeId
+export declare const ScopeTypeId: typeof Scope.ScopeTypeId
 ```
 
 Added in v2.0.0
@@ -207,7 +207,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Finalizer = (exit: Exit.Exit<unknown, unknown>) => Effect.Effect<never, never, void>
+export type Finalizer = (exit: Exit<unknown, unknown>) => Effect<never, never, void>
 ```
 
 Added in v2.0.0

@@ -1,6 +1,6 @@
 ---
 title: TPriorityQueue.ts
-nav_order: 130
+nav_order: 273
 parent: Modules
 ---
 
@@ -314,7 +314,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TPriorityQueueTypeId: typeof TPriorityQueueTypeId
+export declare const TPriorityQueueTypeId: typeof TPriorityQueue.TPriorityQueueTypeId
 ```
 
 Added in v2.0.0

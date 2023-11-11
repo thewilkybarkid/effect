@@ -1,6 +1,6 @@
 ---
 title: MetricKeyType.ts
-nav_order: 60
+nav_order: 203
 parent: Modules
 ---
 
@@ -118,7 +118,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface MetricKeyType<In, Out> extends MetricKeyType.Variance<In, Out>, Equal.Equal, Pipeable {}
+export interface MetricKeyType<In, Out> extends MetricKeyType.Variance<In, Out>, Equal, Pipeable {}
 ```
 
 Added in v2.0.0
@@ -192,7 +192,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const CounterKeyTypeTypeId: typeof CounterKeyTypeTypeId
+export declare const CounterKeyTypeTypeId: typeof MetricKeyType.CounterKeyTypeTypeId
 ```
 
 Added in v2.0.0
@@ -212,7 +212,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FrequencyKeyTypeTypeId: typeof FrequencyKeyTypeTypeId
+export declare const FrequencyKeyTypeTypeId: typeof MetricKeyType.FrequencyKeyTypeTypeId
 ```
 
 Added in v2.0.0
@@ -232,7 +232,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const GaugeKeyTypeTypeId: typeof GaugeKeyTypeTypeId
+export declare const GaugeKeyTypeTypeId: typeof MetricKeyType.GaugeKeyTypeTypeId
 ```
 
 Added in v2.0.0
@@ -252,7 +252,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const HistogramKeyTypeTypeId: typeof HistogramKeyTypeTypeId
+export declare const HistogramKeyTypeTypeId: typeof MetricKeyType.HistogramKeyTypeTypeId
 ```
 
 Added in v2.0.0
@@ -272,7 +272,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricKeyTypeTypeId: typeof MetricKeyTypeTypeId
+export declare const MetricKeyTypeTypeId: typeof MetricKeyType.MetricKeyTypeTypeId
 ```
 
 Added in v2.0.0
@@ -292,7 +292,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const SummaryKeyTypeTypeId: typeof SummaryKeyTypeTypeId
+export declare const SummaryKeyTypeTypeId: typeof MetricKeyType.SummaryKeyTypeTypeId
 ```
 
 Added in v2.0.0
@@ -333,7 +333,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Counter<A extends number | bigint> = MetricKeyType<A, MetricState.MetricState.Counter<A>> & {
+export type Counter<A extends number | bigint> = MetricKeyType<A, MetricState.Counter<A>> & {
   readonly [CounterKeyTypeTypeId]: CounterKeyTypeTypeId
   readonly incremental: boolean
   readonly bigint: boolean
@@ -347,7 +347,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Frequency = MetricKeyType<string, MetricState.MetricState.Frequency> & {
+export type Frequency = MetricKeyType<string, MetricState.Frequency> & {
   readonly [FrequencyKeyTypeTypeId]: FrequencyKeyTypeTypeId
 }
 ```
@@ -359,7 +359,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Gauge<A extends number | bigint> = MetricKeyType<A, MetricState.MetricState.Gauge<A>> & {
+export type Gauge<A extends number | bigint> = MetricKeyType<A, MetricState.Gauge<A>> & {
   readonly [GaugeKeyTypeTypeId]: GaugeKeyTypeTypeId
   readonly bigint: boolean
 }
@@ -372,9 +372,9 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Histogram = MetricKeyType<number, MetricState.MetricState.Histogram> & {
+export type Histogram = MetricKeyType<number, MetricState.Histogram> & {
   readonly [HistogramKeyTypeTypeId]: HistogramKeyTypeTypeId
-  readonly boundaries: MetricBoundaries.MetricBoundaries
+  readonly boundaries: MetricBoundaries
 }
 ```
 
@@ -421,12 +421,12 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type Summary = MetricKeyType<readonly [number, number], MetricState.MetricState.Summary> & {
+export type Summary = MetricKeyType<readonly [number, number], MetricState.Summary> & {
   readonly [SummaryKeyTypeTypeId]: SummaryKeyTypeTypeId
-  readonly maxAge: Duration.Duration
+  readonly maxAge: Duration
   readonly maxSize: number
   readonly error: number
-  readonly quantiles: Chunk.Chunk<number>
+  readonly quantiles: Chunk<number>
 }
 ```
 

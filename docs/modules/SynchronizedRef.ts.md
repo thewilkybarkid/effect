@@ -1,6 +1,6 @@
 ---
 title: SynchronizedRef.ts
-nav_order: 116
+nav_order: 259
 parent: Modules
 ---
 
@@ -79,8 +79,8 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface SynchronizedRef<A> extends SynchronizedRef.Variance<A>, Ref.Ref<A> {
-  modifyEffect: <R, E, B>(f: (a: A) => Effect.Effect<R, E, readonly [B, A]>) => Effect.Effect<R, E, B>
+export interface SynchronizedRef<A> extends SynchronizedRef.Variance<A>, Ref<A> {
+  modifyEffect<R, E, B>(f: (a: A) => Effect<R, E, readonly [B, A]>): Effect<R, E, B>
 }
 ```
 
@@ -93,7 +93,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const SynchronizedRefTypeId: typeof SynchronizedRefTypeId
+export declare const SynchronizedRefTypeId: typeof SynchronizedRef.SynchronizedRefTypeId
 ```
 
 Added in v2.0.0

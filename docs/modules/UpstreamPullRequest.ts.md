@@ -1,6 +1,6 @@
 ---
 title: UpstreamPullRequest.ts
-nav_order: 142
+nav_order: 285
 parent: Modules
 ---
 
@@ -127,7 +127,7 @@ Returns `true` if the specified `UpstreamPullRequest` is a `NoUpstream`,
 **Signature**
 
 ```ts
-export declare const isNoUpstream: <A>(self: UpstreamPullRequest<A>) => self is NoUpstream
+export declare const isNoUpstream: <A>(self: UpstreamPullRequest<A>) => self is UpstreamPullRequest.NoUpstream
 ```
 
 Added in v2.0.0
@@ -140,7 +140,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isPulled: <A>(self: UpstreamPullRequest<A>) => self is Pulled<A>
+export declare const isPulled: <A>(self: UpstreamPullRequest<A>) => self is UpstreamPullRequest.Pulled<A>
 ```
 
 Added in v2.0.0
@@ -165,7 +165,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const UpstreamPullRequestTypeId: typeof UpstreamPullRequestTypeId
+export declare const UpstreamPullRequestTypeId: typeof UpstreamPullRequest.UpstreamPullRequestTypeId
 ```
 
 Added in v2.0.0

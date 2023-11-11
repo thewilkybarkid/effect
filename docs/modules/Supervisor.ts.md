@@ -1,6 +1,6 @@
 ---
 title: Supervisor.ts
-nav_order: 114
+nav_order: 257
 parent: Modules
 ---
 
@@ -250,27 +250,27 @@ export interface Supervisor<T> extends Supervisor.Variance<T> {
    * supervisor. This value may change over time, reflecting what the supervisor
    * produces as it supervises fibers.
    */
-  value(): Effect.Effect<never, never, T>
+  value(): Effect<never, never, T>
 
   /**
    * Supervises the start of a `Fiber`.
    */
   onStart<R, E, A>(
-    context: Context.Context<R>,
-    effect: Effect.Effect<R, E, A>,
-    parent: Option.Option<Fiber.RuntimeFiber<any, any>>,
+    context: Context<R>,
+    effect: Effect<R, E, A>,
+    parent: Option<Fiber.RuntimeFiber<any, any>>,
     fiber: Fiber.RuntimeFiber<E, A>
   ): void
 
   /**
    * Supervises the end of a `Fiber`.
    */
-  onEnd<E, A>(value: Exit.Exit<E, A>, fiber: Fiber.RuntimeFiber<E, A>): void
+  onEnd<E, A>(value: Exit<E, A>, fiber: Fiber.RuntimeFiber<E, A>): void
 
   /**
    * Supervises the execution of an `Effect` by a `Fiber`.
    */
-  onEffect<E, A>(fiber: Fiber.RuntimeFiber<E, A>, effect: Effect.Effect<any, any, any>): void
+  onEffect<E, A>(fiber: Fiber.RuntimeFiber<E, A>, effect: Effect<any, any, any>): void
 
   /**
    * Supervises the suspension of a computation running within a `Fiber`.
@@ -306,7 +306,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const SupervisorTypeId: typeof SupervisorTypeId
+export declare const SupervisorTypeId: typeof Supervisor.SupervisorTypeId
 ```
 
 Added in v2.0.0

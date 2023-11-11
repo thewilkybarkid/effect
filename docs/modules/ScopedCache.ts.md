@@ -1,6 +1,6 @@
 ---
 title: ScopedCache.ts
-nav_order: 100
+nav_order: 243
 parent: Modules
 ---
 
@@ -38,7 +38,7 @@ lookup function.
 
 ```ts
 export declare const make: <Key, Environment, Error, Value>(options: {
-  readonly lookup: Lookup<Key, Environment, Error, Value>
+  readonly lookup: ScopedCache.Lookup<Key, Environment, Error, Value>
   readonly capacity: number
   readonly timeToLive: Duration.DurationInput
 }) => Effect.Effect<Scope.Scope | Environment, never, ScopedCache<Key, Error, Value>>
@@ -57,7 +57,7 @@ returned by the lookup function.
 ```ts
 export declare const makeWith: <Key, Environment, Error, Value>(options: {
   readonly capacity: number
-  readonly lookup: Lookup<Key, Environment, Error, Value>
+  readonly lookup: ScopedCache.Lookup<Key, Environment, Error, Value>
   readonly timeToLive: (exit: Exit.Exit<Error, Value>) => Duration.DurationInput
 }) => Effect.Effect<Scope.Scope | Environment, never, ScopedCache<Key, Error, Value>>
 ```
@@ -90,47 +90,47 @@ export interface ScopedCache<Key, Error, Value> extends ScopedCache.Variance<Key
    * Retrieves the value associated with the specified key if it exists.
    * Otherwise returns `Option.none`.
    */
-  getOption(key: Key): Effect.Effect<Scope.Scope, Error, Option.Option<Value>>
+  getOption(key: Key): Effect<Scope, Error, Option<Value>>
 
   /**
    * Retrieves the value associated with the specified key if it exists and the
    * lookup function has completed. Otherwise returns `Option.none`.
    */
-  getOptionComplete(key: Key): Effect.Effect<Scope.Scope, never, Option.Option<Value>>
+  getOptionComplete(key: Key): Effect<Scope, never, Option<Value>>
 
   /**
    * Returns statistics for this cache.
    */
-  cacheStats(): Effect.Effect<never, never, Cache.CacheStats>
+  cacheStats(): Effect<never, never, Cache.CacheStats>
 
   /**
    * Return whether a resource associated with the specified key exists in the
    * cache. Sometime `contains` can return true if the resource is currently
    * being created but not yet totally created.
    */
-  contains(key: Key): Effect.Effect<never, never, boolean>
+  contains(key: Key): Effect<never, never, boolean>
 
   /**
    * Return statistics for the specified entry.
    */
-  entryStats(key: Key): Effect.Effect<never, never, Option.Option<Cache.EntryStats>>
+  entryStats(key: Key): Effect<never, never, Option<Cache.EntryStats>>
 
   /**
    * Gets the value from the cache if it exists or otherwise computes it, the
    * release action signals to the cache that the value is no longer being used
    * and can potentially be finalized subject to the policies of the cache.
    */
-  get(key: Key): Effect.Effect<Scope.Scope, Error, Value>
+  get(key: Key): Effect<Scope, Error, Value>
 
   /**
    * Invalidates the resource associated with the specified key.
    */
-  invalidate(key: Key): Effect.Effect<never, never, void>
+  invalidate(key: Key): Effect<never, never, void>
 
   /**
    * Invalidates all values in the cache.
    */
-  invalidateAll(): Effect.Effect<never, never, void>
+  invalidateAll(): Effect<never, never, void>
 
   /**
    * Force the reuse of the lookup function to compute the returned scoped
@@ -140,12 +140,12 @@ export interface ScopedCache<Key, Error, Value> extends ScopedCache.Variance<Key
    * computed, concurrent call the .get will use the old resource if this one is
    * not expired.
    */
-  refresh(key: Key): Effect.Effect<never, Error, void>
+  refresh(key: Key): Effect<never, Error, void>
 
   /**
    * Returns the approximate number of values in the cache.
    */
-  size(): Effect.Effect<never, never, number>
+  size(): Effect<never, never, number>
 }
 ```
 
@@ -158,7 +158,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ScopedCacheTypeId: typeof ScopedCacheTypeId
+export declare const ScopedCacheTypeId: typeof ScopedCache.ScopedCacheTypeId
 ```
 
 Added in v2.0.0

@@ -1,6 +1,6 @@
 ---
 title: TestServices.ts
-nav_order: 127
+nav_order: 270
 parent: Modules
 ---
 
@@ -57,7 +57,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export type TestServices = Annotations.TestAnnotations | Live.TestLive | Sized.TestSized | TestConfig.TestConfig
+export type TestServices = TestAnnotations | TestLive | TestSized | TestConfig
 ```
 
 Added in v2.0.0

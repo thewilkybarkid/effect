@@ -1,6 +1,6 @@
 ---
 title: TQueue.ts
-nav_order: 132
+nav_order: 275
 parent: Modules
 ---
 
@@ -177,7 +177,7 @@ queue is empty.
 **Signature**
 
 ```ts
-export declare const peek: <A>(self: TDequeue<A>) => STM.STM<never, never, A>
+export declare const peek: <A>(self: TQueue.TDequeue<A>) => STM.STM<never, never, A>
 ```
 
 Added in v2.0.0
@@ -190,7 +190,7 @@ if the queue is empty.
 **Signature**
 
 ```ts
-export declare const peekOption: <A>(self: TDequeue<A>) => STM.STM<never, never, Option.Option<A>>
+export declare const peekOption: <A>(self: TQueue.TDequeue<A>) => STM.STM<never, never, Option.Option<A>>
 ```
 
 Added in v2.0.0
@@ -203,7 +203,7 @@ empty.
 **Signature**
 
 ```ts
-export declare const poll: <A>(self: TDequeue<A>) => STM.STM<never, never, Option.Option<A>>
+export declare const poll: <A>(self: TQueue.TDequeue<A>) => STM.STM<never, never, Option.Option<A>>
 ```
 
 Added in v2.0.0
@@ -382,8 +382,8 @@ Places one value in the queue.
 
 ```ts
 export declare const offer: {
-  <A>(value: A): (self: TEnqueue<A>) => STM.STM<never, never, void>
-  <A>(self: TEnqueue<A>, value: A): STM.STM<never, never, void>
+  <A>(value: A): (self: TQueue.TEnqueue<A>) => STM.STM<never, never, void>
+  <A>(self: TQueue.TEnqueue<A>, value: A): STM.STM<never, never, void>
 }
 ```
 
@@ -409,8 +409,8 @@ queue but if there is no room it will not enqueue them and return false.
 
 ```ts
 export declare const offerAll: {
-  <A>(iterable: Iterable<A>): (self: TEnqueue<A>) => STM.STM<never, never, boolean>
-  <A>(self: TEnqueue<A>, iterable: Iterable<A>): STM.STM<never, never, boolean>
+  <A>(iterable: Iterable<A>): (self: TQueue.TEnqueue<A>) => STM.STM<never, never, boolean>
+  <A>(self: TQueue.TEnqueue<A>, iterable: Iterable<A>): STM.STM<never, never, boolean>
 }
 ```
 
@@ -426,8 +426,8 @@ Retries if no elements satisfy the predicate.
 
 ```ts
 export declare const seek: {
-  <A>(predicate: Predicate<A>): (self: TDequeue<A>) => STM.STM<never, never, A>
-  <A>(self: TDequeue<A>, predicate: Predicate<A>): STM.STM<never, never, A>
+  <A>(predicate: Predicate<A>): (self: TQueue.TDequeue<A>) => STM.STM<never, never, A>
+  <A>(self: TQueue.TDequeue<A>, predicate: Predicate<A>): STM.STM<never, never, A>
 }
 ```
 
@@ -454,7 +454,7 @@ a computation that resumes when an item has been added to the queue.
 **Signature**
 
 ```ts
-export declare const take: <A>(self: TDequeue<A>) => STM.STM<never, never, A>
+export declare const take: <A>(self: TQueue.TDequeue<A>) => STM.STM<never, never, A>
 ```
 
 Added in v2.0.0
@@ -467,7 +467,7 @@ empty returns an empty collection.
 **Signature**
 
 ```ts
-export declare const takeAll: <A>(self: TDequeue<A>) => STM.STM<never, never, A[]>
+export declare const takeAll: <A>(self: TQueue.TDequeue<A>) => STM.STM<never, never, A[]>
 ```
 
 Added in v2.0.0
@@ -482,8 +482,8 @@ retries until at least the minimum number of elements have been collected.
 
 ```ts
 export declare const takeBetween: {
-  (min: number, max: number): <A>(self: TDequeue<A>) => STM.STM<never, never, A[]>
-  <A>(self: TDequeue<A>, min: number, max: number): STM.STM<never, never, A[]>
+  (min: number, max: number): <A>(self: TQueue.TDequeue<A>) => STM.STM<never, never, A[]>
+  <A>(self: TQueue.TDequeue<A>, min: number, max: number): STM.STM<never, never, A[]>
 }
 ```
 
@@ -499,8 +499,8 @@ become available.
 
 ```ts
 export declare const takeN: {
-  (n: number): <A>(self: TDequeue<A>) => STM.STM<never, never, A[]>
-  <A>(self: TDequeue<A>, n: number): STM.STM<never, never, A[]>
+  (n: number): <A>(self: TQueue.TDequeue<A>) => STM.STM<never, never, A[]>
+  <A>(self: TQueue.TDequeue<A>, n: number): STM.STM<never, never, A[]>
 }
 ```
 
@@ -514,8 +514,8 @@ Takes up to max number of values from the queue.
 
 ```ts
 export declare const takeUpTo: {
-  (max: number): <A>(self: TDequeue<A>) => STM.STM<never, never, A[]>
-  <A>(self: TDequeue<A>, max: number): STM.STM<never, never, A[]>
+  (max: number): <A>(self: TQueue.TDequeue<A>) => STM.STM<never, never, A[]>
+  <A>(self: TQueue.TDequeue<A>, max: number): STM.STM<never, never, A[]>
 }
 ```
 
@@ -530,7 +530,7 @@ Returns `true` if the specified value is a `TDequeue`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isTDequeue: (u: unknown) => u is TDequeue<unknown>
+export declare const isTDequeue: (u: unknown) => u is TQueue.TDequeue<unknown>
 ```
 
 Added in v2.0.0
@@ -542,7 +542,7 @@ Returns `true` if the specified value is a `TEnqueue`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isTEnqueue: (u: unknown) => u is TEnqueue<unknown>
+export declare const isTEnqueue: (u: unknown) => u is TQueue.TEnqueue<unknown>
 ```
 
 Added in v2.0.0
@@ -566,7 +566,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TDequeueTypeId: typeof TDequeueTypeId
+export declare const TDequeueTypeId: typeof TQueue.TDequeueTypeId
 ```
 
 Added in v2.0.0
@@ -586,7 +586,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TEnqueueTypeId: typeof TEnqueueTypeId
+export declare const TEnqueueTypeId: typeof TQueue.TEnqueueTypeId
 ```
 
 Added in v2.0.0

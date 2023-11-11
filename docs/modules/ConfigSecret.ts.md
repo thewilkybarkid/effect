@@ -84,7 +84,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface ConfigSecret extends ConfigSecret.Proto, Equal.Equal {
+export interface ConfigSecret extends ConfigSecret.Proto, Equal {
   /** @internal */
   readonly raw: Array<number>
 }
@@ -111,7 +111,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ConfigSecretTypeId: typeof ConfigSecretTypeId
+export declare const ConfigSecretTypeId: typeof ConfigSecret.ConfigSecretTypeId
 ```
 
 Added in v2.0.0

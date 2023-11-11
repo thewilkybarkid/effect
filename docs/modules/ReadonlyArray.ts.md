@@ -1,6 +1,6 @@
 ---
 title: ReadonlyArray.ts
-nav_order: 82
+nav_order: 225
 parent: Modules
 ---
 
@@ -130,9 +130,13 @@ Added in v2.0.0
 - [unsafe](#unsafe)
   - [unsafeGet](#unsafeget)
 - [utils](#utils)
+  - [ReadonlyArray (type alias)](#readonlyarray-type-alias)
   - [ReadonlyArray (namespace)](#readonlyarray-namespace)
     - [Infer (type alias)](#infer-type-alias)
     - [With (type alias)](#with-type-alias)
+  - [ReadonlyArray (namespace)](#readonlyarray-namespace-1)
+    - [Infer (type alias)](#infer-type-alias-1)
+    - [With (type alias)](#with-type-alias-1)
   - [chop](#chop)
   - [chopNonEmpty](#chopnonempty)
   - [copy](#copy)
@@ -519,9 +523,9 @@ Check if a predicate holds true for every `ReadonlyArray` element.
 
 ```ts
 export declare const every: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: readonly A[]) => self is readonly B[]
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: readonly A[]) => self is readonly B[]
   <A>(predicate: Predicate<A>): (self: readonly A[]) => boolean
-  <A, B extends A>(self: readonly A[], refinement: Refinement<A, B>): self is readonly B[]
+  <A, B extends A>(self: readonly A[], refinement: Predicate.Refinement<A, B>): self is readonly B[]
   <A>(self: readonly A[], predicate: Predicate<A>): boolean
 }
 ```
@@ -537,9 +541,9 @@ predicate, or `None` if no such element exists.
 
 ```ts
 export declare const findFirst: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: Iterable<A>) => Option<B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: Iterable<A>) => Option<B>
   <A>(predicate: Predicate<A>): <B extends A>(self: Iterable<B>) => Option<B>
-  <A, B extends A>(self: Iterable<A>, refinement: Refinement<A, B>): Option<B>
+  <A, B extends A>(self: Iterable<A>, refinement: Predicate.Refinement<A, B>): Option<B>
   <B extends A, A>(self: Iterable<B>, predicate: Predicate<A>): Option<B>
 }
 ```
@@ -569,9 +573,9 @@ Find the last element for which a predicate holds.
 
 ```ts
 export declare const findLast: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: Iterable<A>) => Option<B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: Iterable<A>) => Option<B>
   <A>(predicate: Predicate<A>): <B extends A>(self: Iterable<B>) => Option<B>
-  <A, B extends A>(self: Iterable<A>, refinement: Refinement<A, B>): Option<B>
+  <A, B extends A>(self: Iterable<A>, refinement: Predicate.Refinement<A, B>): Option<B>
   <B extends A, A>(self: Iterable<B>, predicate: Predicate<A>): Option<B>
 }
 ```
@@ -747,9 +751,9 @@ Split an `Iterable` into two parts:
 
 ```ts
 export declare const span: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: Iterable<A>) => [init: B[], rest: A[]]
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: Iterable<A>) => [init: B[], rest: A[]]
   <A>(predicate: Predicate<A>): <B extends A>(self: Iterable<B>) => [init: B[], rest: B[]]
-  <A, B extends A>(self: Iterable<A>, refinement: Refinement<A, B>): [init: B[], rest: A[]]
+  <A, B extends A>(self: Iterable<A>, refinement: Predicate.Refinement<A, B>): [init: B[], rest: A[]]
   <B extends A, A>(self: Iterable<B>, predicate: Predicate<A>): [init: B[], rest: B[]]
 }
 ```
@@ -921,9 +925,9 @@ Remove the longest initial subarray for which all element satisfy the specified 
 
 ```ts
 export declare const dropWhile: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: Iterable<A>) => B[]
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: Iterable<A>) => B[]
   <A>(predicate: Predicate<A>): <B extends A>(self: Iterable<B>) => B[]
-  <A, B extends A>(self: Iterable<A>, refinement: Refinement<A, B>): B[]
+  <A, B extends A>(self: Iterable<A>, refinement: Predicate.Refinement<A, B>): B[]
   <B extends A, A>(self: Iterable<B>, predicate: Predicate<A>): B[]
 }
 ```
@@ -1113,9 +1117,9 @@ Calculate the longest initial subarray for which all element satisfy the specifi
 
 ```ts
 export declare const takeWhile: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: Iterable<A>) => B[]
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: Iterable<A>) => B[]
   <A>(predicate: Predicate<A>): <B extends A>(self: Iterable<B>) => B[]
-  <A, B extends A>(self: Iterable<A>, refinement: Refinement<A, B>): B[]
+  <A, B extends A>(self: Iterable<A>, refinement: Predicate.Refinement<A, B>): B[]
   <B extends A, A>(self: Iterable<B>, predicate: Predicate<A>): B[]
 }
 ```
@@ -1350,7 +1354,7 @@ Added in v2.0.0
 
 ```ts
 export declare const liftPredicate: {
-  <C extends A, B extends A, A = C>(refinement: Refinement<A, B>): (c: C) => B[]
+  <C extends A, B extends A, A = C>(refinement: Predicate.Refinement<A, B>): (c: C) => B[]
   <B extends A, A = B>(predicate: Predicate<A>): (b: B) => B[]
 }
 ```
@@ -1592,6 +1596,40 @@ export declare const unsafeGet: {
 Added in v2.0.0
 
 # utils
+
+## ReadonlyArray (type alias)
+
+**Signature**
+
+```ts
+export type ReadonlyArray<T> = globalThis.ReadonlyArray<T>
+```
+
+Added in v2.0.0
+
+## ReadonlyArray (namespace)
+
+Added in v2.0.0
+
+### Infer (type alias)
+
+**Signature**
+
+```ts
+export type Infer<T extends ReadonlyArray<any>> = T[number]
+```
+
+Added in v2.0.0
+
+### With (type alias)
+
+**Signature**
+
+```ts
+export type With<T extends ReadonlyArray<any>, A> = T extends NonEmptyReadonlyArray<any> ? NonEmptyArray<A> : Array<A>
+```
+
+Added in v2.0.0
 
 ## ReadonlyArray (namespace)
 

@@ -1,6 +1,6 @@
 ---
 title: Predicate.ts
-nav_order: 78
+nav_order: 221
 parent: Modules
 ---
 
@@ -75,8 +75,13 @@ Combines two predicates into a new predicate that returns `true` if both of the 
 
 ```ts
 export declare const and: {
-  <A, C extends A>(that: Refinement<A, C>): <B extends A>(self: Refinement<A, B>) => Refinement<A, B & C>
-  <A, B extends A, C extends A>(self: Refinement<A, B>, that: Refinement<A, C>): Refinement<A, B & C>
+  <A, C extends A>(
+    that: Predicate.Refinement<A, C>
+  ): <B extends A>(self: Predicate.Refinement<A, B>) => Predicate.Refinement<A, B & C>
+  <A, B extends A, C extends A>(
+    self: Predicate.Refinement<A, B>,
+    that: Predicate.Refinement<A, C>
+  ): Predicate.Refinement<A, B & C>
   <A>(that: Predicate<A>): (self: Predicate<A>) => Predicate<A>
   <A>(self: Predicate<A>, that: Predicate<A>): Predicate<A>
 }
@@ -890,8 +895,13 @@ Added in v2.0.0
 
 ```ts
 export declare const compose: {
-  <A, B extends A, C extends B>(bc: Refinement<B, C>): (ab: Refinement<A, B>) => Refinement<A, C>
-  <A, B extends A, C extends B>(ab: Refinement<A, B>, bc: Refinement<B, C>): Refinement<A, C>
+  <A, B extends A, C extends B>(
+    bc: Predicate.Refinement<B, C>
+  ): (ab: Predicate.Refinement<A, B>) => Predicate.Refinement<A, C>
+  <A, B extends A, C extends B>(
+    ab: Predicate.Refinement<A, B>,
+    bc: Predicate.Refinement<B, C>
+  ): Predicate.Refinement<A, C>
 }
 ```
 

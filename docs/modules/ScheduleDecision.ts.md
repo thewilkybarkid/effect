@@ -1,6 +1,6 @@
 ---
 title: ScheduleDecision.ts
-nav_order: 95
+nav_order: 238
 parent: Modules
 ---
 
@@ -33,7 +33,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const continue: (intervals: Intervals.Intervals) => ScheduleDecision
+export declare const continue: (intervals: Intervals.ScheduleIntervals) => ScheduleDecision
 ```
 
 Added in v2.0.0
@@ -43,7 +43,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const continueWith: (interval: Interval.Interval) => ScheduleDecision
+export declare const continueWith: (interval: Interval.ScheduleInterval) => ScheduleDecision
 ```
 
 Added in v2.0.0
@@ -67,7 +67,7 @@ Added in v2.0.0
 ```ts
 export interface Continue {
   readonly _tag: "Continue"
-  readonly intervals: Intervals.Intervals
+  readonly intervals: Intervals.ScheduleIntervals
 }
 ```
 
@@ -102,7 +102,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const isContinue: (self: ScheduleDecision) => self is Continue
+export declare const isContinue: (self: ScheduleDecision) => self is ScheduleDecision.Continue
 ```
 
 Added in v2.0.0
@@ -112,7 +112,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const isDone: (self: ScheduleDecision) => self is Done
+export declare const isDone: (self: ScheduleDecision) => self is ScheduleDecision.Done
 ```
 
 Added in v2.0.0

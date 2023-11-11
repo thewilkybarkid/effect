@@ -1,6 +1,6 @@
 ---
 title: MutableRef.ts
-nav_order: 70
+nav_order: 213
 parent: Modules
 ---
 
@@ -35,6 +35,7 @@ Added in v2.0.0
   - [increment](#increment)
   - [incrementAndGet](#incrementandget)
 - [symbol](#symbol)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 
 ---
@@ -240,6 +241,16 @@ export declare const incrementAndGet: (self: MutableRef<number>) => number
 Added in v2.0.0
 
 # symbol
+
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof MutableRef.TypeId
+```
+
+Added in v2.0.0
 
 ## TypeId (type alias)
 

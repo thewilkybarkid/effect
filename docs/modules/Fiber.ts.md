@@ -204,7 +204,7 @@ Returns a chunk containing all root fibers.
 **Signature**
 
 ```ts
-export declare const roots: Effect.Effect<never, never, RuntimeFiber<any, any>[]>
+export declare const roots: Effect.Effect<never, never, Fiber.RuntimeFiber<any, any>[]>
 ```
 
 Added in v2.0.0
@@ -278,7 +278,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const dump: <E, A>(self: RuntimeFiber<E, A>) => Effect.Effect<never, never, Fiber.Dump>
+export declare const dump: <E, A>(self: Fiber.RuntimeFiber<E, A>) => Effect.Effect<never, never, Fiber.Dump>
 ```
 
 Added in v2.0.0
@@ -345,7 +345,7 @@ Pretty-prints a `RuntimeFiber`.
 **Signature**
 
 ```ts
-export declare const pretty: <E, A>(self: RuntimeFiber<E, A>) => Effect.Effect<never, never, string>
+export declare const pretty: <E, A>(self: Fiber.RuntimeFiber<E, A>) => Effect.Effect<never, never, string>
 ```
 
 Added in v2.0.0
@@ -375,11 +375,14 @@ Folds over the `Fiber` or `RuntimeFiber`.
 export declare const match: {
   <E, A, Z>(options: {
     readonly onFiber: (fiber: Fiber<E, A>) => Z
-    readonly onRuntimeFiber: (fiber: RuntimeFiber<E, A>) => Z
+    readonly onRuntimeFiber: (fiber: Fiber.RuntimeFiber<E, A>) => Z
   }): (self: Fiber<E, A>) => Z
   <E, A, Z>(
     self: Fiber<E, A>,
-    options: { readonly onFiber: (fiber: Fiber<E, A>) => Z; readonly onRuntimeFiber: (fiber: RuntimeFiber<E, A>) => Z }
+    options: {
+      readonly onFiber: (fiber: Fiber<E, A>) => Z
+      readonly onRuntimeFiber: (fiber: Fiber.RuntimeFiber<E, A>) => Z
+    }
   ): Z
 }
 ```
@@ -445,7 +448,9 @@ Returns the `FiberStatus` of a `RuntimeFiber`.
 **Signature**
 
 ```ts
-export declare const status: <E, A>(self: RuntimeFiber<E, A>) => Effect.Effect<never, never, FiberStatus.FiberStatus>
+export declare const status: <E, A>(
+  self: Fiber.RuntimeFiber<E, A>
+) => Effect.Effect<never, never, FiberStatus.FiberStatus>
 ```
 
 Added in v2.0.0
@@ -457,7 +462,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const Order: order.Order<RuntimeFiber<unknown, unknown>>
+export declare const Order: order.Order<Fiber.RuntimeFiber<unknown, unknown>>
 ```
 
 Added in v2.0.0
@@ -621,37 +626,37 @@ export interface Fiber<E, A> extends Fiber.Variance<E, A>, Pipeable {
   /**
    * The identity of the fiber.
    */
-  id(): FiberId.FiberId
+  id(): FiberId
 
   /**
    * Awaits the fiber, which suspends the awaiting fiber until the result of the
    * fiber has been determined.
    */
-  await(): Effect.Effect<never, never, Exit.Exit<E, A>>
+  await(): Effect<never, never, Exit<E, A>>
 
   /**
    * Retrieves the immediate children of the fiber.
    */
-  children(): Effect.Effect<never, never, Array<Fiber.Runtime<any, any>>>
+  children(): Effect<never, never, Array<Fiber.Runtime<any, any>>>
 
   /**
    * Inherits values from all `FiberRef` instances into current fiber. This
    * will resume immediately.
    */
-  inheritAll(): Effect.Effect<never, never, void>
+  inheritAll(): Effect<never, never, void>
 
   /**
    * Tentatively observes the fiber, but returns immediately if it is not
    * already done.
    */
-  poll(): Effect.Effect<never, never, Option.Option<Exit.Exit<E, A>>>
+  poll(): Effect<never, never, Option<Exit<E, A>>>
 
   /**
    * In the background, interrupts the fiber as if interrupted from the
    * specified fiber. If the fiber has already exited, the returned effect will
    * resume immediately. Otherwise, the effect will resume when the fiber exits.
    */
-  interruptAsFork(fiberId: FiberId.FiberId): Effect.Effect<never, never, void>
+  interruptAsFork(fiberId: FiberId): Effect<never, never, void>
 }
 ```
 
@@ -739,7 +744,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isRuntimeFiber: <E, A>(self: Fiber<E, A>) => self is RuntimeFiber<E, A>
+export declare const isRuntimeFiber: <E, A>(self: Fiber<E, A>) => self is Fiber.RuntimeFiber<E, A>
 ```
 
 Added in v2.0.0
@@ -751,7 +756,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FiberTypeId: typeof FiberTypeId
+export declare const FiberTypeId: typeof Fiber.FiberTypeId
 ```
 
 Added in v2.0.0
@@ -771,7 +776,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RuntimeFiberTypeId: typeof RuntimeFiberTypeId
+export declare const RuntimeFiberTypeId: typeof Fiber.RuntimeFiberTypeId
 ```
 
 Added in v2.0.0
@@ -817,15 +822,15 @@ export interface Descriptor {
   /**
    * The fiber's unique identifier.
    */
-  readonly id: FiberId.FiberId
+  readonly id: FiberId
   /**
    * The status of the fiber.
    */
-  readonly status: FiberStatus.FiberStatus
+  readonly status: FiberStatus
   /**
    * The set of fibers attempting to interrupt the fiber or its ancestors.
    */
-  readonly interruptors: HashSet.HashSet<FiberId.FiberId>
+  readonly interruptors: HashSet<FiberId>
 }
 ```
 
@@ -844,7 +849,7 @@ export interface Dump {
   /**
    * The status of the fiber.
    */
-  readonly status: FiberStatus.FiberStatus
+  readonly status: FiberStatus
 }
 ```
 

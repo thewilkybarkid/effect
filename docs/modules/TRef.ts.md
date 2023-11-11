@@ -1,6 +1,6 @@
 ---
 title: TRef.ts
-nav_order: 136
+nav_order: 279
 parent: Modules
 ---
 
@@ -69,7 +69,7 @@ export interface TRef<A> extends TRef.Variance<A> {
   /**
    * Note: the method is unbound, exposed only for potential extensions.
    */
-  modify<B>(f: (a: A) => readonly [B, A]): STM.STM<never, never, B>
+  modify<B>(f: (a: A) => readonly [B, A]): STM<never, never, B>
 }
 ```
 
@@ -237,7 +237,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TRefTypeId: typeof TRefTypeId
+export declare const TRefTypeId: typeof TRef.TRefTypeId
 ```
 
 Added in v2.0.0

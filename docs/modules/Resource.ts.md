@@ -1,6 +1,6 @@
 ---
 title: Resource.ts
-nav_order: 90
+nav_order: 233
 parent: Modules
 ---
 
@@ -94,9 +94,9 @@ which can be refreshed either manually or automatically.
 ```ts
 export interface Resource<E, A> extends Resource.Variance<E, A> {
   /** @internal */
-  readonly scopedRef: ScopedRef.ScopedRef<Exit.Exit<E, A>>
+  readonly scopedRef: ScopedRef<Exit<E, A>>
   /** @internal */
-  acquire(): Effect.Effect<Scope.Scope, E, A>
+  acquire(): Effect<Scope, E, A>
 }
 ```
 
@@ -109,7 +109,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ResourceTypeId: typeof ResourceTypeId
+export declare const ResourceTypeId: typeof Resource.ResourceTypeId
 ```
 
 Added in v2.0.0

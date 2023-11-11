@@ -1,6 +1,6 @@
 ---
 title: KeyedPool.ts
-nav_order: 46
+nav_order: 189
 parent: Modules
 ---
 
@@ -173,14 +173,14 @@ export interface KeyedPool<K, E, A> extends KeyedPool.Variance<K, E, A>, Pipeabl
    * for that same reason. Retrying a failed acquisition attempt will repeat the
    * acquisition attempt.
    */
-  get(key: K): Effect.Effect<Scope.Scope, E, A>
+  get(key: K): Effect<Scope, E, A>
 
   /**
    * Invalidates the specified item. This will cause the pool to eventually
    * reallocate the item, although this reallocation may occur lazily rather
    * than eagerly.
    */
-  invalidate(item: A): Effect.Effect<never, never, void>
+  invalidate(item: A): Effect<never, never, void>
 }
 ```
 
@@ -193,7 +193,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const KeyedPoolTypeId: typeof KeyedPoolTypeId
+export declare const KeyedPoolTypeId: typeof KeyedPool.KeyedPoolTypeId
 ```
 
 Added in v2.0.0

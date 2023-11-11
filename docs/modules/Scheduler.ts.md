@@ -1,6 +1,6 @@
 ---
 title: Scheduler.ts
-nav_order: 98
+nav_order: 241
 parent: Modules
 ---
 
@@ -98,7 +98,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-tasks: PriorityBuckets<Task>
+tasks: Scheduler.PriorityBuckets<Scheduler.Task>
 ```
 
 Added in v2.0.0
@@ -183,7 +183,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-tasks: PriorityBuckets<Task>
+tasks: Scheduler.PriorityBuckets<Scheduler.Task>
 ```
 
 Added in v2.0.0
@@ -233,7 +233,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-tasks: PriorityBuckets<Task>
+tasks: Scheduler.PriorityBuckets<Scheduler.Task>
 ```
 
 Added in v2.0.0

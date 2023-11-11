@@ -224,7 +224,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const BrandTypeId: typeof BrandTypeId
+export declare const BrandTypeId: typeof Brand.BrandTypeId
 ```
 
 Added in v2.0.0
@@ -244,7 +244,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RefinedConstructorsTypeId: typeof RefinedConstructorsTypeId
+export declare const RefinedConstructorsTypeId: typeof Brand.RefinedConstructorsTypeId
 ```
 
 Added in v2.0.0
@@ -293,12 +293,12 @@ export interface Constructor<in out A extends Brand<any>> {
    * Constructs a branded type from a value of type `A`, returning `Some<A>`
    * if the provided `A` is valid, `None` otherwise.
    */
-  option: (args: Brand.Unbranded<A>) => Option.Option<A>
+  option: (args: Brand.Unbranded<A>) => Option<A>
   /**
    * Constructs a branded type from a value of type `A`, returning `Right<A>`
    * if the provided `A` is valid, `Left<BrandError>` otherwise.
    */
-  either: (args: Brand.Unbranded<A>) => Either.Either<Brand.BrandErrors, A>
+  either: (args: Brand.Unbranded<A>) => Either<Brand.BrandErrors, A>
   /**
    * Attempts to refine the provided value of type `A`, returning `true` if
    * the provided `A` is valid, `false` otherwise.

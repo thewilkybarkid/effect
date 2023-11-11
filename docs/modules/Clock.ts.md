@@ -19,7 +19,7 @@ Added in v2.0.0
   - [make](#make)
   - [sleep](#sleep)
 - [context](#context)
-  - [Clock](#clock)
+  - [Tag](#tag)
 - [models](#models)
   - [CancelToken (type alias)](#canceltoken-type-alias)
   - [Clock (interface)](#clock-interface)
@@ -85,12 +85,12 @@ Added in v2.0.0
 
 # context
 
-## Clock
+## Tag
 
 **Signature**
 
 ```ts
-export declare const Clock: Context.Tag<Clock, Clock>
+export declare const Tag: Context.Tag<Clock, Clock>
 ```
 
 Added in v2.0.0
@@ -124,7 +124,7 @@ export interface Clock {
   /**
    * Returns the current time in milliseconds.
    */
-  readonly currentTimeMillis: Effect.Effect<never, never, number>
+  readonly currentTimeMillis: Effect<never, never, number>
   /**
    * Unsafely returns the current time in nanoseconds.
    */
@@ -132,11 +132,11 @@ export interface Clock {
   /**
    * Returns the current time in nanoseconds.
    */
-  readonly currentTimeNanos: Effect.Effect<never, never, bigint>
+  readonly currentTimeNanos: Effect<never, never, bigint>
   /**
    * Asynchronously sleeps for the specified duration.
    */
-  sleep(duration: Duration.Duration): Effect.Effect<never, never, void>
+  sleep(duration: Duration): Effect<never, never, void>
 }
 ```
 
@@ -174,7 +174,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ClockTypeId: typeof ClockTypeId
+export declare const ClockTypeId: typeof Clock.ClockTypeId
 ```
 
 Added in v2.0.0

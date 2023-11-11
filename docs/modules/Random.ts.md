@@ -1,6 +1,6 @@
 ---
 title: Random.ts
-nav_order: 81
+nav_order: 224
 parent: Modules
 ---
 
@@ -129,29 +129,29 @@ export interface Random {
   /**
    * Returns the next numeric value from the pseudo-random number generator.
    */
-  next(): Effect.Effect<never, never, number>
+  next(): Effect<never, never, number>
   /**
    * Returns the next boolean value from the pseudo-random number generator.
    */
-  nextBoolean(): Effect.Effect<never, never, boolean>
+  nextBoolean(): Effect<never, never, boolean>
   /**
    * Returns the next integer value from the pseudo-random number generator.
    */
-  nextInt(): Effect.Effect<never, never, number>
+  nextInt(): Effect<never, never, number>
   /**
    * Returns the next numeric value in the specified range from the
    * pseudo-random number generator.
    */
-  nextRange(min: number, max: number): Effect.Effect<never, never, number>
+  nextRange(min: number, max: number): Effect<never, never, number>
   /**
    * Returns the next integer value in the specified range from the
    * pseudo-random number generator.
    */
-  nextIntBetween(min: number, max: number): Effect.Effect<never, never, number>
+  nextIntBetween(min: number, max: number): Effect<never, never, number>
   /**
    * Uses the pseudo-random number generator to shuffle the specified iterable.
    */
-  shuffle<A>(elements: Iterable<A>): Effect.Effect<never, never, Chunk.Chunk<A>>
+  shuffle<A>(elements: Iterable<A>): Effect<never, never, Chunk<A>>
 }
 ```
 
@@ -164,7 +164,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RandomTypeId: typeof RandomTypeId
+export declare const RandomTypeId: typeof Random.RandomTypeId
 ```
 
 Added in v2.0.0

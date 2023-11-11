@@ -84,6 +84,7 @@ Added in v2.0.0
 - [mapping](#mapping)
   - [map](#map)
 - [model](#model)
+  - [Backing (type alias)](#backing-type-alias)
   - [NonEmptyChunk (interface)](#nonemptychunk-interface)
 - [models](#models)
   - [Chunk (interface)](#chunk-interface)
@@ -93,6 +94,7 @@ Added in v2.0.0
   - [flatten](#flatten)
   - [flattenNonEmpty](#flattennonempty)
 - [symbol](#symbol)
+  - [TypeId](#typeid)
   - [TypeId (type alias)](#typeid-type-alias)
 - [type lambdas](#type-lambdas)
   - [ChunkTypeLambda (interface)](#chunktypelambda-interface)
@@ -145,8 +147,8 @@ Appends the specified element to the end of the `Chunk`.
 
 ```ts
 export declare const append: {
-  <A2>(a: A2): <A>(self: Chunk<A>) => NonEmptyChunk<A2 | A>
-  <A, A2>(self: Chunk<A>, a: A2): NonEmptyChunk<A | A2>
+  <A2>(a: A2): <A>(self: Chunk<A>) => Chunk.NonEmptyChunk<A2 | A>
+  <A, A2>(self: Chunk<A>, a: A2): Chunk.NonEmptyChunk<A | A2>
 }
 ```
 
@@ -173,10 +175,10 @@ Added in v2.0.0
 
 ```ts
 export declare const appendAllNonEmpty: {
-  <B>(that: NonEmptyChunk<B>): <A>(self: Chunk<A>) => NonEmptyChunk<B | A>
-  <B>(that: Chunk<B>): <A>(self: NonEmptyChunk<A>) => NonEmptyChunk<B | A>
-  <A, B>(self: Chunk<A>, that: NonEmptyChunk<B>): NonEmptyChunk<A | B>
-  <A, B>(self: NonEmptyChunk<A>, that: Chunk<B>): NonEmptyChunk<A | B>
+  <B>(that: Chunk.NonEmptyChunk<B>): <A>(self: Chunk<A>) => Chunk.NonEmptyChunk<B | A>
+  <B>(that: Chunk<B>): <A>(self: Chunk.NonEmptyChunk<A>) => Chunk.NonEmptyChunk<B | A>
+  <A, B>(self: Chunk<A>, that: Chunk.NonEmptyChunk<B>): Chunk.NonEmptyChunk<A | B>
+  <A, B>(self: Chunk.NonEmptyChunk<A>, that: Chunk<B>): Chunk.NonEmptyChunk<A | B>
 }
 ```
 
@@ -190,8 +192,8 @@ Prepend an element to the front of a `Chunk`, creating a new `NonEmptyChunk`.
 
 ```ts
 export declare const prepend: {
-  <B>(elem: B): <A>(self: Chunk<A>) => NonEmptyChunk<B | A>
-  <A, B>(self: Chunk<A>, elem: B): NonEmptyChunk<A | B>
+  <B>(elem: B): <A>(self: Chunk<A>) => Chunk.NonEmptyChunk<B | A>
+  <A, B>(self: Chunk<A>, elem: B): Chunk.NonEmptyChunk<A | B>
 }
 ```
 
@@ -216,10 +218,10 @@ Added in v2.0.0
 
 ```ts
 export declare const prependAllNonEmpty: {
-  <B>(that: NonEmptyChunk<B>): <A>(self: Chunk<A>) => NonEmptyChunk<B | A>
-  <B>(that: Chunk<B>): <A>(self: NonEmptyChunk<A>) => NonEmptyChunk<B | A>
-  <A, B>(self: Chunk<A>, that: NonEmptyChunk<B>): NonEmptyChunk<A | B>
-  <A, B>(self: NonEmptyChunk<A>, that: Chunk<B>): NonEmptyChunk<A | B>
+  <B>(that: Chunk.NonEmptyChunk<B>): <A>(self: Chunk<A>) => Chunk.NonEmptyChunk<B | A>
+  <B>(that: Chunk<B>): <A>(self: Chunk.NonEmptyChunk<A>) => Chunk.NonEmptyChunk<B | A>
+  <A, B>(self: Chunk<A>, that: Chunk.NonEmptyChunk<B>): Chunk.NonEmptyChunk<A | B>
+  <A, B>(self: Chunk.NonEmptyChunk<A>, that: Chunk<B>): Chunk.NonEmptyChunk<A | B>
 }
 ```
 
@@ -256,7 +258,7 @@ Builds a `NonEmptyChunk` from an non-empty collection of elements.
 **Signature**
 
 ```ts
-export declare const make: <As extends readonly [any, ...any[]]>(...as: As) => NonEmptyChunk<As[number]>
+export declare const make: <As extends readonly [any, ...any[]]>(...as: As) => Chunk.NonEmptyChunk<As[number]>
 ```
 
 Added in v2.0.0
@@ -271,8 +273,8 @@ Return a Chunk of length n with element i initialized with f(i).
 
 ```ts
 export declare const makeBy: {
-  <A>(f: (i: number) => A): (n: number) => NonEmptyChunk<A>
-  <A>(n: number, f: (i: number) => A): NonEmptyChunk<A>
+  <A>(f: (i: number) => A): (n: number) => Chunk.NonEmptyChunk<A>
+  <A>(n: number, f: (i: number) => A): Chunk.NonEmptyChunk<A>
 }
 ```
 
@@ -285,7 +287,7 @@ Builds a `NonEmptyChunk` from a single element.
 **Signature**
 
 ```ts
-export declare const of: <A>(a: A) => NonEmptyChunk<A>
+export declare const of: <A>(a: A) => Chunk.NonEmptyChunk<A>
 ```
 
 Added in v2.0.0
@@ -404,9 +406,9 @@ Check if a predicate holds true for every `Chunk` element.
 
 ```ts
 export declare const every: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: Chunk<A>) => self is Chunk<B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: Chunk<A>) => self is Chunk<B>
   <A>(predicate: Predicate<A>): (self: Chunk<A>) => boolean
-  <A, B extends A>(self: Chunk<A>, refinement: Refinement<A, B>): self is Chunk<B>
+  <A, B extends A>(self: Chunk<A>, refinement: Predicate.Refinement<A, B>): self is Chunk<B>
   <A>(self: Chunk<A>, predicate: Predicate<A>): boolean
 }
 ```
@@ -422,9 +424,9 @@ predicate, or `None` if no such element exists.
 
 ```ts
 export declare const findFirst: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: Chunk<A>) => Option<B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: Chunk<A>) => Option<B>
   <A>(predicate: Predicate<A>): <B extends A>(self: Chunk<B>) => Option<B>
-  <A, B extends A>(self: Chunk<A>, refinement: Refinement<A, B>): Option<B>
+  <A, B extends A>(self: Chunk<A>, refinement: Predicate.Refinement<A, B>): Option<B>
   <B extends A, A>(self: Chunk<B>, predicate: Predicate<A>): Option<B>
 }
 ```
@@ -454,9 +456,9 @@ Find the last element for which a predicate holds.
 
 ```ts
 export declare const findLast: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: Chunk<A>) => Option<B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: Chunk<A>) => Option<B>
   <A>(predicate: Predicate<A>): <B extends A>(self: Chunk<B>) => Option<B>
-  <A, B extends A>(self: Chunk<A>, refinement: Refinement<A, B>): Option<B>
+  <A, B extends A>(self: Chunk<A>, refinement: Predicate.Refinement<A, B>): Option<B>
   <B extends A, A>(self: Chunk<B>, predicate: Predicate<A>): Option<B>
 }
 ```
@@ -512,7 +514,7 @@ Returns the first element of this non empty chunk.
 **Signature**
 
 ```ts
-export declare const headNonEmpty: <A>(self: NonEmptyChunk<A>) => A
+export declare const headNonEmpty: <A>(self: Chunk.NonEmptyChunk<A>) => A
 ```
 
 Added in v2.0.0
@@ -553,7 +555,7 @@ Determines if the chunk is not empty.
 **Signature**
 
 ```ts
-export declare const isNonEmpty: <A>(self: Chunk<A>) => self is NonEmptyChunk<A>
+export declare const isNonEmpty: <A>(self: Chunk<A>) => self is Chunk.NonEmptyChunk<A>
 ```
 
 Added in v2.0.0
@@ -600,8 +602,8 @@ Check if a predicate holds true for some `Chunk` element.
 
 ```ts
 export declare const some: {
-  <A>(predicate: Predicate<A>): <B extends A>(self: Chunk<B>) => self is NonEmptyChunk<B>
-  <B extends A, A = B>(self: Chunk<B>, predicate: Predicate<A>): self is NonEmptyChunk<B>
+  <A>(predicate: Predicate<A>): <B extends A>(self: Chunk<B>) => self is Chunk.NonEmptyChunk<B>
+  <B extends A, A = B>(self: Chunk<B>, predicate: Predicate<A>): self is Chunk.NonEmptyChunk<B>
 }
 ```
 
@@ -699,7 +701,7 @@ Returns every elements after the first.
 **Signature**
 
 ```ts
-export declare const tailNonEmpty: <A>(self: NonEmptyChunk<A>) => Chunk<A>
+export declare const tailNonEmpty: <A>(self: Chunk.NonEmptyChunk<A>) => Chunk<A>
 ```
 
 Added in v2.0.0
@@ -841,9 +843,9 @@ Returns a filtered and mapped subset of the elements.
 
 ```ts
 export declare const filter: {
-  <C extends A, B extends A, A = C>(refinement: Refinement<A, B>): (self: Chunk<C>) => Chunk<B>
+  <C extends A, B extends A, A = C>(refinement: Predicate.Refinement<A, B>): (self: Chunk<C>) => Chunk<B>
   <B extends A, A = B>(predicate: Predicate<A>): (self: Chunk<B>) => Chunk<B>
-  <C extends A, B extends A, A = C>(self: Chunk<C>, refinement: Refinement<A, B>): Chunk<B>
+  <C extends A, B extends A, A = C>(self: Chunk<C>, refinement: Predicate.Refinement<A, B>): Chunk<B>
   <B extends A, A = B>(self: Chunk<B>, predicate: Predicate<A>): Chunk<B>
 }
 ```
@@ -888,9 +890,14 @@ Separate elements based on a predicate that also exposes the index of the elemen
 
 ```ts
 export declare const partition: {
-  <C extends A, B extends A, A = C>(refinement: Refinement<A, B>): (self: Chunk<C>) => [Chunk<Exclude<C, B>>, Chunk<B>]
+  <C extends A, B extends A, A = C>(
+    refinement: Predicate.Refinement<A, B>
+  ): (self: Chunk<C>) => [Chunk<Exclude<C, B>>, Chunk<B>]
   <B extends A, A = B>(predicate: (a: A) => boolean): (self: Chunk<B>) => [Chunk<B>, Chunk<B>]
-  <C extends A, B extends A, A = C>(self: Chunk<C>, refinement: Refinement<A, B>): [Chunk<Exclude<C, B>>, Chunk<B>]
+  <C extends A, B extends A, A = C>(
+    self: Chunk<C>,
+    refinement: Predicate.Refinement<A, B>
+  ): [Chunk<Exclude<C, B>>, Chunk<B>]
   <B extends A, A = B>(self: Chunk<B>, predicate: (a: A) => boolean): [Chunk<B>, Chunk<B>]
 }
 ```
@@ -1001,6 +1008,16 @@ Added in v2.0.0
 
 # model
 
+## Backing (type alias)
+
+**Signature**
+
+```ts
+export type Backing<A> = IArray<A> | IConcat<A> | ISingleton<A> | IEmpty | ISlice<A>
+```
+
+Added in v2.0.0
+
 ## NonEmptyChunk (interface)
 
 **Signature**
@@ -1018,7 +1035,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export interface Chunk<A> extends Iterable<A>, Equal.Equal, Pipeable, Inspectable {
+export interface Chunk<A> extends Iterable<A>, Equal, Pipeable, Inspectable {
   readonly [TypeId]: {
     readonly _A: (_: never) => A
   }
@@ -1059,8 +1076,8 @@ Added in v2.0.0
 
 ```ts
 export declare const flatMapNonEmpty: {
-  <A, B>(f: (a: A, i: number) => NonEmptyChunk<B>): (self: NonEmptyChunk<A>) => NonEmptyChunk<B>
-  <A, B>(self: NonEmptyChunk<A>, f: (a: A, i: number) => NonEmptyChunk<B>): NonEmptyChunk<B>
+  <A, B>(f: (a: A, i: number) => Chunk.NonEmptyChunk<B>): (self: Chunk.NonEmptyChunk<A>) => Chunk.NonEmptyChunk<B>
+  <A, B>(self: Chunk.NonEmptyChunk<A>, f: (a: A, i: number) => Chunk.NonEmptyChunk<B>): Chunk.NonEmptyChunk<B>
 }
 ```
 
@@ -1083,12 +1100,22 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const flattenNonEmpty: <A>(self: NonEmptyChunk<NonEmptyChunk<A>>) => NonEmptyChunk<A>
+export declare const flattenNonEmpty: <A>(self: Chunk.NonEmptyChunk<Chunk.NonEmptyChunk<A>>) => Chunk.NonEmptyChunk<A>
 ```
 
 Added in v2.0.0
 
 # symbol
+
+## TypeId
+
+**Signature**
+
+```ts
+export declare const TypeId: typeof Chunk.TypeId
+```
+
+Added in v2.0.0
 
 ## TypeId (type alias)
 
@@ -1135,7 +1162,7 @@ Wraps an array into a chunk without copying, unsafe on mutable arrays
 **Signature**
 
 ```ts
-export declare const unsafeFromNonEmptyArray: <A>(self: readonly [A, ...A[]]) => NonEmptyChunk<A>
+export declare const unsafeFromNonEmptyArray: <A>(self: readonly [A, ...A[]]) => Chunk.NonEmptyChunk<A>
 ```
 
 Added in v2.0.0

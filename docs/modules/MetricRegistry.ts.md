@@ -1,6 +1,6 @@
 ---
 title: MetricRegistry.ts
-nav_order: 64
+nav_order: 207
 parent: Modules
 ---
 
@@ -43,18 +43,15 @@ Added in v2.0.0
 ```ts
 export interface MetricRegistry {
   readonly [MetricRegistryTypeId]: MetricRegistryTypeId
-  snapshot(): HashSet.HashSet<MetricPair.MetricPair.Untyped>
-  get<Type extends MetricKeyType.MetricKeyType<any, any>>(
-    key: MetricKey.MetricKey<Type>
-  ): MetricHook.MetricHook<
-    MetricKeyType.MetricKeyType.InType<(typeof key)["keyType"]>,
-    MetricKeyType.MetricKeyType.OutType<(typeof key)["keyType"]>
-  >
-  getCounter<A extends number | bigint>(key: MetricKey.MetricKey.Counter<A>): MetricHook.MetricHook.Counter<A>
-  getFrequency(key: MetricKey.MetricKey.Frequency): MetricHook.MetricHook.Frequency
-  getGauge<A extends number | bigint>(key: MetricKey.MetricKey.Gauge<A>): MetricHook.MetricHook.Gauge<A>
-  getHistogram(key: MetricKey.MetricKey.Histogram): MetricHook.MetricHook.Histogram
-  getSummary(key: MetricKey.MetricKey.Summary): MetricHook.MetricHook.Summary
+  snapshot(): HashSet<MetricPair.Untyped>
+  get<Type extends MetricKeyType<any, any>>(
+    key: MetricKey<Type>
+  ): MetricHook<MetricKeyType.InType<(typeof key)["keyType"]>, MetricKeyType.OutType<(typeof key)["keyType"]>>
+  getCounter<A extends number | bigint>(key: MetricKey.Counter<A>): MetricHook.Counter<A>
+  getFrequency(key: MetricKey.Frequency): MetricHook.Frequency
+  getGauge<A extends number | bigint>(key: MetricKey.Gauge<A>): MetricHook.Gauge<A>
+  getHistogram(key: MetricKey.Histogram): MetricHook.Histogram
+  getSummary(key: MetricKey.Summary): MetricHook.Summary
 }
 ```
 
@@ -67,7 +64,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricRegistryTypeId: typeof MetricRegistryTypeId
+export declare const MetricRegistryTypeId: typeof MetricRegistry.MetricRegistryTypeId
 ```
 
 Added in v2.0.0

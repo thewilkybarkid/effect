@@ -1,12 +1,12 @@
 ---
 title: Match.ts
-nav_order: 52
+nav_order: 195
 parent: Modules
 ---
 
 ## Match overview
 
-Added in v1.0.0
+Added in v2.0.0
 
 ---
 

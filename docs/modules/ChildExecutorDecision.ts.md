@@ -173,7 +173,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isClose: (self: ChildExecutorDecision) => self is Close
+export declare const isClose: (self: ChildExecutorDecision) => self is ChildExecutorDecision.Close
 ```
 
 Added in v2.0.0
@@ -186,7 +186,7 @@ Returns `true` if the specified `ChildExecutorDecision` is a `Continue`,
 **Signature**
 
 ```ts
-export declare const isContinue: (self: ChildExecutorDecision) => self is Continue
+export declare const isContinue: (self: ChildExecutorDecision) => self is ChildExecutorDecision.Continue
 ```
 
 Added in v2.0.0
@@ -199,7 +199,7 @@ otherwise.
 **Signature**
 
 ```ts
-export declare const isYield: (self: ChildExecutorDecision) => self is Yield
+export declare const isYield: (self: ChildExecutorDecision) => self is ChildExecutorDecision.Yield
 ```
 
 Added in v2.0.0
@@ -211,7 +211,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ChildExecutorDecisionTypeId: typeof ChildExecutorDecisionTypeId
+export declare const ChildExecutorDecisionTypeId: typeof ChildExecutorDecision.ChildExecutorDecisionTypeId
 ```
 
 Added in v2.0.0

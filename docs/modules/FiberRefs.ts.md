@@ -108,7 +108,7 @@ example between an asynchronous producer and consumer.
 ```ts
 export interface FiberRefs extends Pipeable {
   readonly [FiberRefsSym]: FiberRefsSym
-  readonly locals: Map<FiberRef.FiberRef<any>, Arr.NonEmptyReadonlyArray<readonly [FiberId.Runtime, any]>>
+  readonly locals: Map<FiberRef<any>, Arr.NonEmptyReadonlyArray<readonly [FiberId.Runtime, any]>>
 }
 ```
 
@@ -121,7 +121,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FiberRefsSym: typeof FiberRefsSym
+export declare const FiberRefsSym: typeof FiberRefs.FiberRefsSym
 ```
 
 Added in v2.0.0

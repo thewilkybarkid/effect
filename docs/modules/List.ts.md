@@ -1,6 +1,6 @@
 ---
 title: List.ts
-nav_order: 48
+nav_order: 191
 parent: Modules
 ---
 
@@ -124,9 +124,9 @@ Filters a list using the specified predicate.
 
 ```ts
 export declare const filter: {
-  <C extends A, B extends A, A = C>(refinement: Refinement<A, B>): (self: List<C>) => List<B>
+  <C extends A, B extends A, A = C>(refinement: Predicate.Refinement<A, B>): (self: List<C>) => List<B>
   <B extends A, A = B>(predicate: Predicate<A>): (self: List<B>) => List<B>
-  <C extends A, B extends A, A = C>(self: List<C>, refinement: Refinement<A, B>): List<B>
+  <C extends A, B extends A, A = C>(self: List<C>, refinement: Predicate.Refinement<A, B>): List<B>
   <B extends A, A = B>(self: List<B>, predicate: Predicate<A>): List<B>
 }
 ```
@@ -190,9 +190,14 @@ all elements that did satisfy the specified predicate.
 
 ```ts
 export declare const partition: {
-  <C extends A, B extends A, A = C>(refinement: Refinement<A, B>): (self: List<C>) => [List<Exclude<C, B>>, List<B>]
+  <C extends A, B extends A, A = C>(
+    refinement: Predicate.Refinement<A, B>
+  ): (self: List<C>) => [List<Exclude<C, B>>, List<B>]
   <B extends A, A = B>(predicate: (a: A) => boolean): (self: List<B>) => [List<B>, List<B>]
-  <C extends A, B extends A, A = C>(self: List<C>, refinement: Refinement<A, B>): [List<Exclude<C, B>>, List<B>]
+  <C extends A, B extends A, A = C>(
+    self: List<C>,
+    refinement: Predicate.Refinement<A, B>
+  ): [List<Exclude<C, B>>, List<B>]
   <B extends A, A = B>(self: List<B>, predicate: (a: A) => boolean): [List<B>, List<B>]
 }
 ```
@@ -254,8 +259,8 @@ Appends the specified element to the end of the `List`, creating a new `Cons`.
 
 ```ts
 export declare const append: {
-  <B>(element: B): <A>(self: List<A>) => Cons<B | A>
-  <A, B>(self: List<A>, element: B): Cons<A | B>
+  <B>(element: B): <A>(self: List<A>) => List.Cons<B | A>
+  <A, B>(self: List<A>, element: B): List.Cons<A | B>
 }
 ```
 
@@ -282,10 +287,10 @@ Added in v2.0.0
 
 ```ts
 export declare const appendAllNonEmpty: {
-  <B>(that: Cons<B>): <A>(self: List<A>) => Cons<B | A>
-  <B>(that: List<B>): <A>(self: Cons<A>) => Cons<B | A>
-  <A, B>(self: List<A>, that: Cons<B>): Cons<A | B>
-  <A, B>(self: Cons<A>, that: List<B>): Cons<A | B>
+  <B>(that: List.Cons<B>): <A>(self: List<A>) => List.Cons<B | A>
+  <B>(that: List<B>): <A>(self: List.Cons<A>) => List.Cons<B | A>
+  <A, B>(self: List<A>, that: List.Cons<B>): List.Cons<A | B>
+  <A, B>(self: List.Cons<A>, that: List<B>): List.Cons<A | B>
 }
 ```
 
@@ -299,8 +304,8 @@ Prepends the specified element to the beginning of the list.
 
 ```ts
 export declare const prepend: {
-  <B>(element: B): <A>(self: List<A>) => Cons<B | A>
-  <A, B>(self: List<A>, element: B): Cons<A | B>
+  <B>(element: B): <A>(self: List<A>) => List.Cons<B | A>
+  <A, B>(self: List<A>, element: B): List.Cons<A | B>
 }
 ```
 
@@ -327,10 +332,10 @@ Added in v2.0.0
 
 ```ts
 export declare const prependAllNonEmpty: {
-  <B>(that: Cons<B>): <A>(self: List<A>) => Cons<B | A>
-  <B>(that: List<B>): <A>(self: Cons<A>) => Cons<B | A>
-  <A, B>(self: List<A>, that: Cons<B>): Cons<A | B>
-  <A, B>(self: Cons<A>, that: List<B>): Cons<A | B>
+  <B>(that: List.Cons<B>): <A>(self: List<A>) => List.Cons<B | A>
+  <B>(that: List<B>): <A>(self: List.Cons<A>) => List.Cons<B | A>
+  <A, B>(self: List<A>, that: List.Cons<B>): List.Cons<A | B>
+  <A, B>(self: List.Cons<A>, that: List<B>): List.Cons<A | B>
 }
 ```
 
@@ -361,7 +366,7 @@ Constructs a new `List.Cons<A>` from the specified `head` and `tail` values.
 **Signature**
 
 ```ts
-export declare const cons: <A>(head: A, tail: List<A>) => Cons<A>
+export declare const cons: <A>(head: A, tail: List<A>) => List.Cons<A>
 ```
 
 Added in v2.0.0
@@ -399,7 +404,9 @@ Constructs a new `List<A>` from the specified values.
 **Signature**
 
 ```ts
-export declare const make: <Elements extends readonly [any, ...any[]]>(...elements: Elements) => Cons<Elements[number]>
+export declare const make: <Elements extends readonly [any, ...any[]]>(
+  ...elements: Elements
+) => List.Cons<Elements[number]>
 ```
 
 Added in v2.0.0
@@ -423,7 +430,7 @@ Constructs a new `List<A>` from the specified value.
 **Signature**
 
 ```ts
-export declare const of: <A>(value: A) => Cons<A>
+export declare const of: <A>(value: A) => List.Cons<A>
 ```
 
 Added in v2.0.0
@@ -464,9 +471,9 @@ Check if a predicate holds true for every `List` element.
 
 ```ts
 export declare const every: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: List<A>) => self is List<B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: List<A>) => self is List<B>
   <A>(predicate: Predicate<A>): (self: List<A>) => boolean
-  <A, B extends A>(self: List<A>, refinement: Refinement<A, B>): self is List<B>
+  <A, B extends A>(self: List<A>, refinement: Predicate.Refinement<A, B>): self is List<B>
   <A>(self: List<A>, predicate: Predicate<A>): boolean
 }
 ```
@@ -482,9 +489,9 @@ predicate, or `None` if no such element exists.
 
 ```ts
 export declare const findFirst: {
-  <A, B extends A>(refinement: Refinement<A, B>): (self: List<A>) => Option.Option<B>
+  <A, B extends A>(refinement: Predicate.Refinement<A, B>): (self: List<A>) => Option.Option<B>
   <A>(predicate: Predicate<A>): (self: List<A>) => Option.Option<A>
-  <A, B extends A>(self: List<A>, refinement: Refinement<A, B>): Option.Option<B>
+  <A, B extends A>(self: List<A>, refinement: Predicate.Refinement<A, B>): Option.Option<B>
   <A>(self: List<A>, predicate: Predicate<A>): Option.Option<A>
 }
 ```
@@ -511,8 +518,8 @@ Check if a predicate holds true for some `List` element.
 
 ```ts
 export declare const some: {
-  <A>(predicate: Predicate<A>): <B extends A>(self: List<B>) => self is Cons<B>
-  <B extends A, A = B>(self: List<B>, predicate: Predicate<A>): self is Cons<B>
+  <A>(predicate: Predicate<A>): <B extends A>(self: List<B>) => self is List.Cons<B>
+  <B extends A, A = B>(self: List<B>, predicate: Predicate<A>): self is List.Cons<B>
 }
 ```
 
@@ -671,7 +678,7 @@ Returns `true` if the specified value is a `List.Cons<A>`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isCons: <A>(self: List<A>) => self is Cons<A>
+export declare const isCons: <A>(self: List<A>) => self is List.Cons<A>
 ```
 
 Added in v2.0.0
@@ -695,7 +702,7 @@ Returns `true` if the specified value is a `List.Nil<A>`, `false` otherwise.
 **Signature**
 
 ```ts
-export declare const isNil: <A>(self: List<A>) => self is Nil<A>
+export declare const isNil: <A>(self: List<A>) => self is List.Nil<A>
 ```
 
 Added in v2.0.0
@@ -723,8 +730,8 @@ Added in v2.0.0
 
 ```ts
 export declare const flatMapNonEmpty: {
-  <A, B>(f: (a: A) => Cons<B>): (self: Cons<A>) => Cons<B>
-  <A, B>(self: Cons<A>, f: (a: A) => Cons<B>): Cons<B>
+  <A, B>(f: (a: A) => List.Cons<B>): (self: List.Cons<A>) => List.Cons<B>
+  <A, B>(self: List.Cons<A>, f: (a: A) => List.Cons<B>): List.Cons<B>
 }
 ```
 
@@ -737,7 +744,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TypeId: typeof TypeId
+export declare const TypeId: typeof List.TypeId
 ```
 
 Added in v2.0.0

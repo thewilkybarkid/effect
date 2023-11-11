@@ -635,7 +635,7 @@ export declare const all: <
 >(
   arg: Arg,
   options?: O | undefined
-) => All.Return<Arg, O>
+) => Effect.All.Return<Arg, O>
 ```
 
 Added in v2.0.0
@@ -678,7 +678,7 @@ export declare const allWith: <
   options?: O | undefined
 ) => <const Arg extends Iterable<Effect<any, any, any>> | Record<string, Effect<any, any, any>>>(
   arg: Arg
-) => All.Return<Arg, O>
+) => Effect.All.Return<Arg, O>
 ```
 
 Added in v2.0.0
@@ -1379,19 +1379,19 @@ Added in v2.0.0
 
 ```ts
 export declare const gen: {
-  <Eff extends EffectGen<any, any, any>, AEff>(
+  <Eff extends Effect.EffectGen<any, any, any>, AEff>(
     f: (resume: Adapter) => Generator<Eff, AEff, any>
   ): Effect<
-    [Eff] extends [never] ? never : [Eff] extends [EffectGen<infer R, any, any>] ? R : never,
-    [Eff] extends [never] ? never : [Eff] extends [EffectGen<any, infer E, any>] ? E : never,
+    [Eff] extends [never] ? never : [Eff] extends [Effect.EffectGen<infer R, any, any>] ? R : never,
+    [Eff] extends [never] ? never : [Eff] extends [Effect.EffectGen<any, infer E, any>] ? E : never,
     AEff
   >
-  <Self, Eff extends EffectGen<any, any, any>, AEff>(
+  <Self, Eff extends Effect.EffectGen<any, any, any>, AEff>(
     self: Self,
     f: (this: Self, resume: Adapter) => Generator<Eff, AEff, any>
   ): Effect<
-    [Eff] extends [never] ? never : [Eff] extends [EffectGen<infer R, any, any>] ? R : never,
-    [Eff] extends [never] ? never : [Eff] extends [EffectGen<any, infer E, any>] ? E : never,
+    [Eff] extends [never] ? never : [Eff] extends [Effect.EffectGen<infer R, any, any>] ? R : never,
+    [Eff] extends [never] ? never : [Eff] extends [Effect.EffectGen<any, infer E, any>] ? E : never,
     AEff
   >
 }
@@ -2020,12 +2020,12 @@ export declare const bind: {
   <N extends string, K, R2, E2, A>(
     tag: Exclude<N, keyof K>,
     f: (_: K) => Effect<R2, E2, A>
-  ): <R, E>(self: Effect<R, E, K>) => Effect<R2 | R, E2 | E, MergeRecord<K, { [k in N]: A }>>
+  ): <R, E>(self: Effect<R, E, K>) => Effect<R2 | R, E2 | E, Effect.MergeRecord<K, { [k in N]: A }>>
   <R, E, N extends string, K, R2, E2, A>(
     self: Effect<R, E, K>,
     tag: Exclude<N, keyof K>,
     f: (_: K) => Effect<R2, E2, A>
-  ): Effect<R | R2, E | E2, MergeRecord<K, { [k in N]: A }>>
+  ): Effect<R | R2, E | E2, Effect.MergeRecord<K, { [k in N]: A }>>
 }
 ```
 
@@ -2055,12 +2055,12 @@ export declare const let: {
   <N extends string, K, A>(
     tag: Exclude<N, keyof K>,
     f: (_: K) => A
-  ): <R, E>(self: Effect<R, E, K>) => Effect<R, E, MergeRecord<K, { [k in N]: A }>>
+  ): <R, E>(self: Effect<R, E, K>) => Effect<R, E, Effect.MergeRecord<K, { [k in N]: A }>>
   <R, E, K, N extends string, A>(
     self: Effect<R, E, K>,
     tag: Exclude<N, keyof K>,
     f: (_: K) => A
-  ): Effect<R, E, MergeRecord<K, { [k in N]: A }>>
+  ): Effect<R, E, Effect.MergeRecord<K, { [k in N]: A }>>
 }
 ```
 
@@ -2156,7 +2156,7 @@ Recovers from errors that match the given predicate.
 ```ts
 export declare const catchIf: {
   <E, EA extends E, EB extends EA, R2, E2, A2>(
-    refinement: Refinement<EA, EB>,
+    refinement: Predicate.Refinement<EA, EB>,
     f: (e: EB) => Effect<R2, E2, A2>
   ): <R, A>(self: Effect<R, E, A>) => Effect<R2 | R, E2 | Exclude<E, EB>, A2 | A>
   <E, EX extends E, R2, E2, A2>(
@@ -2165,7 +2165,7 @@ export declare const catchIf: {
   ): <R, A>(self: Effect<R, E, A>) => Effect<R2 | R, E | E2, A2 | A>
   <R, E, A, EA extends E, EB extends EA, R2, E2, A2>(
     self: Effect<R, E, A>,
-    refinement: Refinement<EA, EB>,
+    refinement: Predicate.Refinement<EA, EB>,
     f: (e: EB) => Effect<R2, E2, A2>
   ): Effect<R | R2, E2 | Exclude<E, EB>, A | A2>
   <R, E, A, EX extends E, R2, E2, A2>(
@@ -2454,9 +2454,9 @@ Retries this effect until its error satisfies the specified predicate.
 
 ```ts
 export declare const retryUntil: {
-  <E, E2 extends E>(f: Refinement<E, E2>): <R, A>(self: Effect<R, E, A>) => Effect<R, E2, A>
+  <E, E2 extends E>(f: Predicate.Refinement<E, E2>): <R, A>(self: Effect<R, E, A>) => Effect<R, E2, A>
   <E>(f: Predicate<E>): <R, A>(self: Effect<R, E, A>) => Effect<R, E, A>
-  <R, E, A, E2 extends E>(self: Effect<R, E, A>, f: Refinement<E, E2>): Effect<R, E2, A>
+  <R, E, A, E2 extends E>(self: Effect<R, E, A>, f: Predicate.Refinement<E, E2>): Effect<R, E2, A>
   <R, E, A>(self: Effect<R, E, A>, f: Predicate<E>): Effect<R, E, A>
 }
 ```
@@ -2824,7 +2824,7 @@ defect if the predicate fails.
 ```ts
 export declare const filterOrDie: {
   <A, B extends A, X extends A>(
-    filter: Refinement<A, B>,
+    filter: Predicate.Refinement<A, B>,
     orDieWith: (a: X) => unknown
   ): <R, E>(self: Effect<R, E, A>) => Effect<R, E, B>
   <A, X extends A, Y extends A>(
@@ -2833,7 +2833,7 @@ export declare const filterOrDie: {
   ): <R, E>(self: Effect<R, E, A>) => Effect<R, E, A>
   <R, E, A, B extends A, X extends A>(
     self: Effect<R, E, A>,
-    filter: Refinement<A, B>,
+    filter: Predicate.Refinement<A, B>,
     orDieWith: (a: X) => unknown
   ): Effect<R, E, B>
   <R, E, A, X extends A, Y extends A>(
@@ -2855,9 +2855,12 @@ message if the predicate fails.
 
 ```ts
 export declare const filterOrDieMessage: {
-  <A, B extends A>(filter: Refinement<A, B>, message: string): <R, E>(self: Effect<R, E, A>) => Effect<R, E, B>
+  <A, B extends A>(
+    filter: Predicate.Refinement<A, B>,
+    message: string
+  ): <R, E>(self: Effect<R, E, A>) => Effect<R, E, B>
   <A, X extends A>(filter: Predicate<X>, message: string): <R, E>(self: Effect<R, E, A>) => Effect<R, E, A>
-  <R, E, A, B extends A>(self: Effect<R, E, A>, filter: Refinement<A, B>, message: string): Effect<R, E, B>
+  <R, E, A, B extends A>(self: Effect<R, E, A>, filter: Predicate.Refinement<A, B>, message: string): Effect<R, E, B>
   <R, E, A, X extends A>(self: Effect<R, E, A>, filter: Predicate<X>, message: string): Effect<R, E, A>
 }
 ```
@@ -2874,7 +2877,7 @@ of the effect if it is successful, otherwise returns the value of `orElse`.
 ```ts
 export declare const filterOrElse: {
   <A, B extends A, X extends A, R2, E2, C>(
-    filter: Refinement<A, B>,
+    filter: Predicate.Refinement<A, B>,
     orElse: (a: X) => Effect<R2, E2, C>
   ): <R, E>(self: Effect<R, E, A>) => Effect<R2 | R, E2 | E, B | C>
   <A, X extends A, Y extends A, R2, E2, B>(
@@ -2883,7 +2886,7 @@ export declare const filterOrElse: {
   ): <R, E>(self: Effect<R, E, A>) => Effect<R2 | R, E2 | E, A | B>
   <R, E, A, B extends A, X extends A, R2, E2, C>(
     self: Effect<R, E, A>,
-    filter: Refinement<A, B>,
+    filter: Predicate.Refinement<A, B>,
     orElse: (a: X) => Effect<R2, E2, C>
   ): Effect<R | R2, E | E2, B | C>
   <R, E, A, X extends A, Y extends A, R2, E2, B>(
@@ -2906,7 +2909,7 @@ error if the predicate fails.
 ```ts
 export declare const filterOrFail: {
   <A, B extends A, X extends A, E2>(
-    filter: Refinement<A, B>,
+    filter: Predicate.Refinement<A, B>,
     orFailWith: (a: X) => E2
   ): <R, E>(self: Effect<R, E, A>) => Effect<R, E2 | E, B>
   <A, X extends A, Y extends A, E2>(
@@ -2915,7 +2918,7 @@ export declare const filterOrFail: {
   ): <R, E>(self: Effect<R, E, A>) => Effect<R, E2 | E, A>
   <R, E, A, B extends A, X extends A, E2>(
     self: Effect<R, E, A>,
-    filter: Refinement<A, B>,
+    filter: Predicate.Refinement<A, B>,
     orFailWith: (a: X) => E2
   ): Effect<R, E | E2, B>
   <R, E, A, X extends A, Y extends A, E2>(
@@ -4078,7 +4081,7 @@ of executing `Effect` values.
 **Signature**
 
 ```ts
-export interface Effect<R, E, A> extends Effect.Variance<R, E, A>, Equal.Equal, Pipeable {
+export interface Effect<R, E, A> extends Effect.Variance<R, E, A>, Equal, Pipeable {
   readonly [Unify.typeSymbol]?: unknown
   readonly [Unify.unifySymbol]?: EffectUnify<this>
   readonly [Unify.ignoreSymbol]?: EffectUnifyIgnore
@@ -4250,7 +4253,7 @@ return result
 export declare const iterate: {
   <A, B extends A, R, E>(
     initial: A,
-    options: { readonly while: Refinement<A, B>; readonly body: (b: B) => Effect<R, E, A> }
+    options: { readonly while: Predicate.Refinement<A, B>; readonly body: (b: B) => Effect<R, E, A> }
   ): Effect<R, E, A>
   <A, R, E>(
     initial: A,
@@ -4292,7 +4295,7 @@ export declare const loop: {
   <A, B extends A, R, E, C>(
     initial: A,
     options: {
-      readonly while: Refinement<A, B>
+      readonly while: Predicate.Refinement<A, B>
       readonly step: (b: B) => A
       readonly body: (b: B) => Effect<R, E, C>
       readonly discard?: false | undefined
@@ -4310,7 +4313,7 @@ export declare const loop: {
   <A, B extends A, R, E, C>(
     initial: A,
     options: {
-      readonly while: Refinement<A, B>
+      readonly while: Predicate.Refinement<A, B>
       readonly step: (b: B) => A
       readonly body: (b: B) => Effect<R, E, C>
       readonly discard: true
@@ -4406,7 +4409,7 @@ until the first failure.
 
 ```ts
 export declare const repeatUntil: {
-  <A, B extends A>(f: Refinement<A, B>): <R, E>(self: Effect<R, E, A>) => Effect<R, E, B>
+  <A, B extends A>(f: Predicate.Refinement<A, B>): <R, E>(self: Effect<R, E, A>) => Effect<R, E, B>
   <A>(f: Predicate<A>): <R, E>(self: Effect<R, E, A>) => Effect<R, E, A>
   <R, E, A, B extends A>(self: Effect<R, E, A>, f: Predicate<A>): Effect<R, E, B>
   <R, E, A>(self: Effect<R, E, A>, f: Predicate<A>): Effect<R, E, A>
@@ -4549,7 +4552,7 @@ Added in v2.0.0
 export declare const blocked: <R, E, A>(
   blockedRequests: RequestBlock<R>,
   _continue: Effect<R, E, A>
-) => Blocked<R, E, A>
+) => Effect.Blocked<R, E, A>
 ```
 
 Added in v2.0.0
@@ -4574,7 +4577,7 @@ Added in v2.0.0
 ```ts
 export declare const flatMapStep: <R, E, A, R1, E1, B>(
   self: Effect<R, E, A>,
-  f: (step: Exit.Exit<E, A> | Blocked<R, E, A>) => Effect<R1, E1, B>
+  f: (step: Exit.Exit<E, A> | Effect.Blocked<R, E, A>) => Effect<R1, E1, B>
 ) => Effect<R | R1, E1, B>
 ```
 
@@ -4605,7 +4608,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const runRequestBlock: <R>(blockedRequests: RequestBlock<R>) => Blocked<R, never, void>
+export declare const runRequestBlock: <R>(blockedRequests: RequestBlock<R>) => Effect.Blocked<R, never, void>
 ```
 
 Added in v2.0.0
@@ -4615,7 +4618,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const step: <R, E, A>(self: Effect<R, E, A>) => Effect<R, E, Exit.Exit<E, A> | Blocked<R, E, A>>
+export declare const step: <R, E, A>(self: Effect<R, E, A>) => Effect<R, E, Exit.Exit<E, A> | Effect.Blocked<R, E, A>>
 ```
 
 Added in v2.0.0
@@ -5673,7 +5676,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const EffectTypeId: typeof EffectTypeId
+export declare const EffectTypeId: typeof Effect.EffectTypeId
 ```
 
 Added in v2.0.0

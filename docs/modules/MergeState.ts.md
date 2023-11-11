@@ -1,6 +1,6 @@
 ---
 title: MergeState.ts
-nav_order: 54
+nav_order: 197
 parent: Modules
 ---
 
@@ -175,7 +175,7 @@ otherwise.
 ```ts
 export declare const isBothRunning: <Env, Err, Err1, Err2, Elem, Done, Done1, Done2>(
   self: MergeState<Env, Err, Err1, Err2, Elem, Done, Done1, Done2>
-) => self is BothRunning<Env, Err, Err1, Err2, Elem, Done, Done1, Done2>
+) => self is MergeState.BothRunning<Env, Err, Err1, Err2, Elem, Done, Done1, Done2>
 ```
 
 Added in v2.0.0
@@ -190,7 +190,7 @@ otherwise.
 ```ts
 export declare const isLeftDone: <Env, Err, Err1, Err2, Elem, Done, Done1, Done2>(
   self: MergeState<Env, Err, Err1, Err2, Elem, Done, Done1, Done2>
-) => self is LeftDone<Env, Err, Err1, Err2, Elem, Done, Done1, Done2>
+) => self is MergeState.LeftDone<Env, Err, Err1, Err2, Elem, Done, Done1, Done2>
 ```
 
 Added in v2.0.0
@@ -219,7 +219,7 @@ otherwise.
 ```ts
 export declare const isRightDone: <Env, Err, Err1, Err2, Elem, Done, Done1, Done2>(
   self: MergeState<Env, Err, Err1, Err2, Elem, Done, Done1, Done2>
-) => self is RightDone<Env, Err, Err1, Err2, Elem, Done, Done1, Done2>
+) => self is MergeState.RightDone<Env, Err, Err1, Err2, Elem, Done, Done1, Done2>
 ```
 
 Added in v2.0.0
@@ -231,7 +231,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MergeStateTypeId: typeof MergeStateTypeId
+export declare const MergeStateTypeId: typeof MergeState.MergeStateTypeId
 ```
 
 Added in v2.0.0

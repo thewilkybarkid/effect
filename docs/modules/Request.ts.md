@@ -1,6 +1,6 @@
 ---
 title: Request.ts
-nav_order: 87
+nav_order: 230
 parent: Modules
 ---
 
@@ -60,10 +60,10 @@ Added in v2.0.0
 export declare const makeEntry: <A extends Request<any, any>>(options: {
   readonly request: A
   readonly result: Deferred<Request.Error<A>, Request.Success<A>>
-  readonly listeners: Listeners
+  readonly listeners: Request.Listeners
   readonly ownerId: FiberId
   readonly state: { completed: boolean }
-}) => Entry<A>
+}) => Request.Entry<A>
 ```
 
 Added in v2.0.0
@@ -101,7 +101,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const isEntry: (u: unknown) => u is Entry<unknown>
+export declare const isEntry: (u: unknown) => u is Request.Entry<unknown>
 ```
 
 Added in v2.0.0
@@ -319,7 +319,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const EntryTypeId: typeof EntryTypeId
+export declare const EntryTypeId: typeof Request.EntryTypeId
 ```
 
 Added in v2.0.0
@@ -339,7 +339,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RequestTypeId: typeof RequestTypeId
+export declare const RequestTypeId: typeof Request.RequestTypeId
 ```
 
 Added in v2.0.0
@@ -407,7 +407,7 @@ A utility type to extract the optional result type from a `Request`.
 
 ```ts
 export type OptionalResult<T extends Request<any, any>> = T extends Request<infer E, infer A>
-  ? Exit.Exit<E, Option.Option<A>>
+  ? Exit<E, Option<A>>
   : never
 ```
 
@@ -420,7 +420,7 @@ A utility type to extract the result type from a `Request`.
 **Signature**
 
 ```ts
-export type Result<T extends Request<any, any>> = T extends Request<infer E, infer A> ? Exit.Exit<E, A> : never
+export type Result<T extends Request<any, any>> = T extends Request<infer E, infer A> ? Exit<E, A> : never
 ```
 
 Added in v2.0.0
