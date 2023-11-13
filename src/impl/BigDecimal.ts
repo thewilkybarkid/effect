@@ -9,9 +9,20 @@ import type { Ordering } from "../Ordering.js"
 import { pipeArguments } from "../Pipeable.js"
 import { hasProperty } from "../Predicate.js"
 import type { BigDecimal } from "./BigDecimal.interface.js"
-import { TypeId } from "./BigDecimal.interface.js"
 
 const DEFAULT_PRECISION = 100
+
+/**
+ * @since 2.0.0
+ * @category symbols
+ */
+export const TypeId: unique symbol = Symbol.for("effect/BigDecimal")
+
+/**
+ * @since 2.0.0
+ * @category symbol
+ */
+export type TypeId = typeof TypeId
 
 const BigDecimalProto: Omit<BigDecimal, "value" | "scale" | "normalized"> = {
   [TypeId]: TypeId,
