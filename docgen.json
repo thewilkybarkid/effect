@@ -2,5 +2,7 @@
     "$schema": "node_modules/@effect/docgen/schema.json",
     "exclude": [
         "src/internal/**/*.ts"
-    ]
+    ],
+    "enforceDescriptions": false,
+    "enforceVersion": false
 }
