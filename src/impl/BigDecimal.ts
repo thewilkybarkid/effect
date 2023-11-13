@@ -1,4 +1,3 @@
-import type { BigDecimal } from "../BigDecimal.js"
 import * as Equal from "../Equal.js"
 import * as equivalence from "../Equivalence.js"
 import { dual, pipe } from "../Function.js"
@@ -9,6 +8,7 @@ import * as order from "../Order.js"
 import type { Ordering } from "../Ordering.js"
 import { pipeArguments } from "../Pipeable.js"
 import { hasProperty } from "../Predicate.js"
+import type { BigDecimal } from "./BigDecimal.interface.js"
 
 const DEFAULT_PRECISION = 100
 
