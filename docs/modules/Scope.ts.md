@@ -151,7 +151,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const CloseableScopeTypeId: typeof Scope.CloseableScopeTypeId
+export declare const CloseableScopeTypeId: typeof CloseableScopeTypeId
 ```
 
 Added in v2.0.0
@@ -171,7 +171,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ScopeTypeId: typeof Scope.ScopeTypeId
+export declare const ScopeTypeId: typeof ScopeTypeId
 ```
 
 Added in v2.0.0

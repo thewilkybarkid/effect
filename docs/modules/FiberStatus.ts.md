@@ -177,7 +177,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FiberStatusTypeId: typeof FiberStatus.FiberStatusTypeId
+export declare const FiberStatusTypeId: typeof FiberStatusTypeId
 ```
 
 Added in v2.0.0

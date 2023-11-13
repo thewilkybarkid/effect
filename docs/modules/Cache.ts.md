@@ -285,7 +285,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const CacheTypeId: typeof Cache.CacheTypeId
+export declare const CacheTypeId: typeof CacheTypeId
 ```
 
 Added in v2.0.0

@@ -83,7 +83,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const symbol: typeof Equal.symbol
+export declare const symbol: typeof symbol
 ```
 
 Added in v2.0.0

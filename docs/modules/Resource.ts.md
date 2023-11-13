@@ -109,7 +109,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ResourceTypeId: typeof Resource.ResourceTypeId
+export declare const ResourceTypeId: typeof ResourceTypeId
 ```
 
 Added in v2.0.0

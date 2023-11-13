@@ -267,7 +267,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ConfigProviderTypeId: typeof ConfigProvider.ConfigProviderTypeId
+export declare const ConfigProviderTypeId: typeof ConfigProviderTypeId
 ```
 
 Added in v2.0.0
@@ -287,7 +287,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FlatConfigProviderTypeId: typeof ConfigProvider.FlatConfigProviderTypeId
+export declare const FlatConfigProviderTypeId: typeof FlatConfigProviderTypeId
 ```
 
 Added in v2.0.0

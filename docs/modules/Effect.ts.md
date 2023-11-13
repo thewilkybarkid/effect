@@ -5676,7 +5676,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const EffectTypeId: typeof Effect.EffectTypeId
+export declare const EffectTypeId: typeof EffectTypeId
 ```
 
 Added in v2.0.0

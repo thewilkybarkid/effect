@@ -1137,7 +1137,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ScheduleDriverTypeId: typeof Schedule.ScheduleDriverTypeId
+export declare const ScheduleDriverTypeId: typeof ScheduleDriverTypeId
 ```
 
 Added in v2.0.0
@@ -1157,7 +1157,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ScheduleTypeId: typeof Schedule.ScheduleTypeId
+export declare const ScheduleTypeId: typeof ScheduleTypeId
 ```
 
 Added in v2.0.0

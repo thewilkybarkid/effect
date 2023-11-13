@@ -103,7 +103,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RefTypeId: typeof Ref.RefTypeId
+export declare const RefTypeId: typeof RefTypeId
 ```
 
 Added in v2.0.0

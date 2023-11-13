@@ -157,7 +157,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MergeStrategyTypeId: typeof MergeStrategy.MergeStrategyTypeId
+export declare const MergeStrategyTypeId: typeof MergeStrategyTypeId
 ```
 
 Added in v2.0.0

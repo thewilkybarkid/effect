@@ -2467,7 +2467,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const STMTypeId: typeof STM.STMTypeId
+export declare const STMTypeId: typeof STMTypeId
 ```
 
 Added in v2.0.0

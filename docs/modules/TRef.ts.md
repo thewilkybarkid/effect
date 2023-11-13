@@ -237,7 +237,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TRefTypeId: typeof TRef.TRefTypeId
+export declare const TRefTypeId: typeof TRefTypeId
 ```
 
 Added in v2.0.0

@@ -64,7 +64,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricRegistryTypeId: typeof MetricRegistry.MetricRegistryTypeId
+export declare const MetricRegistryTypeId: typeof MetricRegistryTypeId
 ```
 
 Added in v2.0.0

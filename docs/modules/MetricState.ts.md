@@ -205,7 +205,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const CounterStateTypeId: typeof MetricState.CounterStateTypeId
+export declare const CounterStateTypeId: typeof CounterStateTypeId
 ```
 
 Added in v2.0.0
@@ -225,7 +225,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FrequencyStateTypeId: typeof MetricState.FrequencyStateTypeId
+export declare const FrequencyStateTypeId: typeof FrequencyStateTypeId
 ```
 
 Added in v2.0.0
@@ -245,7 +245,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const GaugeStateTypeId: typeof MetricState.GaugeStateTypeId
+export declare const GaugeStateTypeId: typeof GaugeStateTypeId
 ```
 
 Added in v2.0.0
@@ -265,7 +265,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const HistogramStateTypeId: typeof MetricState.HistogramStateTypeId
+export declare const HistogramStateTypeId: typeof HistogramStateTypeId
 ```
 
 Added in v2.0.0
@@ -285,7 +285,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricStateTypeId: typeof MetricState.MetricStateTypeId
+export declare const MetricStateTypeId: typeof MetricStateTypeId
 ```
 
 Added in v2.0.0
@@ -305,7 +305,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const SummaryStateTypeId: typeof MetricState.SummaryStateTypeId
+export declare const SummaryStateTypeId: typeof SummaryStateTypeId
 ```
 
 Added in v2.0.0

@@ -392,7 +392,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RequestResolverTypeId: typeof RequestResolver.RequestResolverTypeId
+export declare const RequestResolverTypeId: typeof RequestResolverTypeId
 ```
 
 Added in v2.0.0

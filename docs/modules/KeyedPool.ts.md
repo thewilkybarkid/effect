@@ -193,7 +193,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const KeyedPoolTypeId: typeof KeyedPool.KeyedPoolTypeId
+export declare const KeyedPoolTypeId: typeof KeyedPoolTypeId
 ```
 
 Added in v2.0.0

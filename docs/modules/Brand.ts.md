@@ -224,7 +224,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const BrandTypeId: typeof Brand.BrandTypeId
+export declare const BrandTypeId: typeof BrandTypeId
 ```
 
 Added in v2.0.0
@@ -244,7 +244,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RefinedConstructorsTypeId: typeof Brand.RefinedConstructorsTypeId
+export declare const RefinedConstructorsTypeId: typeof RefinedConstructorsTypeId
 ```
 
 Added in v2.0.0

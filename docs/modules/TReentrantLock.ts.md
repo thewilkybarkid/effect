@@ -315,7 +315,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TReentrantLockTypeId: typeof TReentrantLock.TReentrantLockTypeId
+export declare const TReentrantLockTypeId: typeof TReentrantLockTypeId
 ```
 
 Added in v2.0.0

@@ -797,7 +797,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricTypeId: typeof Metric.MetricTypeId
+export declare const MetricTypeId: typeof MetricTypeId
 ```
 
 Added in v2.0.0

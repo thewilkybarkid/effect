@@ -211,7 +211,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ChildExecutorDecisionTypeId: typeof ChildExecutorDecision.ChildExecutorDecisionTypeId
+export declare const ChildExecutorDecisionTypeId: typeof ChildExecutorDecisionTypeId
 ```
 
 Added in v2.0.0

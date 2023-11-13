@@ -756,7 +756,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FiberTypeId: typeof Fiber.FiberTypeId
+export declare const FiberTypeId: typeof FiberTypeId
 ```
 
 Added in v2.0.0
@@ -776,7 +776,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RuntimeFiberTypeId: typeof Fiber.RuntimeFiberTypeId
+export declare const RuntimeFiberTypeId: typeof RuntimeFiberTypeId
 ```
 
 Added in v2.0.0

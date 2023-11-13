@@ -95,7 +95,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const GroupByTypeId: typeof GroupBy.GroupByTypeId
+export declare const GroupByTypeId: typeof GroupByTypeId
 ```
 
 Added in v2.0.0

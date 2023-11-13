@@ -306,7 +306,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const SupervisorTypeId: typeof Supervisor.SupervisorTypeId
+export declare const SupervisorTypeId: typeof SupervisorTypeId
 ```
 
 Added in v2.0.0

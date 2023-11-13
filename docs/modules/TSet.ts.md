@@ -478,7 +478,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TSetTypeId: typeof TSet.TSetTypeId
+export declare const TSetTypeId: typeof TSetTypeId
 ```
 
 Added in v2.0.0

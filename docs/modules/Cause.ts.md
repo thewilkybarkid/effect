@@ -1105,7 +1105,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const CauseTypeId: typeof Cause.CauseTypeId
+export declare const CauseTypeId: typeof CauseTypeId
 ```
 
 Added in v2.0.0
@@ -1125,7 +1125,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const IllegalArgumentExceptionTypeId: typeof Cause.IllegalArgumentExceptionTypeId
+export declare const IllegalArgumentExceptionTypeId: typeof IllegalArgumentExceptionTypeId
 ```
 
 Added in v2.0.0
@@ -1145,7 +1145,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const InterruptedExceptionTypeId: typeof Cause.InterruptedExceptionTypeId
+export declare const InterruptedExceptionTypeId: typeof InterruptedExceptionTypeId
 ```
 
 Added in v2.0.0
@@ -1165,7 +1165,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const InvalidPubSubCapacityExceptionTypeId: typeof Cause.InvalidPubSubCapacityExceptionTypeId
+export declare const InvalidPubSubCapacityExceptionTypeId: typeof InvalidPubSubCapacityExceptionTypeId
 ```
 
 Added in v2.0.0
@@ -1185,7 +1185,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const NoSuchElementExceptionTypeId: typeof Cause.NoSuchElementExceptionTypeId
+export declare const NoSuchElementExceptionTypeId: typeof NoSuchElementExceptionTypeId
 ```
 
 Added in v2.0.0
@@ -1205,7 +1205,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RuntimeExceptionTypeId: typeof Cause.RuntimeExceptionTypeId
+export declare const RuntimeExceptionTypeId: typeof RuntimeExceptionTypeId
 ```
 
 Added in v2.0.0

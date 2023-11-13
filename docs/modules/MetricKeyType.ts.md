@@ -192,7 +192,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const CounterKeyTypeTypeId: typeof MetricKeyType.CounterKeyTypeTypeId
+export declare const CounterKeyTypeTypeId: typeof CounterKeyTypeTypeId
 ```
 
 Added in v2.0.0
@@ -212,7 +212,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FrequencyKeyTypeTypeId: typeof MetricKeyType.FrequencyKeyTypeTypeId
+export declare const FrequencyKeyTypeTypeId: typeof FrequencyKeyTypeTypeId
 ```
 
 Added in v2.0.0
@@ -232,7 +232,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const GaugeKeyTypeTypeId: typeof MetricKeyType.GaugeKeyTypeTypeId
+export declare const GaugeKeyTypeTypeId: typeof GaugeKeyTypeTypeId
 ```
 
 Added in v2.0.0
@@ -252,7 +252,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const HistogramKeyTypeTypeId: typeof MetricKeyType.HistogramKeyTypeTypeId
+export declare const HistogramKeyTypeTypeId: typeof HistogramKeyTypeTypeId
 ```
 
 Added in v2.0.0
@@ -272,7 +272,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricKeyTypeTypeId: typeof MetricKeyType.MetricKeyTypeTypeId
+export declare const MetricKeyTypeTypeId: typeof MetricKeyTypeTypeId
 ```
 
 Added in v2.0.0
@@ -292,7 +292,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const SummaryKeyTypeTypeId: typeof MetricKeyType.SummaryKeyTypeTypeId
+export declare const SummaryKeyTypeTypeId: typeof SummaryKeyTypeTypeId
 ```
 
 Added in v2.0.0

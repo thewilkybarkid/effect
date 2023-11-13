@@ -128,7 +128,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricHookTypeId: typeof MetricHook.MetricHookTypeId
+export declare const MetricHookTypeId: typeof MetricHookTypeId
 ```
 
 Added in v2.0.0

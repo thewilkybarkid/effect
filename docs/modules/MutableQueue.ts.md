@@ -141,7 +141,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const EmptyMutableQueue: typeof MutableQueue.EmptyMutableQueue
+export declare const EmptyMutableQueue: typeof EmptyMutableQueue
 ```
 
 Added in v2.0.0
@@ -151,7 +151,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TypeId: typeof MutableQueue.TypeId
+export declare const TypeId: typeof TypeId
 ```
 
 Added in v2.0.0

@@ -180,7 +180,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ReloadableTypeId: typeof Reloadable.ReloadableTypeId
+export declare const ReloadableTypeId: typeof ReloadableTypeId
 ```
 
 Added in v2.0.0

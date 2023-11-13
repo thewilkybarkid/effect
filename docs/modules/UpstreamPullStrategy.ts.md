@@ -172,7 +172,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const UpstreamPullStrategyTypeId: typeof UpstreamPullStrategy.UpstreamPullStrategyTypeId
+export declare const UpstreamPullStrategyTypeId: typeof UpstreamPullStrategyTypeId
 ```
 
 Added in v2.0.0

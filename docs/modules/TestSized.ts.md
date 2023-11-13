@@ -54,7 +54,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TestSizedTypeId: typeof TestSized.TestSizedTypeId
+export declare const TestSizedTypeId: typeof TestSizedTypeId
 ```
 
 Added in v2.0.0

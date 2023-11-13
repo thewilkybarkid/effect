@@ -236,7 +236,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ChunkPatchTypeId: typeof Differ.ChunkPatchTypeId
+export declare const ChunkPatchTypeId: typeof ChunkPatchTypeId
 ```
 
 Added in v2.0.0
@@ -246,7 +246,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ContextPatchTypeId: typeof Differ.ContextPatchTypeId
+export declare const ContextPatchTypeId: typeof ContextPatchTypeId
 ```
 
 Added in v2.0.0
@@ -256,7 +256,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const HashMapPatchTypeId: typeof Differ.HashMapPatchTypeId
+export declare const HashMapPatchTypeId: typeof HashMapPatchTypeId
 ```
 
 Added in v2.0.0
@@ -266,7 +266,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const HashSetPatchTypeId: typeof Differ.HashSetPatchTypeId
+export declare const HashSetPatchTypeId: typeof HashSetPatchTypeId
 ```
 
 Added in v2.0.0
@@ -276,7 +276,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const OrPatchTypeId: typeof Differ.OrPatchTypeId
+export declare const OrPatchTypeId: typeof OrPatchTypeId
 ```
 
 Added in v2.0.0
@@ -286,7 +286,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TypeId: typeof Differ.TypeId
+export declare const TypeId: typeof TypeId
 ```
 
 Added in v2.0.0

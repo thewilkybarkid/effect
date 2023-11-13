@@ -147,7 +147,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const DeferredTypeId: typeof Deferred.DeferredTypeId
+export declare const DeferredTypeId: typeof DeferredTypeId
 ```
 
 Added in v2.0.0

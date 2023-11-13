@@ -308,7 +308,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FiberFailureCauseId: typeof Runtime.FiberFailureCauseId
+export declare const FiberFailureCauseId: typeof FiberFailureCauseId
 ```
 
 Added in v2.0.0
@@ -318,7 +318,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FiberFailureId: typeof Runtime.FiberFailureId
+export declare const FiberFailureId: typeof FiberFailureId
 ```
 
 Added in v2.0.0

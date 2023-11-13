@@ -696,7 +696,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TArrayTypeId: typeof TArray.TArrayTypeId
+export declare const TArrayTypeId: typeof TArrayTypeId
 ```
 
 Added in v2.0.0

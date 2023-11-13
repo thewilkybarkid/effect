@@ -165,7 +165,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const UpstreamPullRequestTypeId: typeof UpstreamPullRequest.UpstreamPullRequestTypeId
+export declare const UpstreamPullRequestTypeId: typeof UpstreamPullRequestTypeId
 ```
 
 Added in v2.0.0

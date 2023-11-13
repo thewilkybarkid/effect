@@ -309,7 +309,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TypeId: typeof SortedSet.TypeId
+export declare const TypeId: typeof TypeId
 ```
 
 Added in v2.0.0

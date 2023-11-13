@@ -65,7 +65,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricPairTypeId: typeof MetricPair.MetricPairTypeId
+export declare const MetricPairTypeId: typeof MetricPairTypeId
 ```
 
 Added in v2.0.0

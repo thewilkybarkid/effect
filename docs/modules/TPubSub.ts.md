@@ -254,7 +254,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TPubSubTypeId: typeof TPubSub.TPubSubTypeId
+export declare const TPubSubTypeId: typeof TPubSubTypeId
 ```
 
 Added in v2.0.0

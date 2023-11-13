@@ -158,7 +158,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ScopedCacheTypeId: typeof ScopedCache.ScopedCacheTypeId
+export declare const ScopedCacheTypeId: typeof ScopedCacheTypeId
 ```
 
 Added in v2.0.0

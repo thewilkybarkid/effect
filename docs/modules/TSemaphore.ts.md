@@ -178,7 +178,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TSemaphoreTypeId: typeof TSemaphore.TSemaphoreTypeId
+export declare const TSemaphoreTypeId: typeof TSemaphoreTypeId
 ```
 
 Added in v2.0.0

@@ -93,7 +93,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const SynchronizedRefTypeId: typeof SynchronizedRef.SynchronizedRefTypeId
+export declare const SynchronizedRefTypeId: typeof SynchronizedRefTypeId
 ```
 
 Added in v2.0.0

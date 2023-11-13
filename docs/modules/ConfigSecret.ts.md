@@ -111,7 +111,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ConfigSecretTypeId: typeof ConfigSecret.ConfigSecretTypeId
+export declare const ConfigSecretTypeId: typeof ConfigSecretTypeId
 ```
 
 Added in v2.0.0

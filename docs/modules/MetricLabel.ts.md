@@ -78,7 +78,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricLabelTypeId: typeof MetricLabel.MetricLabelTypeId
+export declare const MetricLabelTypeId: typeof MetricLabelTypeId
 ```
 
 Added in v2.0.0

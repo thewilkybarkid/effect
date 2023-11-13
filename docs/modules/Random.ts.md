@@ -164,7 +164,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RandomTypeId: typeof Random.RandomTypeId
+export declare const RandomTypeId: typeof RandomTypeId
 ```
 
 Added in v2.0.0

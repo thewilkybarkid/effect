@@ -360,7 +360,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TakeTypeId: typeof Take.TakeTypeId
+export declare const TakeTypeId: typeof TakeTypeId
 ```
 
 Added in v2.0.0

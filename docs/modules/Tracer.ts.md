@@ -204,7 +204,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TracerTypeId: typeof Tracer.TracerTypeId
+export declare const TracerTypeId: typeof TracerTypeId
 ```
 
 Added in v2.0.0

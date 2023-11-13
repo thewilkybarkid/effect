@@ -319,7 +319,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const EntryTypeId: typeof Request.EntryTypeId
+export declare const EntryTypeId: typeof EntryTypeId
 ```
 
 Added in v2.0.0
@@ -339,7 +339,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const RequestTypeId: typeof Request.RequestTypeId
+export declare const RequestTypeId: typeof RequestTypeId
 ```
 
 Added in v2.0.0

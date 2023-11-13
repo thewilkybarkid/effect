@@ -114,7 +114,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricPollingTypeId: typeof MetricPolling.MetricPollingTypeId
+export declare const MetricPollingTypeId: typeof MetricPollingTypeId
 ```
 
 Added in v2.0.0

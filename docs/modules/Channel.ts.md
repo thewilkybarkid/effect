@@ -1593,7 +1593,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ChannelExceptionTypeId: typeof Channel.ChannelExceptionTypeId
+export declare const ChannelExceptionTypeId: typeof ChannelExceptionTypeId
 ```
 
 Added in v2.0.0
@@ -1613,7 +1613,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ChannelTypeId: typeof Channel.ChannelTypeId
+export declare const ChannelTypeId: typeof ChannelTypeId
 ```
 
 Added in v2.0.0

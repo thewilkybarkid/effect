@@ -566,7 +566,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TDequeueTypeId: typeof TQueue.TDequeueTypeId
+export declare const TDequeueTypeId: typeof TDequeueTypeId
 ```
 
 Added in v2.0.0
@@ -586,7 +586,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TEnqueueTypeId: typeof TQueue.TEnqueueTypeId
+export declare const TEnqueueTypeId: typeof TEnqueueTypeId
 ```
 
 Added in v2.0.0

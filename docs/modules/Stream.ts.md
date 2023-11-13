@@ -3192,7 +3192,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const StreamTypeId: typeof Stream.StreamTypeId
+export declare const StreamTypeId: typeof StreamTypeId
 ```
 
 Added in v2.0.0

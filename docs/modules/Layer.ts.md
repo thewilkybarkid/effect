@@ -916,7 +916,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const LayerTypeId: typeof Layer.LayerTypeId
+export declare const LayerTypeId: typeof LayerTypeId
 ```
 
 Added in v2.0.0

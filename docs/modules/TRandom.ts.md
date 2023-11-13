@@ -179,7 +179,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TRandomTypeId: typeof TRandom.TRandomTypeId
+export declare const TRandomTypeId: typeof TRandomTypeId
 ```
 
 Added in v2.0.0

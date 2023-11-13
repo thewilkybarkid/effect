@@ -121,7 +121,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const ScopedRefTypeId: typeof ScopedRef.ScopedRefTypeId
+export declare const ScopedRefTypeId: typeof ScopedRefTypeId
 ```
 
 Added in v2.0.0

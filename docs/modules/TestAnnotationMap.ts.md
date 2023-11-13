@@ -50,7 +50,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TestAnnotationMapTypeId: typeof TestAnnotationMap.TestAnnotationMapTypeId
+export declare const TestAnnotationMapTypeId: typeof TestAnnotationMapTypeId
 ```
 
 Added in v2.0.0

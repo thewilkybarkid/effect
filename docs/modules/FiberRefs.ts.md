@@ -121,7 +121,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const FiberRefsSym: typeof FiberRefs.FiberRefsSym
+export declare const FiberRefsSym: typeof FiberRefsSym
 ```
 
 Added in v2.0.0

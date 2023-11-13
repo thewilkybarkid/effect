@@ -538,7 +538,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const DequeueTypeId: typeof Queue.DequeueTypeId
+export declare const DequeueTypeId: typeof DequeueTypeId
 ```
 
 Added in v2.0.0
@@ -558,7 +558,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const EnqueueTypeId: typeof Queue.EnqueueTypeId
+export declare const EnqueueTypeId: typeof EnqueueTypeId
 ```
 
 Added in v2.0.0
@@ -578,7 +578,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const QueueStrategyTypeId: typeof Queue.QueueStrategyTypeId
+export declare const QueueStrategyTypeId: typeof QueueStrategyTypeId
 ```
 
 Added in v2.0.0

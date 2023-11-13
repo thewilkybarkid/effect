@@ -1642,7 +1642,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const SinkTypeId: typeof Sink.SinkTypeId
+export declare const SinkTypeId: typeof SinkTypeId
 ```
 
 Added in v2.0.0

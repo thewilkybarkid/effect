@@ -314,7 +314,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const TPriorityQueueTypeId: typeof TPriorityQueue.TPriorityQueueTypeId
+export declare const TPriorityQueueTypeId: typeof TPriorityQueueTypeId
 ```
 
 Added in v2.0.0

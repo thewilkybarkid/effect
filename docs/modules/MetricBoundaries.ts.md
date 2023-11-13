@@ -106,7 +106,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricBoundariesTypeId: typeof MetricBoundaries.MetricBoundariesTypeId
+export declare const MetricBoundariesTypeId: typeof MetricBoundariesTypeId
 ```
 
 Added in v2.0.0

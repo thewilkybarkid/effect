@@ -231,7 +231,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const MetricKeyTypeId: typeof MetricKey.MetricKeyTypeId
+export declare const MetricKeyTypeId: typeof MetricKeyTypeId
 ```
 
 Added in v2.0.0
