@@ -14,3 +14,23 @@ export interface BigDecimal extends Equal, Pipeable, Inspectable {
   /** @internal */
   normalized?: BigDecimal
 }
+
+/**
+ * @since 2.0.0
+ * @internal
+ */
+export * from "./BigDecimal.js"
+
+/**
+ * @since 2.0.0
+ */
+export declare namespace BigDecimal {
+  // eslint-disable-next-line import/no-cycle
+  // @ts-expect-error
+  export * from "./BigDecimal.js"
+}
+/**
+ * @since 2.0.0
+ * @internal
+ */
+export * from "../internal/Jumpers/BigDecimal.js"
