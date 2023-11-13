@@ -1,7 +1,18 @@
 import type { Equal } from "../Equal.js"
 import type { Inspectable } from "../Inspectable.js"
 import type { Pipeable } from "../Pipeable.js"
-import type { TypeId } from "./BigDecimal.js"
+
+/**
+ * @since 2.0.0
+ * @category symbols
+ */
+export const TypeId: unique symbol = Symbol.for("effect/BigDecimal")
+
+/**
+ * @since 2.0.0
+ * @category symbol
+ */
+export type TypeId = typeof TypeId
 
 /**
  * @since 2.0.0
