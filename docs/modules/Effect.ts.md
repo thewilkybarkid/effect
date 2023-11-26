@@ -262,7 +262,6 @@ Added in v2.0.0
 - [requests & batching](#requests--batching)
   - [blocked](#blocked)
   - [cacheRequestResult](#cacherequestresult)
-  - [flatMapStep](#flatmapstep)
   - [request](#request)
   - [runRequestBlock](#runrequestblock)
   - [step](#step)
@@ -4123,8 +4122,8 @@ Added in v2.0.0
 ```ts
 export interface Blocked<out R, out E, out A> extends Effect<R, E, A> {
   readonly _op: "Blocked"
-  readonly i0: RequestBlock<R>
-  readonly i1: Effect<R, E, A>
+  readonly i0: RequestBlock<never>
+  readonly i1: Effect<never, E, A>
 }
 ```
 
@@ -4636,19 +4635,6 @@ export declare const cacheRequestResult: <A extends Request.Request<any, any>>(
 
 Added in v2.0.0
 
-## flatMapStep
-
-**Signature**
-
-```ts
-export declare const flatMapStep: <R, E, A, R1, E1, B>(
-  self: Effect<R, E, A>,
-  f: (step: Exit.Exit<E, A> | Blocked<R, E, A>) => Effect<R1, E1, B>
-) => Effect<R | R1, E1, B>
-```
-
-Added in v2.0.0
-
 ## request
 
 **Signature**
@@ -4674,7 +4660,7 @@ Added in v2.0.0
 **Signature**
 
 ```ts
-export declare const runRequestBlock: <R>(blockedRequests: RequestBlock<R>) => Blocked<R, never, void>
+export declare const runRequestBlock: <R>(blockedRequests: RequestBlock<R>) => Effect<R, never, void>
 ```
 
 Added in v2.0.0

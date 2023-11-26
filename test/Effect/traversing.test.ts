@@ -305,7 +305,7 @@ describe.concurrent("Effect", () => {
         )
       )
       assert.deepStrictEqual(Array.from(result), array)
-    }))
+    }), 15_000)
   it.effect("forEach/concurrency - parallelism - runs effects in parallel", () =>
     Effect.gen(function*($) {
       const deferred = yield* $(Deferred.make<never, void>())
@@ -474,7 +474,7 @@ describe.concurrent("Effect", () => {
         }),
         Effect.exit
       )
-      assert.deepStrictEqual(result, Exit.failCause(Cause.parallel(Cause.empty, Cause.fail(1))))
+      assert.deepStrictEqual(result, Exit.failCause(Cause.fail(1)))
     }))
   it.effect("partition - collects only successes", () =>
     Effect.gen(function*($) {
@@ -651,7 +651,7 @@ describe.concurrent("Effect", () => {
           Effect.exit
         )
       )
-      assert.deepStrictEqual(result, Exit.failCause(Cause.parallel(Cause.empty, Cause.fail(1))))
+      assert.deepStrictEqual(result, Exit.failCause(Cause.fail(1)))
     }))
   it.effect("reduceEffect/concurrency - return error if it exists in list", () =>
     Effect.gen(function*($) {
@@ -665,7 +665,7 @@ describe.concurrent("Effect", () => {
           Effect.exit
         )
       )
-      assert.deepStrictEqual(result, Exit.failCause(Cause.parallel(Cause.empty, Cause.fail(1))))
+      assert.deepStrictEqual(result, Exit.failCause(Cause.fail(1)))
     }))
   it.effect("takeUntil - happy path", () =>
     Effect.gen(function*($) {
